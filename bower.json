@@ -1,0 +1,32 @@
+{
+    "name": "resume",
+    "description": "",
+    "main": [
+        "dist/resume.js"
+    ],
+    "version": "0.0.1",
+    "authors": ["Lukasz"],
+    "license": {
+        "type": "The MIT License (MIT)"
+    },
+    "homepage": "https://github.com/lukasz-si/resume",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/lukasz-si/resume.git"
+    },
+    "ignore": [
+        "/*",
+        "!/dist",
+        "!/src",
+        "!LICENSE"
+    ],
+    "keywords": [
+        "resume"
+    ],
+    "devDependencies": {
+    },
+    "dependencies": {
+        "jquery": "latest",
+        "requirejs": "latest"
+    }
+}
