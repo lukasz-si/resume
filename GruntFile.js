@@ -74,7 +74,7 @@ module.exports = function (grunt) {
                             fs.write('dist/versions.txt', output);
                         }
                     },
-
+                    // uglify | uglify2
                     optimize: "none"
 
                 }
@@ -87,13 +87,13 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                    'app/css/resume.css': 'app/css/sass/resume.scss'
+                    'dist/css/resume.css': 'app/sass/resume.scss'
                 }
             }
         },
         watch: {
             scss: {
-                files: ['app/css/sass/*.scss'],
+                files: ['app/sass/*.scss'],
                 tasks: ['sass']
             }
         },

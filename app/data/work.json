@@ -1,0 +1,42 @@
+{
+    "companies": [
+        {
+            "id": 1,
+            "content": "Tieto",
+            "style": "",
+            "subgroupOrder": "start",
+            "start": "2005-08-01",
+            "end": ""
+        },
+        {
+            "id": 2,
+            "content": "Meelogic",
+            "style": "",
+            "subgroupOrder": "start",
+            "start": "2005-08-01",
+            "end": ""
+        },
+        {
+            "id": 3,
+            "content": "Freelance",
+            "style": "",
+            "subgroupOrder": "start",
+            "start": "2005-08-01",
+            "end": ""
+        }
+    ],
+    "projects": [
+        {
+            "start": "2005-08-01",
+            "end": "2005-10-02",
+            "group": 1,
+            "content": "project 1"
+        },
+        {
+            "start": "2005-10-03",
+            "end": "2005-12-02",
+            "group": 1,
+            "content": "project 2"
+        }
+    ]
+}

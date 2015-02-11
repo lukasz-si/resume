@@ -27,6 +27,9 @@
     },
     "dependencies": {
         "jquery": "latest",
-        "requirejs": "latest"
+        "requirejs": "latest",
+        "angular": "1.3.12",
+        "bootstrap": "~3.3.2",
+        "vis": "~3.9.1"
     }
 }
