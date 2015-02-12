@@ -27,16 +27,64 @@
     ],
     "projects": [
         {
-            "start": "2005-08-01",
-            "end": "2005-10-02",
+            "id": 21,
+            "start": "2009-04-02",
+            "endd": "2009-09-01",
+            "group": 3,
+            "content": "Registration system",
+            "position": "Frontend/Backend Developer",
+            "description": "Application implemented for recruitment company.",
+            "website": null,
+            "technologies": ["PHP", "Ajax", "Smarty", "CSS", "HTML", "SVN"]
+        },
+
+
+
+
+        {
+            "id": 11,
+            "start": "2013-09-02",
+            "endd": "2014-03-01",
+            "group": 2,
+            "content": "Campanda",
+            "position": "Frontend Developer",
+            "description": "Website designed to rent motorhomes. The application supports all devices – desktops, tablets and mobile phones (responsive design). Twitter Bootstrap framework provides modern layout. User interactive interface is provided by JavaScript frameworks. Project management methodology is Scrum.",
+            "website": "http://www.campanda.com/",
+            "technologies": ["Javascript", "jQuery", "requirejs", "underscore", "Twitter Bootstrap", "PHP (Zend Framework2)", "HTML","CSS", "Less", "GIT (GitFlow)", "REST"]
+        },
+
+
+
+
+        {
+            "id": 3,
+            "start": "2007-11-02",
+            "endd": "2009-06-01",
             "group": 1,
-            "content": "project 1"
+            "content": "EM Frame",
+            "position": "Team Leader",
+            "description": "Responsible for managing a team of developers, gathering requirements, planning and writing specifications for new features, participating in teleconferences.",
+            "technologies": ["Java", "Swing", "C", "C++"]
         },
         {
-            "start": "2005-10-03",
-            "end": "2005-12-02",
+            "id": 2,
+            "start": "2006-01-02",
+            "endd": "2007-11-01",
             "group": 1,
-            "content": "project 2"
+            "content": "Operation Support Systems (OSS)",
+            "position": "Software Developer",
+            "description": "Responsible for development of OSS system based on C++, gathering and merging source code via ClearCase.",
+            "technologies": ["C", "C++", "ClearCase"]
+        },
+        {
+            "id": 1,
+            "start": "2005-08-01",
+            "endd": "2006-01-01",
+            "group": 1,
+            "content": "Intranet",
+            "position": "Software Developer",
+            "description": "Responsible for implementation of web based applications & tools for company internal use.",
+            "technologies": ["PHP", "HTML", "Javascript", "AJAX", "CSS", "PostgreSQL", "MySQL"]
         }
     ]
 }

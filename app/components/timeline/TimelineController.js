@@ -1,28 +1,29 @@
 define([
     'angular',
     'components/timeline/module',
-    'vis'
+    'components/timeline/TimelineServices'
 ], function (ng, module) {
     'use strict';
 
-    var controller = module.controller('TimelineController', ['$scope', '$http', '$log',
-        function ($scope, $http, $log) {
+    module.controller('TimelineController', ['$scope', '$http', '$log', 'TimelineServices',
+        function ($scope, $http, $log, TimelineServices) {
 
-            $http.get('data/work.json')
+            $http.get('data/work.json', {cache: true})
                 .success(function (data) {
-                    var projects = [],
-                        project,
-                        array;
+//                    var projects = [];
 
-                    $scope.companies = data.companies;
                     $log.log("work.json loaded");
 
-                    if (ng.isArray(data.projects)) {
-                        ng.forEach(data.projects, function (value) {
-                            projects.push(convert(value));
-                        });
-                        $log.log(projects);
-                    }
+//                    if (ng.isArray(data.projects)) {
+//                        ng.forEach(data.projects, function (value) {
+//                            projects.push(TimelineServices.convertStringToDate(value));
+//                        });
+//                        $log.log(projects);
+//                    }
+
+                    TimelineServices.createTimeline('#timeline-container', data.projects, data.companies);
+                    $scope.companies = data.companies;
+                    $scope.projects = data.projects;
 
                 });
             $scope.companies = [];
@@ -30,25 +31,7 @@ define([
         }
     ]);
 
-    // TODO: create a service
-    function convert(value) {
-        var project = ng.extend({}, value),
-            dateArray = project.start.split('-');
 
-        if (dateArray.length === 3) {
-            project.start = new Date(dateArray[0], dateArray[1], dateArray[2]);
-        }
-
-        if (ng.isString(project.end)) {
-            dateArray = project.end.split('-');
-            if (dateArray.length === 3) {
-                project.end = new Date(dateArray[0], dateArray[1], dateArray[2]);
-            }
-        }
-
-        return project;
-    }
-
-    return controller;
+    return module;
 });
 

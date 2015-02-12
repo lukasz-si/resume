@@ -29,10 +29,13 @@ require.config({
         'angular': '../bower_components/angular/angular',
         'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap.min',
         'vis': '../bower_components/vis/dist/vis',
-        'app': 'js/app'
+        'wow': '../bower_components/wow/dist/wow',
+        'image-scroll': '../bower_components/Parallax-ImageScroll/jquery.imageScroll',
+        'app': 'js/app',
+        'templates': 'js/templates'
     },
 
-    packages: ['components/timeline'],
+    packages: ['components/timeline', 'components/project'],
 
     shim: {
         'jquery': {
@@ -42,7 +45,8 @@ require.config({
             deps: ['jquery']
         },
         'angular': {
-            exports: 'angular'
+            exports: 'angular',
+            deps: ['jquery']
         }
     }
 });

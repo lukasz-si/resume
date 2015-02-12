@@ -1,13 +1,14 @@
 define([
     'angular',
-    'components/timeline'
+    'components/timeline',
+    'components/project',
+    'bootstrap'
 ], function (ng) {
     'use strict';
 
-    var mainModule = ng.module('resumeApp', [
-        'timelineModule'
+    return ng.module('resumeApp', [
+        'timelineModule',
+        'projectModule'
     ]);
-
-    return mainModule;
 });
 

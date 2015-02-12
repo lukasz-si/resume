@@ -1,0 +1,10 @@
+// centered image
+// background: url("../images/bg1.jpg") no-repeat fixed center center / cover  rgba(0, 0, 0, 0)
+@import "_animate.scss";
+@import "_bootstrap";
+
+#resume {
+    :focus {
+        outline: 0;
+    }
+}

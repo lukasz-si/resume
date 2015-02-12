@@ -97,6 +97,33 @@ module.exports = function (grunt) {
                 tasks: ['sass']
             }
         },
+        ngtemplates: {
+            app: {
+                cwd: '',
+                src: 'app/components/**/**.html',
+                dest: 'app/js/templates.js',
+                options: {
+                    module: 'templates',
+                    standalone: true,
+                    url: function (url) {
+                        return url.replace(/.*\//g, '');
+                    },
+                    bootstrap:  function(module, script) {
+                        return 'define(["angular"], function(ng) { ng.module("' + module + '", []).run(["$templateCache", function($templateCache) {' + script + ' }]); return ng; });';
+                    },
+                    htmlmin: {
+                        collapseBooleanAttributes: true,
+                        collapseWhitespace: true,
+                        removeAttributeQuotes: true,
+                        removeComments: true, // Only if you don't use comment directives!
+                        removeEmptyAttributes: true,
+                        removeRedundantAttributes: true,
+                        removeScriptTypeAttributes: true,
+                        removeStyleLinkTypeAttributes: true
+                    }
+                }
+            }
+        },
         jasmine: {
             coverage: {
                 src: "app/js/**/*.js",
@@ -159,6 +186,7 @@ module.exports = function (grunt) {
     });
 
     // These plugins provide necessary tasks.
+    grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-jsdoc');
