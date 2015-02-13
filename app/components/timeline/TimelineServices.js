@@ -5,16 +5,22 @@ define([
     'angular',
     'jquery',
     'components/timeline/module',
-    'vis'
-], function (ng, $, module, vis) {
+    'vis',
+    'moment'
+], function (ng, $, module, vis, moment) {
     'use strict';
 
     module.factory('TimelineServices', ['$document', '$log', '$window', function ($document, $log, $window) {
 
         var timeline = null,
+            zoom = 10,
             DEFAULT_TIMELINE_OPTIONS = {
                 autoResize: true,
-                stack: true
+                stack: true,
+                zoomable: true,
+                clickToUse: true,
+                align: 'center',
+                type: 'point'
             };
 
         return {
@@ -35,6 +41,20 @@ define([
 //
 //                return project;
 //            },
+            calculateMonths: function (start, end) {
+                var startDate = moment(start),
+                    endDate = moment(end),
+                    months = -1;
+
+                if (startDate.isValid()) {
+                    if (!endDate.isValid()) {
+                        endDate = moment();
+                    }
+                    months = endDate.diff(startDate, 'months');
+                }
+
+                return months;
+            },
             createTimeline: function (selector, items, groups, options) {
 
                 if (timeline === null) {

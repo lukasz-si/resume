@@ -1,9 +1,26 @@
 // centered image
 // background: url("../images/bg1.jpg") no-repeat fixed center center / cover  rgba(0, 0, 0, 0)
+$navbarHeight: 80px;
+$sectionPadding: $navbarHeight;
+
 @import "_animate.scss";
 @import "_bootstrap";
+@import "_navigation";
+@import "_projects";
+@import "_timeline";
 
 #resume {
+
+    .main-wrapper > .container-fluid {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    section {
+        padding-top: $navbarHeight;
+        padding-bottom: $sectionPadding;
+    }
+
     :focus {
         outline: 0;
     }

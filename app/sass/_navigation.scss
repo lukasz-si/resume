@@ -1,0 +1,23 @@
+#resume {
+    #navigation {
+        text-transform: uppercase;
+
+        .navbar-header {
+            padding-top: 12px;
+            padding-bottom: 5px;
+        }
+
+        li {
+            font-size: 15px;
+        }
+
+        a {
+            color: #111;
+            text-align: center;
+        }
+
+        .current a {
+            color: #d24837;
+        }
+    }
+}

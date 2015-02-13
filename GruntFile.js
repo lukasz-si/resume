@@ -87,7 +87,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                    'dist/css/resume.css': 'app/sass/resume.scss'
+                    'app/css/resume.css': 'app/sass/resume.scss'
                 }
             }
         },
@@ -95,12 +95,16 @@ module.exports = function (grunt) {
             scss: {
                 files: ['app/sass/*.scss'],
                 tasks: ['sass']
+            },
+            ngtemplates: {
+                files: ['app/**/*-template.html'],
+                tasks: ['ngtemplates']
             }
         },
         ngtemplates: {
             app: {
                 cwd: '',
-                src: 'app/components/**/**.html',
+                src: 'app/components/**/*-template.html',
                 dest: 'app/js/templates.js',
                 options: {
                     module: 'templates',

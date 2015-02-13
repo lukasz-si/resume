@@ -31,11 +31,13 @@ require.config({
         'vis': '../bower_components/vis/dist/vis',
         'wow': '../bower_components/wow/dist/wow',
         'image-scroll': '../bower_components/Parallax-ImageScroll/jquery.imageScroll',
-        'app': 'js/app',
+        'moment': '../bower_components/moment/moment',
+        'one-page-nav': '../bower_components/jQuery-One-Page-Nav/jquery.nav',
+        'main': 'js/main',
         'templates': 'js/templates'
     },
 
-    packages: ['components/timeline', 'components/project'],
+    packages: ['components/timeline', 'components/project', 'components/navigation'],
 
     shim: {
         'jquery': {
@@ -47,13 +49,24 @@ require.config({
         'angular': {
             exports: 'angular',
             deps: ['jquery']
+        },
+        'one-page-nav': {
+            deps: ['jquery']
+        },
+        'wow': {
+            exports: 'WOW'
+        }
+    },
+
+    config: {
+        moment: {
+            noGlobal: true
         }
     }
 });
 
 // Start the main app logic.
-require(['angular', 'app'], function (ng) {
+require(['main'], function () {
     "use strict";
 
-    ng.bootstrap(document, ['resumeApp']);
 });

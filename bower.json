@@ -33,6 +33,7 @@
         "vis": "~3.9.1",
         "wow": "~1.0.3",
         "Parallax-ImageScroll": "latest",
-        "jQuery-One-Page-Nav": "latest"
+        "jQuery-One-Page-Nav": "latest",
+        "moment": "^2.9.0"
     }
 }

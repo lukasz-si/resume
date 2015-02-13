@@ -29,7 +29,7 @@
         {
             "id": 21,
             "start": "2009-04-02",
-            "endd": "2009-09-01",
+            "end": "2009-09-01",
             "group": 3,
             "content": "Registration system",
             "position": "Frontend/Backend Developer",
@@ -44,7 +44,7 @@
         {
             "id": 11,
             "start": "2013-09-02",
-            "endd": "2014-03-01",
+            "end": "2014-03-01",
             "group": 2,
             "content": "Campanda",
             "position": "Frontend Developer",
@@ -59,7 +59,7 @@
         {
             "id": 3,
             "start": "2007-11-02",
-            "endd": "2009-06-01",
+            "end": "2009-06-01",
             "group": 1,
             "content": "EM Frame",
             "position": "Team Leader",
@@ -69,7 +69,7 @@
         {
             "id": 2,
             "start": "2006-01-02",
-            "endd": "2007-11-01",
+            "end": "2007-11-01",
             "group": 1,
             "content": "Operation Support Systems (OSS)",
             "position": "Software Developer",
@@ -79,7 +79,7 @@
         {
             "id": 1,
             "start": "2005-08-01",
-            "endd": "2006-01-01",
+            "end": "2006-01-01",
             "group": 1,
             "content": "Intranet",
             "position": "Software Developer",

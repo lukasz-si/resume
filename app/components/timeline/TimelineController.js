@@ -10,20 +10,22 @@ define([
 
             $http.get('data/work.json', {cache: true})
                 .success(function (data) {
-//                    var projects = [];
+                    var projects = ng.isArray(data.projects) ? data.projects.slice() : [],
+                        months;
 
                     $log.log("work.json loaded");
 
-//                    if (ng.isArray(data.projects)) {
-//                        ng.forEach(data.projects, function (value) {
-//                            projects.push(TimelineServices.convertStringToDate(value));
-//                        });
-//                        $log.log(projects);
-//                    }
+                    ng.forEach(projects, function (value) {
+                        months = TimelineServices.calculateMonths(value.start, value.end);
+                        if (months >= 0) {
+                            value.content += '<br>(' + months + ' month' + (months !== 1 ? 's' : '') + (value.end ? '' : ', until now') + ')';
+                        }
+                    });
+                    $log.log(projects);
 
                     TimelineServices.createTimeline('#timeline-container', data.projects, data.companies);
                     $scope.companies = data.companies;
-                    $scope.projects = data.projects;
+                    $scope.projects = projects;
 
                 });
             $scope.companies = [];

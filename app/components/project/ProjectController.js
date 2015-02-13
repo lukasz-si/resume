@@ -4,6 +4,9 @@ define([
 ], function (ng, module) {
     'use strict';
 
+    var animationTypes = ['fadeInLeft', 'fadeInRight'],
+        counter = 0;
+
     module.controller('ProjectController', ['$scope', '$http', '$log',
         function ($scope, $http, $log) {
 
@@ -17,6 +20,10 @@ define([
                 });
             $scope.companies = [];
             $scope.projects = [];
+
+            $scope.setAnimationType = function() {
+                return animationTypes[counter++ % 2];
+            }
         }
     ]);
 

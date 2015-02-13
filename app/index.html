@@ -4,54 +4,53 @@
     <meta charset="utf-8">
     <title>Resume</title>
 
-    <link href="../dist/css/resume.css" rel="stylesheet">
+    <link href="css/resume.css" rel="stylesheet">
     <link href="../bower_components/vis/dist/vis.min.css" rel="stylesheet">
     <script data-main="require-config" src="../bower_components/requirejs/require.js"></script>
 </head>
-<body>
+<body id="resume">
 
+<div ui-navigation-component></div>
 
-<div id="resume" class="main-wrapper">
+<div class="main-wrapper">
 
-    <!-- TODO: move to navigation component -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"> Resume </a>
+    <!-- Empty DIV in order to fix problem with fixed navbar --><!--
+    <div style="height: 51px;"></div>
+-->
+    <div class="container-fluid">
+
+        <section id="home" style="height: 600px;">
+            Image
+        </section>
+
+        <!-- Timeline -->
+        <section id="timeline" ng-controller="TimelineController">
+            <div class="container timeline-wrapper">
+                <span>(click on the timeline component in order to zoom or move it)</span>
+
+                <div id="timeline-container" class="wow flipInX"></div>
             </div>
-            <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="current"><a href="#home">Home</a></li>
-                    <li><a href="#timeline">Timeline</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#links">Links</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </section>
 
-    <div id="home" style="height: 600px;">
-        Image
-    </div>
+        <!-- Projects list -->
+        <section id="projects">
+            <div ui-projects-component class="container"></div>
+        </section>
 
-    <!-- Timeline -->
-    <div id="timeline" ng-controller="TimelineController">
-        <div id="timeline-container"></div>
-    </div>
+        <!-- Contact -->
+        <section id="contact">
 
-    <!-- Projects list -->
-    <ui-project-component id="project"></ui-project-component>
+        </section>
 
-    <div id="contact">
+        <!-- Links -->
+        <section id="links">
 
-    </div>
+        </section>
 
-    <div id="links">
+        <!-- Footer -->
+        <section id="footer">
 
+        </section>
     </div>
 </div>
 </body>
