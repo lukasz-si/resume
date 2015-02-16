@@ -9,8 +9,16 @@ define([
 
         return {
             restrict: 'A',
-            controller: 'ProjectController',
+//            controller: 'ProjectController',
             templateUrl: 'project-template.html'
+        }
+    });
+
+    module.directive('uiTechnologiesComponent', function () {
+        return {
+            restrict: 'A',
+//            controller: 'ProjectController',
+            templateUrl: 'technologies-template.html'
         }
     });
 

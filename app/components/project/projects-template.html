@@ -1,6 +1,19 @@
-<div class="row" ng-repeat="project in projects">
-    <div class="col-md-6 wow" ng-class="setAnimationType()">
-        <div style="height: 40px; width: 40px; background-color: #536273;"></div>
+<h3>Filter projects by:</h3>
+Company:
+<button ng-click="selectedCompany={$:1}">All</button>
+<div ng-repeat="company in companies">
+    <button ng-click="selectedCompany.group=company.id">{{company.name}}</button>
+</div>
+Technology:
+<button ng-click="selectedTechnology={$:1}">All</button>
+<div ng-repeat="technology in technologies">
+    <button ng-click="selectedTechnology.technologies=[technology.id]">{{technology.name}}</button>
+</div>
+
+<div class="project" ng-repeat="project in projects | filter:selectedCompany | filter:selectedTechnology:compareTechnologies">
+    <div class="row {{companies[project.group-1].className}}">
+        <div class="col-md-3 wow fadeInLeft brand" ng-bind-html="trustAsHtml(companies[project.group-1].content)"></div>
+        <div class="col-md-5 wow fadeInUp" ui-project-component></div>
+        <div class="col-md-4 wow fadeInRight technologies" ui-technologies-component></div>
     </div>
-    <div class="col-md-6 wow" ng-class="setAnimationType()" ui-project-component></div>
 </div>

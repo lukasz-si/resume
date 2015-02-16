@@ -3,9 +3,34 @@
         background: #f6f6f6;
         border-top: 1px solid #d7dddd;
         border-bottom: 1px solid #d7dddd;
+        overflow: hidden;
 
-        .timeline-wrapper {
-//            padding-bottom: $sectionPadding;
+        .tieto, .meelogic, .freelance {
+            text-align: center;
+            padding: 10px 5px 0px;
+
         }
+
+        .tieto {
+            img {
+                width: 60px;
+                height: 60px;
+                background-color: #63b3e3;
+            }
+        }
+        .meelogic {
+            img {
+//                width: 80px;
+//                height: 30px;
+            }
+        }
+        .freelance {
+            span {
+                font-size: 30px;
+                color: #38607d;
+            }
+        }
+
+
     }
 }

@@ -2,24 +2,27 @@
     "companies": [
         {
             "id": 1,
-            "content": "Tieto",
-            "style": "",
+            "name": "Tieto",
+            "content": "<img class='image-tieto' src='images/logo-tieto.png'><br>Tieto",
+            "className": "tieto",
             "subgroupOrder": "start",
             "start": "2005-08-01",
             "end": ""
         },
         {
             "id": 2,
-            "content": "Meelogic",
-            "style": "",
+            "name": "Meelogic",
+            "content": "<img src='images/logo-meelogic.png'><br>Meelogic",
+            "className": "meelogic",
             "subgroupOrder": "start",
             "start": "2005-08-01",
             "end": ""
         },
         {
             "id": 3,
-            "content": "Freelance",
-            "style": "",
+            "name": "Freelance",
+            "content": "<span class='glyphicon glyphicon-console'></span><br>Freelance",
+            "className": "freelance",
             "subgroupOrder": "start",
             "start": "2005-08-01",
             "end": ""
@@ -35,7 +38,7 @@
             "position": "Frontend/Backend Developer",
             "description": "Application implemented for recruitment company.",
             "website": null,
-            "technologies": ["PHP", "Ajax", "Smarty", "CSS", "HTML", "SVN"]
+            "technologies": [6]
         },
 
 
@@ -50,7 +53,7 @@
             "position": "Frontend Developer",
             "description": "Website designed to rent motorhomes. The application supports all devices – desktops, tablets and mobile phones (responsive design). Twitter Bootstrap framework provides modern layout. User interactive interface is provided by JavaScript frameworks. Project management methodology is Scrum.",
             "website": "http://www.campanda.com/",
-            "technologies": ["Javascript", "jQuery", "requirejs", "underscore", "Twitter Bootstrap", "PHP (Zend Framework2)", "HTML","CSS", "Less", "GIT (GitFlow)", "REST"]
+            "technologies": [2, 14, 15, 16, 17, 4, 5]
         },
 
 
@@ -64,7 +67,7 @@
             "content": "EM Frame",
             "position": "Team Leader",
             "description": "Responsible for managing a team of developers, gathering requirements, planning and writing specifications for new features, participating in teleconferences.",
-            "technologies": ["Java", "Swing", "C", "C++"]
+            "technologies": [3, 11, 7, 8]
         },
         {
             "id": 2,
@@ -74,7 +77,7 @@
             "content": "Operation Support Systems (OSS)",
             "position": "Software Developer",
             "description": "Responsible for development of OSS system based on C++, gathering and merging source code via ClearCase.",
-            "technologies": ["C", "C++", "ClearCase"]
+            "technologies": [7, 8]
         },
         {
             "id": 1,
@@ -84,7 +87,128 @@
             "content": "Intranet",
             "position": "Software Developer",
             "description": "Responsible for implementation of web based applications & tools for company internal use.",
-            "technologies": ["PHP", "HTML", "Javascript", "AJAX", "CSS", "PostgreSQL", "MySQL"]
+            "technologies": [6, 2, 9, 10]
         }
+    ],
+    "technologies": [
+        {
+            "id": 1,
+            "name": "",
+            "style": "",
+            "animation": ""
+        },
+        {
+            "id": 2,
+            "name": "Javascript",
+            "style": "javascript",
+            "animation": "bounce"
+        },
+        {
+            "id": 3,
+            "name": "Java",
+            "style": "java",
+            "animation": "flash"
+        },
+        {
+            "id": 4,
+            "name": "HTML5",
+            "style": "html",
+            "animation": "pulse"
+        },
+        {
+            "id": 5,
+            "name": "CSS3",
+            "style": "css",
+            "animation": "rubberBand"
+        },
+        {
+            "id": 6,
+            "name": "PHP",
+            "style": "php",
+            "animation": "shake"
+        },
+        {
+            "id": 7,
+            "name": "C",
+            "style": "c",
+            "animation": "bounceIn"
+        },
+        {
+            "id": 8,
+            "name": "C++",
+            "style": "cpp",
+            "animation": "swing"
+        },
+        {
+            "id": 9,
+            "name": "PostgreSQL",
+            "style": "postgresql",
+            "animation": "fadeIn"
+        },
+        {
+            "id": 10,
+            "name": "MySQL",
+            "style": "mysql",
+            "animation": "flipInX"
+        },
+        {
+            "id": 11,
+            "name": "Swing",
+            "style": "swing",
+            "animation": "rotateIn"
+        },
+        {
+            "id": 12,
+            "name": "Git",
+            "style": "git",
+            "animation": "rollIn"
+        },
+        {
+            "id": 13,
+            "name": "SVN",
+            "style": "svn",
+            "animation": "zoomInUp"
+        },
+        {
+            "id": 14,
+            "name": "jQuery",
+            "style": "jquery",
+            "animation": "zoomIn"
+        },
+        {
+            "id": 15,
+            "name": "requirejs",
+            "style": "requirejs",
+            "animation": "zoomInLeft"
+        },
+        {
+            "id": 16,
+            "name": "underscore",
+            "style": "underscore",
+            "animation": "flipInY"
+        },
+        {
+            "id": 17,
+            "name": "Twitter Bootstrap",
+            "style": "bootstrap",
+            "animation": "fadeInUp"
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     ]
 }

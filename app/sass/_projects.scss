@@ -4,7 +4,58 @@
         overflow: hidden;
         width: 100%;
         .project {
+            border-bottom-color: #d7dddd;
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
+            padding-bottom: 25px;
+
+            &:last-child {
+                border-bottom-style: none;
+            }
+
+            &:nth-child {
+
+            }
+            .brand {
+                text-align: center;
+                padding: 10px;
+            }
+            .freelance .brand span {
+                font-size: 40px;
+                color: #38607d;
+            }
+            .tieto .brand img {
+                width: 60px;
+                height: 60px;
+                background-color: #63b3e3;
+            }
+            .meelogic .brand img {
+            }
 
         }
+        .technologies {
+            padding: 35px;
+
+            .technology {
+
+                font-size: 16px;
+                color: #3d4363;
+                margin: 5px;
+
+                .php {
+                    font-size: 26px;
+                    color: #8892bf;
+                }
+                .javascript {
+                    font-size: 20px;
+                    color: #ffe267;
+                }
+                .java {
+                    font-size: 24px;
+                    color: #f00;
+                }
+            }
+        }
+
     }
 }

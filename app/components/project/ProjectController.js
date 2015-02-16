@@ -4,26 +4,46 @@ define([
 ], function (ng, module) {
     'use strict';
 
-    var animationTypes = ['fadeInLeft', 'fadeInRight'],
-        counter = 0;
+    module.filter('filterByCompany', ['$log', function ($log) {
 
-    module.controller('ProjectController', ['$scope', '$http', '$log',
-        function ($scope, $http, $log) {
+        return function (project, selectedCompany) {
+
+                $log.log(project);
+                $log.log(selectedCompany);
+            return true;
+        };
+    }
+    ]);
+
+    module.controller('ProjectController', ['$scope', '$http', '$log', '$sce',
+        function ($scope, $http, $log, $sce) {
 
             $http.get('data/work.json', {cache: true})
                 .success(function (data) {
                     $log.log("work.json loaded - project");
 
-                    $scope.companies = data.companies;
                     $scope.projects = data.projects;
+                    $scope.technologies = data.technologies;
+                    $scope.companies = data.companies;
+                    $scope.selectedCompany = {};
+                    $scope.selectedCompany.$ = 1;
 
                 });
             $scope.companies = [];
+            $scope.technologies = [];
             $scope.projects = [];
+            $scope.trustAsHtml = function (html) {
+                return $sce.trustAsHtml(html);
+            };
+            $scope.selectedTechnology = {};
+            $scope.selectedTechnology.$ = 1;
+            $scope.selectedTechnology.compareTechnologies = function (actual, expected) {
 
-            $scope.setAnimationType = function() {
-                return animationTypes[counter++ % 2];
+                $log.log(actual)
+                $log.log(expected)
+                return false;
             }
+            $scope.compareTechnologies = $scope.selectedTechnology.compareTechnologies;
         }
     ]);
 
