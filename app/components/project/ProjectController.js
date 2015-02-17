@@ -8,8 +8,8 @@ define([
 
         return function (project, selectedCompany) {
 
-                $log.log(project);
-                $log.log(selectedCompany);
+            $log.log(project);
+            $log.log(selectedCompany);
             return true;
         };
     }
@@ -36,18 +36,24 @@ define([
                 return $sce.trustAsHtml(html);
             };
             $scope.selectedTechnology = {};
-            $scope.selectedTechnology.$ = 1;
-            $scope.selectedTechnology.compareTechnologies = function (actual, expected) {
+            $scope.selectedTechnology.search = "all";
+//            $scope.selectedTechnology.$ = 1;
+            $scope.selectedTechnology.compareTechnologies = function (value, index) {
 
-                $log.log(actual)
-                $log.log(expected)
-                return false;
-            }
-            $scope.compareTechnologies = $scope.selectedTechnology.compareTechnologies;
+                var result = false,
+                    technology = $scope.selectedTechnology.search;
+
+                if (technology === "all" || ng.isArray(value.technologies) && value.technologies.indexOf(technology) !== -1) {
+                    result = true;
+                }
+                $log.log(technology)
+                $log.log(value)
+                return result;
+            };
         }
     ]);
 
-
     return module;
-});
+})
+;
 

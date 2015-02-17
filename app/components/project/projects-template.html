@@ -5,12 +5,12 @@ Company:
     <button ng-click="selectedCompany.group=company.id">{{company.name}}</button>
 </div>
 Technology:
-<button ng-click="selectedTechnology={$:1}">All</button>
+<button ng-click="selectedTechnology.search='all'">All</button>
 <div ng-repeat="technology in technologies">
-    <button ng-click="selectedTechnology.technologies=[technology.id]">{{technology.name}}</button>
+    <button ng-click="selectedTechnology.search=technology.id">{{technology.name}}</button>
 </div>
 
-<div class="project" ng-repeat="project in projects | filter:selectedCompany | filter:selectedTechnology:compareTechnologies">
+<div class="project" ng-repeat="project in projects | filter:selectedTechnology.compareTechnologies | filter:selectedCompany">
     <div class="row {{companies[project.group-1].className}}">
         <div class="col-md-3 wow fadeInLeft brand" ng-bind-html="trustAsHtml(companies[project.group-1].content)"></div>
         <div class="col-md-5 wow fadeInUp" ui-project-component></div>

@@ -11,11 +11,11 @@ define(["angular"], function(ng) { ng.module("templates", []).run(["$templateCac
 
 
   $templateCache.put('projects-template.html',
-    "<h3>Filter projects by:</h3>Company: <button ng-click=\"selectedCompany={$:1}\">All</button><div ng-repeat=\"company in companies\"><button ng-click=\"selectedCompany.group=company.id\">{{company.name}}</button></div>Technology: <button ng-click=\"selectedTechnology={$:1}\">All</button><div ng-repeat=\"technology in technologies\"><button ng-click=\"selectedTechnology.technologies=[technology.id]\">{{technology.name}}</button></div><div class=project ng-repeat=\"project in projects | filter:selectedCompany | filter:selectedTechnology:compareTechnologies\"><div class=\"row {{companies[project.group-1].className}}\"><div class=\"col-md-3 wow fadeInLeft brand\" ng-bind-html=trustAsHtml(companies[project.group-1].content)></div><div class=\"col-md-5 wow fadeInUp\" ui-project-component></div><div class=\"col-md-4 wow fadeInRight technologies\" ui-technologies-component></div></div></div>"
+    "<h3>Filter projects by:</h3>Company: <button ng-click=\"selectedCompany={$:1}\">All</button><div ng-repeat=\"company in companies\"><button ng-click=\"selectedCompany.group=company.id\">{{company.name}}</button></div>Technology: <button ng-click=\"selectedTechnology.search='all'\">All</button><div ng-repeat=\"technology in technologies\"><button ng-click=\"selectedTechnology.search=technology.id\">{{technology.name}}</button></div><div class=project ng-repeat=\"project in projects | filter:selectedTechnology.compareTechnologies | filter:selectedCompany\"><div class=\"row {{companies[project.group-1].className}}\"><div class=\"col-md-3 wow fadeInLeft brand\" ng-bind-html=trustAsHtml(companies[project.group-1].content)></div><div class=\"col-md-5 wow fadeInUp\" ui-project-component></div><div class=\"col-md-4 wow fadeInRight technologies\" ui-technologies-component></div></div></div>"
   );
 
 
   $templateCache.put('technologies-template.html',
-    "<span class=technology ng-repeat=\"technology in project.technologies\"><span class=\"wow {{technologies[technology].animation ? technologies[technology].animation : 'fadeIn'}} {{technologies[technology].style}}\">{{technologies[technology].name}}</span></span>"
+    "<span class=technology ng-repeat=\"technology in project.technologies\"><span class=\"wow {{technologies[technology-1].animation ? technologies[technology-1].animation : 'fadeIn'}} {{technologies[technology-1].style}}\">{{technologies[technology-1].name}}</span></span>"
   );
  }]); return ng; });
