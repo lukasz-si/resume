@@ -3,6 +3,7 @@ define([
     'components/timeline',
     'components/project',
     'components/navigation',
+    'components/introduction',
     'bootstrap'
 ], function (ng) {
     'use strict';
@@ -10,7 +11,8 @@ define([
     return ng.module('resumeApp', [
         'timelineModule',
         'projectModule',
-        'navigationModule'
+        'navigationModule',
+        'introductionModule'
     ]);
 });
 

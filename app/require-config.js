@@ -37,7 +37,7 @@ require.config({
         'templates': 'js/templates'
     },
 
-    packages: ['components/timeline', 'components/project', 'components/navigation'],
+    packages: ['components/timeline', 'components/project', 'components/navigation', 'components/introduction'],
 
     shim: {
         'jquery': {

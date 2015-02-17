@@ -4,17 +4,6 @@ define([
 ], function (ng, module) {
     'use strict';
 
-    module.filter('filterByCompany', ['$log', function ($log) {
-
-        return function (project, selectedCompany) {
-
-            $log.log(project);
-            $log.log(selectedCompany);
-            return true;
-        };
-    }
-    ]);
-
     module.controller('ProjectController', ['$scope', '$http', '$log', '$sce',
         function ($scope, $http, $log, $sce) {
 
@@ -46,8 +35,8 @@ define([
                 if (technology === "all" || ng.isArray(value.technologies) && value.technologies.indexOf(technology) !== -1) {
                     result = true;
                 }
-                $log.log(technology)
-                $log.log(value)
+//                $log.log(technology)
+//                $log.log(value)
                 return result;
             };
         }
