@@ -1,10 +1,44 @@
 /*global module:false*/
 module.exports = function (grunt) {
     var fs = require('fs-sync'),
-        baseUrl = "app/js",
+        baseUrl = "app",
         paths = {
-            "jquery": "../../bower_components/jquery/dist/jquery"
-        };
+            'jquery': '../bower_components/jquery/dist/jquery.min',
+            'angular': '../bower_components/angular/angular',
+            'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap.min',
+            'vis': '../bower_components/vis/dist/vis',
+            'wow': '../bower_components/wow/dist/wow',
+            'image-scroll': '../bower_components/Parallax-ImageScroll/jquery.imageScroll',
+            'moment': '../bower_components/moment/moment',
+            'one-page-nav': '../bower_components/jQuery-One-Page-Nav/jquery.nav',
+            'main': 'js/main',
+            'templates': 'js/templates'
+        },
+        packages = ['components/timeline', 'components/project', 'components/navigation', 'components/introduction'],
+        shim = {
+            'jquery': {
+                exports: '$'
+            },
+            'bootstrap': {
+                deps: ['jquery']
+            },
+            'angular': {
+                exports: 'angular',
+                deps: ['jquery']
+            },
+            'one-page-nav': {
+                deps: ['jquery']
+            },
+            'wow': {
+                exports: 'WOW'
+            }
+        },
+        config = {
+            moment: {
+                noGlobal: true
+            }
+        }
+        ;
     // Project configuration.
     grunt.initConfig({
         // Metadata.
@@ -30,6 +64,9 @@ module.exports = function (grunt) {
                 options: {
                     baseUrl: baseUrl,
                     paths: paths,
+                    packages: packages,
+                    shim: shim,
+                    config: config,
                     // build file destination, relative to the build file itself
                     out: function (text, sourceMapText) {
                         var configFile = grunt.file.readJSON('bower.json'),
@@ -75,8 +112,9 @@ module.exports = function (grunt) {
                         }
                     },
                     // uglify | uglify2
-                    optimize: "none"
-
+                    optimize: "none",
+                    include: ["js/main"],
+                    exclude: []
                 }
             }
         },
@@ -112,7 +150,7 @@ module.exports = function (grunt) {
                     url: function (url) {
                         return url.replace(/.*\//g, '');
                     },
-                    bootstrap:  function(module, script) {
+                    bootstrap: function (module, script) {
                         return 'define(["angular"], function(ng) { ng.module("' + module + '", []).run(["$templateCache", function($templateCache) {' + script + ' }]); return ng; });';
                     },
                     htmlmin: {
@@ -200,7 +238,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task.
-    grunt.registerTask('default', ['sass', 'jasmine:coverage', 'requirejs', 'concat', 'uglify']);
+    grunt.registerTask('default', ['sass', 'ngtemplates', 'requirejs']);
 
     grunt.registerTask('doc', ['jsdoc']);
     grunt.registerTask('test', ['jasmine:coverage']);

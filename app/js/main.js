@@ -1,16 +1,12 @@
 define([
     'angular',
     'jquery',
-    'wow',
-    'js/appModule',
-    'bootstrap'
-], function (ng, $, wow) {
+    'js/appModule'
+], function (ng, $) {
     'use strict';
 
-    ng.bootstrap(document, ['resumeApp']);
-
-    new wow().init();
-
-    $('[data-toggle="tooltip"]').tooltip();
+    $(document).ready(function () {
+        ng.bootstrap(document, ['resumeApp']);
+    });
 });
 
