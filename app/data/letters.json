@@ -1,0 +1,40 @@
+{
+    "columnsNum": 40,
+    "rows": [
+        {
+            "offset": 0,
+            "text": "",
+            "class": ""
+        },
+        {
+            "offset": 2,
+            "text": "RESUME",
+            "class": "letters-cell-marked"
+        },
+        {
+            "offset": 0,
+            "text": "",
+            "class": ""
+        },
+        {
+            "offset": 6,
+            "text": "LUKASZ",
+            "class": "letters-cell-marked"
+        },
+        {
+            "offset": 0,
+            "text": "",
+            "class": ""
+        },
+        {
+            "offset": 8,
+            "text": "SSSSSSSSSSS",
+            "class": "letters-cell-marked"
+        },
+        {
+            "offset": 0,
+            "text": "",
+            "class": ""
+        }
+    ]
+}

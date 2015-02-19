@@ -1,0 +1,5 @@
+<div ng-controller="LettersController"  class="letters-container">
+    <div class="letters-row" ng-repeat="row in rows">
+        <span class="letters-cell {{cell.class}}" ng-class="" ng-repeat="cell in row.cells">{{cell.random}}</span>
+    </div>
+</div>

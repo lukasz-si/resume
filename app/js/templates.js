@@ -1,5 +1,10 @@
 define(["angular"], function(ng) { ng.module("templates", []).run(["$templateCache", function($templateCache) {  'use strict';
 
+  $templateCache.put('letters-template.html',
+    "<div ng-controller=LettersController class=letters-container><div class=letters-row ng-repeat=\"row in rows\"><span class=\"letters-cell {{cell.class}}\" ng-class=\"\" ng-repeat=\"cell in row.cells\">{{cell.random}}</span></div></div>"
+  );
+
+
   $templateCache.put('navigation-template.html',
     "<div id=navigation class=\"navbar navbar-default navbar-fixed-top\"><div class=container-fluid><div class=navbar-header><button type=button class=\"navbar-toggle collapsed\" data-toggle=collapse data-target=#bs-navbar-collapse-1><span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span></button> <span class=navbar-brand>Resume</span></div><div class=\"collapse navbar-collapse\" id=bs-navbar-collapse-1><ul class=\"nav navbar-nav navbar-right\"><li class=current><a href=#home><span class=\"glyphicon glyphicon-home\" aria-hidden=true></span><br>Home</a></li><li><a href=#timeline><span class=\"glyphicon glyphicon-time\" aria-hidden=true></span><br>Timeline</a></li><li><a href=#projects><span class=\"glyphicon glyphicon-tasks\" aria-hidden=true></span><br>Projects</a></li><li><a href=#contact><span class=\"glyphicon glyphicon-envelope\" aria-hidden=true></span><br>Contact</a></li><li><a href=#links><span class=\"glyphicon glyphicon-link\" aria-hidden=true></span><br>Links</a></li></ul></div></div></div>"
   );

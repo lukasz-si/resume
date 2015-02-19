@@ -1,0 +1,20 @@
+#resume {
+    .letters-container {
+        .letters-row {
+            .letters-cell {
+                width: $lettersCellWidth;
+                height: $lettersCellWidth;
+                text-align: center;
+                display: inline-block;
+                line-height: $lettersCellWidth;
+                font-size: $lettersCellWidth - 6px;
+                color: #aaa;
+
+                &.letters-cell-marked {
+                    color: #d24837;
+                }
+            }
+        }
+    }
+
+}
