@@ -1,13 +1,23 @@
 <h3>Filter projects by:</h3>
 Company:
-<button ng-click="selectedCompany={$:1}">All</button>
-<div ng-repeat="company in companies">
-    <button ng-click="selectedCompany.group=company.id">{{company.name}}</button>
+
+<div class="button-group clearfix" data-toggle="buttons">
+    <label class="btn btn-warning active" ng-click="selectedCompany={$:1}">
+        <input type="radio" name="options" id="project-filter-technology" autocomplete="off" checked>All
+    </label>
+    <label class="btn btn-warning" ng-repeat="company in companies" ng-click="selectedCompany.group=company.id">
+        <input type="radio" name="options" id="project-filter-technology" autocomplete="off">{{company.name}}
+    </label>
 </div>
+
 Technology:
-<button ng-click="selectedTechnology.search='all'">All</button>
-<div ng-repeat="technology in technologies">
-    <button ng-click="selectedTechnology.search=technology.id">{{technology.name}}</button>
+<div class="button-group clearfix" data-toggle="buttons">
+    <label class="btn btn-primary active" ng-click="selectedTechnology.search='all'">
+        <input type="radio" name="options" id="project-filter-technology" autocomplete="off" checked>All
+    </label>
+    <label class="btn btn-primary" ng-repeat="technology in technologies" ng-click="selectedTechnology.search=technology.id">
+        <input type="radio" name="options" id="project-filter-technology" autocomplete="off">{{technology.name}}
+    </label>
 </div>
 
 <div class="project" ng-repeat="project in projects | filter:selectedTechnology.compareTechnologies | filter:selectedCompany">

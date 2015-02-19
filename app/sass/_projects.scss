@@ -3,6 +3,16 @@
         position: relative;
         overflow: hidden;
         width: 100%;
+
+        .button-group {
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            label {
+                margin-top: 10px;
+                margin-right: 5px;
+            }
+        }
         .project {
             border-bottom-color: #d7dddd;
             border-bottom-width: 2px;

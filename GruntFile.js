@@ -111,7 +111,7 @@ module.exports = function (grunt) {
                             fs.write('dist/versions.txt', output);
                         }
                     },
-                    // uglify | uglify2
+                    // none | uglify | uglify2
                     optimize: "none",
                     include: ["js/main"],
                     exclude: []
@@ -238,7 +238,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task.
-    grunt.registerTask('default', ['sass', 'ngtemplates', 'requirejs']);
+    grunt.registerTask('default', ['sass', 'ngtemplates', 'requirejs', 'uglify']);
 
     grunt.registerTask('doc', ['jsdoc']);
     grunt.registerTask('test', ['jasmine:coverage']);
