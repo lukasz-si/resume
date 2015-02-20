@@ -62,13 +62,11 @@ define([
 
                     timeline = new vis.Timeline($(selector)[0], items, groups, opts);
 
-                    timeline.on('select', function (properties) {
-                        $log.log(properties)
-                    });
-
                 } else {
                     this.updateTimeline(items, groups, options);
                 }
+
+                return timeline;
             },
             updateTimeline: function (items, groups, options) {
                 if (timeline === null) {

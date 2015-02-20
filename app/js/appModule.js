@@ -18,7 +18,7 @@ define([
         ])
         .run(['$q', 'OnImageLoadService', function ($q, OnImageLoadService) {
 
-            $q.all([OnImageLoadService.getPromise()])
+            $q.all([/*OnImageLoadService.getPromise()*/])
                 .then(function (value) {
                     new wow().init();
                     $('[data-toggle="tooltip"]').tooltip();

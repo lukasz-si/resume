@@ -29,17 +29,23 @@ define([
             azDiff = zCharCode - aCharCode + 1;
 
         return {
+            /**
+             * Generates random characters based on 'data' object
+             * @param data
+             * @returns {Array}
+             */
             generateRandomLetters: function (data) {
                 var rows = data.rows,
                     rowsLength = rows.length,
                     columnsNum = data.columnsNum || 20,
                     scopeRows = [],
-                    i, j, row, offset, cell, text, textLength, className, randomInterval;
+                    i, j, row, offset, cell, text, textLength, className, char;
 
                 if (!ng.isArray(rows) || isNaN(columnsNum)) {
                     return [];
                 }
 
+                // rows loop
                 for (i = 0; i < rowsLength; i++) {
                     row = {};
                     row.cells = [];
@@ -48,6 +54,7 @@ define([
                     offset = rows[i].offset;
                     className = rows[i].class;
 
+                    // cells loop
                     for (j = 0; j < columnsNum; j++) {
                         cell = {};
                         cell.random = this.getRandomLetter();
@@ -56,8 +63,16 @@ define([
                             cell.char = this.getRandomLetter();
                         }
                         else {
-                            cell.char = text.charAt(j - offset);
-                            cell.class = className;
+                            char = text.charAt(j - offset);
+
+                            // checks if there is a ' ', if yes random character is generated
+                            if (char === ' ') {
+                                cell.char = this.getRandomLetter();
+                            }
+                            else {
+                                cell.char = char;
+                                cell.class = className;
+                            }
                         }
                         row.cells.push(cell);
                     }
@@ -66,17 +81,30 @@ define([
 
                 return scopeRows;
             },
+            /**
+             * Sets interval for generated letters
+             * @param scopeRows
+             * @returns {boolean} false if data is empty
+             */
             setInterval: function (scopeRows) {
-                var that = this;
+                var that = this, promise;
 
                 if (scopeRows.length === 0) {
                     return false;
                 }
 
-                $interval(function () {
+                promise = $interval(function () {
                     that.incrementLetters(scopeRows);
-                }, 150, 100);
+                }, 150, azDiff);
+
+                promise.then(function () {
+                    that.setFinalLetters(scopeRows);
+                });
             },
+            /**
+             * Increments all letters (starts from 'A') until they have proper characters
+             * @param rows
+             */
             incrementLetters: function (rows) {
                 var i, j, randomCharCode, randomChar, charCode;
 
@@ -86,17 +114,37 @@ define([
                         randomCharCode = randomChar.charCodeAt(0);
                         charCode = rows[i].cells[j].char.charCodeAt(0);
 
+                        // increment character if it is less than final one
                         if (randomCharCode < charCode) {
                             randomCharCode++;
                             rows[i].cells[j].random = String.fromCharCode(randomCharCode);
                         }
+                        // decrement character if it is greater than final one
                         else if (randomCharCode > charCode) {
                             randomCharCode--;
                             rows[i].cells[j].random = String.fromCharCode(randomCharCode);
                         }
+                        // do nothing when they are equal
                     }
                 }
             },
+            /**
+             * Sets final characters in case a character is out of range 'A' - 'Z'
+             * @param rows
+             */
+            setFinalLetters: function (rows) {
+                var i, j;
+
+                for (i = rows.length; i--;) {
+                    for (j = rows[i].cells.length; j--;) {
+                        rows[i].cells[j].random = rows[i].cells[j].char;
+                    }
+                }
+            },
+            /**
+             * Gets random letter - from 'A' to 'Z'
+             * @returns {string}
+             */
             getRandomLetter: function () {
                 return String.fromCharCode(Math.floor(Math.random() * azDiff) + aCharCode);
             }

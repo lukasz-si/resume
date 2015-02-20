@@ -1,7 +1,7 @@
 // centered image
 // background: url("../images/bg1.jpg") no-repeat fixed center center / cover  rgba(0, 0, 0, 0)
 $navbarHeight: 80px;
-$sectionPadding: $navbarHeight;
+$sectionPadding: 30px 0 0 30px;
 
 @import "_animate.scss";
 @import "_bootstrap";
@@ -21,7 +21,6 @@ $sectionPadding: $navbarHeight;
 
     section {
         padding-top: $navbarHeight;
-        padding-bottom: $sectionPadding;
     }
 
     :focus {
@@ -31,5 +30,11 @@ $sectionPadding: $navbarHeight;
     .info-sign {
         font-size: 20px;
         color: #1b809e;
+    }
+
+    .footer {
+        background-color: #282828;
+        padding: 30px;
+        color: #dddddd;
     }
 }
