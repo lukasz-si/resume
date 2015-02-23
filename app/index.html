@@ -36,26 +36,30 @@
 
         <section id="home" ng-controller="IntroductionController">
             <!--<img style="height: 600px; width: 100%;" ng-src="images/{{imageName}}" on-image-load="intro">-->
-            <div class="container">
-                <div ui-letters-component></div>
+            <div class="container-wrapper">
+                <div class="container">
+                    <div ui-letters-component></div>
+                </div>
             </div>
         </section>
 
         <!-- Timeline -->
         <section id="timeline" ng-controller="TimelineController">
-            <div class="container">
-                <span data-toggle="tooltip" data-placement="right" title="Click on the timeline in order to zoom or move it"><span class="glyphicon glyphicon-info-sign info-sign"></span></span>
+            <div class="container-wrapper">
+                <div class="container">
+                    <span data-toggle="tooltip" data-placement="right" title="Click on the timeline in order to zoom or move it"><span class="glyphicon glyphicon-info-sign info-sign"></span></span>
 
-                <div id="timeline-container" class="wow flipInX"></div>
-                <div class="project-description">
-                    <div>{{companies[selectedProject.group - 1].name}}</div>
-                    <div>{{selectedProject.content}}</div>
-                    <div>{{selectedProject.website}}</div>
-                    <div>{{selectedProject.position}}</div>
-                    <div>{{selectedProject.start}}{{(selectedProject.end ? ' - ' : '') + selectedProject.end}}</div>
-                    <div>{{selectedProject.description}}</div>
-                    <div>
-                        <span ng-repeat="technology in selectedProject.technologies" ng-class="{{technologies[technology.id].style}}">{{technologies[technology.id].name}}</span>
+                    <div id="timeline-container" class="wow flipInX"></div>
+                    <div class="project-description">
+                        <div>{{companies[selectedProject.group - 1].name}}</div>
+                        <div>{{selectedProject.content}}</div>
+                        <div>{{selectedProject.website}}</div>
+                        <div>{{selectedProject.position}}</div>
+                        <div>{{selectedProject.start}}{{(selectedProject.end ? ' - ' : '') + selectedProject.end}}</div>
+                        <div>{{selectedProject.description}}</div>
+                        <div>
+                            <span ng-repeat="technology in selectedProject.technologies" ng-class="{{technologies[technology.id].style}}">{{technologies[technology.id].name}}</span>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,13 +1,16 @@
 #resume {
     #timeline {
-        background: #f6f6f6;
-        border-top: 1px solid #d7dddd;
-        border-bottom: 1px solid #d7dddd;
-        overflow: hidden;
+
+        .container-wrapper {
+            background-color: #f6f6f6;
+            border-top: 1px solid #d7dddd;
+            border-bottom: 1px solid #d7dddd;
+            overflow: hidden;
+        }
 
         .tieto, .meelogic, .freelance {
             text-align: center;
-            padding: 10px 5px 0px;
+            padding: 5px 5px 0px;
 
         }
 

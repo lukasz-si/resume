@@ -1,28 +1,36 @@
-$lettersCellWidth: 20px;
 
-#resume {
-    #navigation {
-        text-transform: uppercase;
-        border-bottom: 4px solid #d4d4d4;
-        border-top: 4px solid #d24837;
+#navigation {
+    text-transform: uppercase;
+    border-bottom: 4px solid #d4d4d4;
+    border-top: 4px solid #d24837;
 
-        .navbar-header {
-            padding-top: 12px;
-            padding-bottom: 5px;
-        }
+    .navbar-header {
+        padding-top: 12px;
+        padding-bottom: 5px;
+    }
 
-        li {
-            font-size: 15px;
-        }
+    li {
+        font-size: 15px;
+        text-align: center;
 
         a {
             color: #111;
-            text-align: center;
         }
 
-        .current a {
+        &.current a {
             color: #d24837;
         }
 
+        @media (max-width: $screen-xs-max) {
+            text-align: left;
+
+            br {
+                display: none;
+            }
+
+            span {
+                margin-right: 10px;
+            }
+        }
     }
 }

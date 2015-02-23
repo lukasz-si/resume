@@ -17,7 +17,7 @@ define([
                     currentClass: 'current',
                     changeHash: true,
                     scrollSpeed: 750,
-                    scrollThreshold: 0.5,
+                    scrollThreshold: 0.2,
                     filter: '',
                     easing: 'swing',
                     begin: function() {
