@@ -1,15 +1,18 @@
-$lettersCellWidth: 20px;
+$lettersCellWidth: 40px;
 
 #home {
     .letters-container {
         .letters-row {
+            height: $lettersCellWidth;
+            overflow: hidden;
+
             .letters-cell {
                 width: $lettersCellWidth;
                 height: $lettersCellWidth;
                 text-align: center;
                 display: inline-block;
                 line-height: $lettersCellWidth;
-                font-size: $lettersCellWidth - 6px;
+                font-size: $lettersCellWidth - 16px;
                 color: #aaa;
 
                 &.letters-cell-marked {
