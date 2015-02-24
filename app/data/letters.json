@@ -1,40 +1,41 @@
 {
-    "columnsNum": 36,
+    "columnsNum": 40,
     "rows": [
         {
-            "offset": 0,
-            "text": "",
-            "class": ""
-        },
-        {
-            "offset": 2,
-            "text": "RESUME : @ & < >",
+            "offset": 8,
+            "text": "WEB APPLICATIONS",
             "class": "letters-cell-marked"
         },
         {
-            "offset": 0,
-            "text": "",
-            "class": ""
-        },
-        {
-            "offset": 6,
-            "text": "LUKASZ    TEST  TEST",
+            "offset": 14,
+            "text": "DEVELOPMENT",
             "class": "letters-cell-marked"
         },
         {
-            "offset": 0,
+            "offset": 7,
             "text": "",
             "class": ""
         },
         {
             "offset": 8,
-            "text": "SSSSSSSSSSS",
+            "text": "JAVASCRIPT JQUERY",
             "class": "letters-cell-marked"
         },
         {
-            "offset": 0,
-            "text": "",
-            "class": ""
+            "offset": 9,
+            "text": "CSS3  ANGULARJS",
+            "class": "letters-cell-marked"
+        },
+        {
+            "offset": 7,
+            "text": "BOOTSTRAP  HTML5",
+            "class": "letters-cell-marked"
+        },
+        {
+            "offset": 13,
+            "text": "REQUIREJS",
+            "class": "letters-cell-marked"
         }
+
     ]
 }

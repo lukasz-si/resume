@@ -131,7 +131,7 @@ module.exports = function (grunt) {
         },
         watch: {
             scss: {
-                files: ['app/sass/*.scss'],
+                files: ['app/sass/**/*.scss'],
                 tasks: ['sass']
             },
             ngtemplates: {

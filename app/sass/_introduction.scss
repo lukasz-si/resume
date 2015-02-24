@@ -1,10 +1,28 @@
-$lettersCellWidth: 40px;
+$lettersCellWidth: 35px;
 
 #home {
     .letters-container {
+
+        padding: 20px 0;
+
         .letters-row {
             height: $lettersCellWidth;
             overflow: hidden;
+
+            @media (max-width: $screen-xs-max) {
+                display: none;
+            }
+
+            @media (max-width: $screen-sm-max) {
+                text-indent: -($lettersCellWidth * 4 - 5);
+                white-space: nowrap;
+            }
+
+
+            @media (max-width: $screen-md-max) and (min-width: $screen-md-min) {
+                text-indent: -($lettersCellWidth * 2);
+                white-space: nowrap;
+            }
 
             .letters-cell {
                 width: $lettersCellWidth;
@@ -13,12 +31,28 @@ $lettersCellWidth: 40px;
                 display: inline-block;
                 line-height: $lettersCellWidth;
                 font-size: $lettersCellWidth - 16px;
-                color: #aaa;
+                color: #dcdcdc;
 
                 &.letters-cell-marked {
                     color: #d24837;
                 }
             }
+        }
+    }
+
+    .intro-row {
+
+        border-bottom-color: #d7dddd;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        padding: 25px 0;
+
+        &:last-child {
+            border-bottom-style: none;
+        }
+
+        .intro-col {
+
         }
     }
 
