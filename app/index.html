@@ -42,17 +42,16 @@
                         <div ui-letters-component></div>
                     </div>
                     <div class="clearfix">
-                        Something about me.
-                        <span class="fa fa-quote-left fa-3x pull-left"></span>
+                        Something about me. <span class="fa fa-quote-left fa-3x pull-left"></span>
 
                     </div>
                     <h4>Education</h4>
+
                     <div class="education"></div>
 
                     <div class="row intro-row">
                         <div class="col-sm-6 col-sm-push-6">
-                            <span class="fa fa-5x fa-html5"></span>
-                            <span class="fa fa-5x fa-css3"></span>
+                            <span class="fa fa-5x fa-html5"></span> <span class="fa fa-5x fa-css3"></span>
                         </div>
                         <div class="col-sm-6 col-sm-pull-6 intro-col">
                             Single Web Application Development - JavasScript, ,jQuery, HTML5, CSS3
@@ -60,8 +59,7 @@
                     </div>
                     <div class="row intro-row">
                         <div class="col-sm-6">
-                            <span class="fa fa-3x fa-mobile"></span>
-                            <span class="fa fa-4x fa-tablet"></span>
+                            <span class="fa fa-3x fa-mobile"></span> <span class="fa fa-4x fa-tablet"></span>
                             <span class="fa fa-5x fa-desktop"></span>
                         </div>
                         <div class="col-sm-6">
@@ -84,18 +82,19 @@
         <section id="timeline" ng-controller="TimelineController">
             <div class="container-wrapper">
                 <div class="container">
-                    <span data-toggle="tooltip" data-placement="right" title="Click on the timeline in order to zoom or move it"><span class="glyphicon glyphicon-info-sign info-sign"></span></span>
+                    <span data-toggle="tooltip" data-placement="right" title="Click on the timeline in order to zoom or move it"><span class="fa fa-info-circle info-sign"></span></span>
 
                     <div id="timeline-container" class="wow flipInX"></div>
                     <div class="project-description">
-                        <div>{{companies[selectedProject.group - 1].name}}</div>
+                        <h3>{{getCompany(selectedProject.group).name}}</h3>
                         <div>{{selectedProject.content}}</div>
                         <div>{{selectedProject.website}}</div>
                         <div>{{selectedProject.position}}</div>
                         <div>{{selectedProject.start}}{{(selectedProject.end ? ' - ' : '') + selectedProject.end}}</div>
                         <div>{{selectedProject.description}}</div>
                         <div>
-                            <span ng-repeat="technology in selectedProject.technologies" ng-class="{{technologies[technology.id].style}}">{{technologies[technology.id].name}}</span>
+                            <div>{{(selectedProject.start ? 'Technologies:' : '')}}</div>
+                            <span ng-repeat="technology in selectedProject.technologies" class="technology">{{technology}}</span>
                         </div>
                     </div>
                 </div>

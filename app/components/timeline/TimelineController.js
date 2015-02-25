@@ -49,6 +49,21 @@ define([
             $scope.projects = [];
             $scope.technologies = [];
             $scope.selectedProject = {};
+            $scope.getCompany = function (groupName) {
+                var companies = $scope.companies,
+                    company, i;
+
+                if (ng.isArray(companies) && companies.length > 0) {
+                    for(i = companies.length; i--;) {
+                        if (companies[i].id === groupName) {
+                            company = companies[i];
+                            break;
+                        }
+                    }
+                }
+
+                return company || {};
+            }
 
             function updateScope(i) {
                 $timeout(function () {

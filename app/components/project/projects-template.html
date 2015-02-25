@@ -1,29 +1,43 @@
-<h3>Filter projects by:</h3>
-Company:
+<h3>Filter projects by:</h3>Company:
 
 <div class="button-group clearfix" data-toggle="buttons">
-    <label class="btn btn-warning active" ng-click="selectedCompany={$:1}">
-        <input type="radio" name="options" id="project-filter-technology" autocomplete="off" checked>All
-    </label>
-    <label class="btn btn-warning" ng-repeat="company in companies" ng-click="selectedCompany.group=company.id">
-        <input type="radio" name="options" id="project-filter-technology" autocomplete="off">{{company.name}}
-    </label>
+    <label class="btn btn-warning active" ng-click="projectFilter.company='all'">
+        <input type="radio" name="options" autocomplete="off" checked>All </label>
+    <label class="btn btn-warning" ng-repeat="company in companies" ng-click="projectFilter.company=company.id">
+        <input type="radio" name="options" autocomplete="off">{{company.name}} </label>
 </div>
 
 Technology:
 <div class="button-group clearfix" data-toggle="buttons">
-    <label class="btn btn-primary active" ng-click="selectedTechnology.search='all'">
-        <input type="radio" name="options" id="project-filter-technology" autocomplete="off" checked>All
-    </label>
-    <label class="btn btn-primary" ng-repeat="technology in technologies" ng-click="selectedTechnology.search=technology.id">
-        <input type="radio" name="options" id="project-filter-technology" autocomplete="off">{{technology.name}}
-    </label>
+    <label class="btn btn-primary active" ng-click="projectFilter.technology='all'">
+        <input type="radio" name="options" autocomplete="off" checked>All </label>
+    <label class="btn btn-primary" ng-repeat="technology in technologies" ng-click="projectFilter.technology=technology">
+        <input type="radio" name="options" autocomplete="off">{{technology}} </label>
 </div>
 
-<div class="project" ng-repeat="project in projects | filter:selectedTechnology.compareTechnologies | filter:selectedCompany">
-    <div class="row {{companies[project.group-1].className}}">
-        <div class="col-md-3 wow fadeInLeft brand" ng-bind-html="trustAsHtml(companies[project.group-1].content)"></div>
-        <div class="col-md-5 wow fadeInUp" ui-project-component></div>
-        <div class="col-md-4 wow fadeInRight technologies" ui-technologies-component></div>
+<div class="project" ng-repeat="project in projects | filter:projectFilter.filter | orderBy:'start':true">
+    <div class="row {{getCompany(project.group).className}}">
+        <div class="col-md-3 wow fadeInLeft brand" ng-bind-html="trustAsHtml(getCompany(project.group).content)"></div>
+        <div class="col-md-5 wow fadeInUp">
+            <div class="">
+                <h3>{{project.content}}</h3>
+                <h4><a ng-href="{{project.website}}" target="_blank">{{project.website}}</a></h4>
+                <h5>{{project.position}}</h5>
+
+                <div>
+                    <span>{{project.start}}</span> - <span>{{project.end}}</span>
+                </div>
+                <div>
+                    <span>{{project.description}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 wow fadeInRight technologies">
+            <div>
+                <span class="technology wow fadeIn" ng-repeat="technology in project.technologies">
+                    {{technology}}
+                </span>
+            </div>
+        </div>
     </div>
 </div>

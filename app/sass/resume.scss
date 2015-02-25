@@ -12,7 +12,7 @@ $screen-md-max: ($screen-lg-min - 1);
 
 @import "font-awesome/font-awesome";
 @import "_animate";
-@import "_bootstrap";
+@import "bootstrap/_bootstrap";
 @import "_navigation";
 @import "_projects";
 @import "_timeline";

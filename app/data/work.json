@@ -1,7 +1,7 @@
 {
     "companies": [
         {
-            "id": 1,
+            "id": "tieto",
             "name": "Tieto",
             "content": "<img class='image-tieto' src='images/logo-tieto.png'><br>Tieto",
             "className": "tieto",
@@ -10,7 +10,7 @@
             "end": ""
         },
         {
-            "id": 2,
+            "id": "meelogic",
             "name": "Meelogic",
             "content": "<img src='images/logo-meelogic.png'><br>Meelogic",
             "className": "meelogic",
@@ -19,9 +19,9 @@
             "end": ""
         },
         {
-            "id": 3,
-            "name": "Freelance",
-            "content": "<span class='glyphicon glyphicon-console'></span><br>Freelance",
+            "id": "freelance",
+            "name": "Freelance/OpenSource",
+            "content": "<span class='fa fa-terminal'></span><br>Freelance/OpenSource",
             "className": "freelance",
             "subgroupOrder": "start",
             "start": "2005-08-01",
@@ -30,185 +30,145 @@
     ],
     "projects": [
         {
+            "id": 25,
+            "start": "2015-01-01",
+            "end": "2015-01-10",
+            "group": "freelance",
+            "content": "Opening Hours",
+            "position": "Frontend Developer",
+            "description": "JavaScript library which might be useful to show opening hours. It is very easy to use and configure. Supports AMD and non-AMD projects. Fully documented with demo examples.",
+            "website": "http://github.com/lukasz-si/opening-hours",
+            "technologies": ["JavaScript", "jQuery", "RequireJS", "Grunt", "Bower", "NPM", "Git", "Jasmine", "Istanbul (code coverage)", "JSDoc", "HTML", "CSS", "Sass"]
+        },
+        {
+            "id": 24,
+            "start": "2013-11-01",
+            "end": "2013-12-01",
+            "group": "freelance",
+            "content": "Pizzeria Planetarium",
+            "position": "Frontend Developer",
+            "description": "Single Web Application which supports all devices – desktops, tablets and mobile phones (responsive design). Twitter Bootstrap framework provides modern layout. User interactive interface is provided by JavaScript frameworks. Client can find pizza by choosing ingredients.",
+            "website": "http://pizzeriaplanetarium.pl",
+            "technologies": ["JavaScript", "jQuery", "RequireJS", "Underscore", "Twitter Bootstrap", "HTML5", "CSS3", "Less", "Git"]
+        },
+        {
+            "id": 23,
+            "start": "2012-06-01",
+            "end": "2012-08-31",
+            "group": "freelance",
+            "content": "E-learning tool",
+            "position": "Frontend/Backend Developer",
+            "description": "E-learning tool used for creating and performing online trainings. It supports different kind of user authorization level, e.g. administrator, tutor, learner.",
+            "website": "",
+            "technologies": ["PHP", "Ajax", "Smarty", "CSS", "HTML", "Mercurial"]
+        },
+        {
+            "id": 22,
+            "start": "2011-05-01",
+            "end": "2012-04-01",
+            "group": "freelance",
+            "content": "Shipping system",
+            "position": "Frontend/Backend Developer",
+            "description": "Application implemented for shipment company. Based on OpenSwing framework.",
+            "website": "",
+            "technologies": ["Java", "Swing", "OpenSwing", "Tomcat", "MySQL", "Ant", "Mercurial", "JasperReports"]
+        },
+        {
             "id": 21,
             "start": "2009-04-02",
             "end": "2009-09-01",
-            "group": 3,
+            "group": "freelance",
             "content": "Registration system",
             "position": "Frontend/Backend Developer",
             "description": "Application implemented for recruitment company.",
-            "website": null,
-            "technologies": [6]
+            "website": "",
+            "technologies": ["PHP", "Ajax", "Smarty", "CSS", "HTML", "SVN"]
         },
 
 
-
-
+        {
+            "id": 12,
+            "start": "2014-03-02",
+            "end": "2014-12-31",
+            "group": "meelogic",
+            "content": "The Cube",
+            "position": "Frontend Developer",
+            "description": "Single Web Application which is designed to visualize data on charts or maps. User interactive interface is provided by JavaScript frameworks. All libraries created for the project are fully documented, the libraries are also automatically tested during every build.",
+            "website": "",
+            "technologies": ["JavaScript", "jQuery", "RequireJS", "D3", "Grunt", "Bower", "NPM", "Jenkins", "Git", "Jasmine", "Istanbul (code coverage)", "JSDoc", "HTML5", "CSS3", "Sass"]
+        },
         {
             "id": 11,
-            "start": "2013-09-02",
+            "start": "2013-09-01",
             "end": "2014-03-01",
-            "group": 2,
+            "group": "meelogic",
             "content": "Campanda",
             "position": "Frontend Developer",
             "description": "Website designed to rent motorhomes. The application supports all devices – desktops, tablets and mobile phones (responsive design). Twitter Bootstrap framework provides modern layout. User interactive interface is provided by JavaScript frameworks. Project management methodology is Scrum.",
             "website": "http://www.campanda.com/",
-            "technologies": [2, 14, 15, 16, 17, 4, 5]
+            "technologies": ["Javascript", "jQuery", "RequireJS", "Underscore", "Twitter Bootstrap", "PHP", "Zend Framework 2", "HTML5", "CSS5", "Less", "Git", "GitFlow", "REST", "Scrum"]
         },
 
 
-
-
+        {
+            "id": 6,
+            "start": "2013-01-02",
+            "end": "2013-08-31",
+            "group": "tieto",
+            "content": "EM Demo",
+            "position": "Senior Software Engineer",
+            "description": "Internal demo project of Element Manager (OSS) implemented for offering purpose. Main requirements of the application – modern web design, responsive design – support for all devices (smartphones, tablets, PCs), REST API, interactive user interface.",
+            "technologies": ["Java", "JEE", "Spring", "Hibernate", "H2 Database", "GWT", "HTML5", "WebSockets", "CSS3", "Maven", "Git", "REST"]
+        },
+        {
+            "id": 5,
+            "start": "2011-01-02",
+            "end": "2013-01-01",
+            "group": "tieto",
+            "content": "OMS",
+            "position": "Senior Software Engineer",
+            "description": "Responsible for Web Application development.",
+            "technologies": ["Java", "Ext GWT", "Spring", "JSP", "HTML", "CSS", "MySQL", "Tomcat", "SVN", "Continuous Integration", "Maven", "Ant", "Scrum"]
+        },
+        {
+            "id": 4,
+            "start": "2009-06-02",
+            "end": "2011-01-01",
+            "group": "tieto",
+            "content": "Juniper",
+            "position": "Senior Software Engineer",
+            "description": "Responsible for development of Operations Support Systems (OSS) based on various programming languages and technologies.",
+            "technologies": ["C++", "Java", "JSP", "JSF", "CORBA", "Continuous Integration", "Mercurial", "Scrum"]
+        },
         {
             "id": 3,
             "start": "2007-11-02",
             "end": "2009-06-01",
-            "group": 1,
+            "group": "tieto",
             "content": "EM Frame",
             "position": "Team Leader",
             "description": "Responsible for managing a team of developers, gathering requirements, planning and writing specifications for new features, participating in teleconferences.",
-            "technologies": [3, 11, 7, 8]
+            "technologies": ["C++", "Java", "CORBA", "Continuous Integration", "SVN", "Maven", "Ant","Scrum"]
         },
         {
             "id": 2,
             "start": "2006-01-02",
             "end": "2007-11-01",
-            "group": 1,
-            "content": "Operation Support Systems (OSS)",
+            "group": "tieto",
+            "content": "EM SX",
             "position": "Software Developer",
-            "description": "Responsible for development of OSS system based on C++, gathering and merging source code via ClearCase.",
-            "technologies": [7, 8]
+            "description": "Responsible for development of OSS (Operation Support Systems) system based on C++, gathering and merging source code via ClearCase.",
+            "technologies": ["C", "C++", "ClearCase"]
         },
         {
             "id": 1,
             "start": "2005-08-01",
             "end": "2006-01-01",
-            "group": 1,
+            "group": "tieto",
             "content": "Intranet",
             "position": "Software Developer",
             "description": "Responsible for implementation of web based applications & tools for company internal use.",
-            "technologies": [6, 2, 9, 10]
+            "technologies": ["PHP", "HTML", "JavaScript", "Ajax", "XML", "CSS", "PostgreSQL", "MySQL"]
         }
-    ],
-    "technologies": [
-        {
-            "id": 1,
-            "name": "",
-            "style": "",
-            "animation": ""
-        },
-        {
-            "id": 2,
-            "name": "Javascript",
-            "style": "javascript",
-            "animation": "bounce"
-        },
-        {
-            "id": 3,
-            "name": "Java",
-            "style": "java",
-            "animation": "flash"
-        },
-        {
-            "id": 4,
-            "name": "HTML5",
-            "style": "html",
-            "animation": "pulse"
-        },
-        {
-            "id": 5,
-            "name": "CSS3",
-            "style": "css",
-            "animation": "rubberBand"
-        },
-        {
-            "id": 6,
-            "name": "PHP",
-            "style": "php",
-            "animation": "shake"
-        },
-        {
-            "id": 7,
-            "name": "C",
-            "style": "c",
-            "animation": "bounceIn"
-        },
-        {
-            "id": 8,
-            "name": "C++",
-            "style": "cpp",
-            "animation": "swing"
-        },
-        {
-            "id": 9,
-            "name": "PostgreSQL",
-            "style": "postgresql",
-            "animation": "fadeIn"
-        },
-        {
-            "id": 10,
-            "name": "MySQL",
-            "style": "mysql",
-            "animation": "flipInX"
-        },
-        {
-            "id": 11,
-            "name": "Swing",
-            "style": "swing",
-            "animation": "rotateIn"
-        },
-        {
-            "id": 12,
-            "name": "Git",
-            "style": "git",
-            "animation": "rollIn"
-        },
-        {
-            "id": 13,
-            "name": "SVN",
-            "style": "svn",
-            "animation": "zoomInUp"
-        },
-        {
-            "id": 14,
-            "name": "jQuery",
-            "style": "jquery",
-            "animation": "zoomIn"
-        },
-        {
-            "id": 15,
-            "name": "requirejs",
-            "style": "requirejs",
-            "animation": "zoomInLeft"
-        },
-        {
-            "id": 16,
-            "name": "underscore",
-            "style": "underscore",
-            "animation": "flipInY"
-        },
-        {
-            "id": 17,
-            "name": "Twitter Bootstrap",
-            "style": "bootstrap",
-            "animation": "fadeInUp"
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     ]
 }

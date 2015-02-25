@@ -5,23 +5,6 @@ define([
 ], function (ng, module) {
     'use strict';
 
-    module.directive('uiProjectComponent', function () {
-
-        return {
-            restrict: 'A',
-//            controller: 'ProjectController',
-            templateUrl: 'project-template.html'
-        }
-    });
-
-    module.directive('uiTechnologiesComponent', function () {
-        return {
-            restrict: 'A',
-//            controller: 'ProjectController',
-            templateUrl: 'technologies-template.html'
-        }
-    });
-
     module.directive('uiProjectsComponent', function () {
 
         return {
