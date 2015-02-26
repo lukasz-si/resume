@@ -1,40 +1,42 @@
-<h2>Projects</h2><h4>Filter by:</h4>Company:
+<div ng-controller="ProjectController">
+    <h2>Projects</h2><h4>Filter by:</h4>Company:
 
-<div class="button-group clearfix" data-toggle="buttons">
-    <label class="btn btn-warning active" ng-click="projectFilter.company='all'">
-        <input type="radio" name="options" autocomplete="off" checked>All</label>
-    <label class="btn btn-warning" ng-repeat="company in companies" ng-click="projectFilter.company=company.id">
-        <input type="radio" name="options" autocomplete="off">{{company.name}}</label>
-</div>
+    <div class="button-group clearfix" data-toggle="buttons">
+        <label class="btn btn-warning active" ng-click="projectFilter.company='all'">
+            <input type="radio" name="options" autocomplete="off" checked>All</label>
+        <label class="btn btn-warning" ng-repeat="company in companies" ng-click="projectFilter.company=company.id">
+            <input type="radio" name="options" autocomplete="off">{{company.name}}</label>
+    </div>
 
-Technology:
-<div class="button-group clearfix" data-toggle="buttons">
-    <label class="btn btn-primary active" ng-click="projectFilter.technology='all'">
-        <input type="radio" name="options" autocomplete="off" checked>All</label>
-    <label class="btn btn-primary" ng-repeat="technology in technologies" ng-click="projectFilter.technology=technology">
-        <input type="radio" name="options" autocomplete="off">{{technology}}</label>
-</div>
+    Technology:
+    <div class="button-group clearfix" data-toggle="buttons">
+        <label class="btn btn-primary active" ng-click="projectFilter.technology='all'">
+            <input type="radio" name="options" autocomplete="off" checked>All</label>
+        <label class="btn btn-primary" ng-repeat="technology in technologies" ng-click="projectFilter.technology=technology">
+            <input type="radio" name="options" autocomplete="off">{{technology}}</label>
+    </div>
 
-<div class="project" ng-repeat="project in projects | filter:projectFilter.filter | orderBy:'start':true">
-    <div class="row {{getCompany(project.group).className}}">
-        <div class="col-md-3 wow fadeInLeft brand" ng-bind-html="trustAsHtml(getCompany(project.group).content)"></div>
-        <div class="col-md-5 wow fadeInUp">
-            <div class="">
-                <h3>{{project.content}}</h3>
-                <h4><a ng-href="{{project.website}}" target="_blank">{{project.website}}</a></h4>
-                <h5>{{project.position}}</h5>
+    <div class="project" ng-repeat="project in projects | filter:projectFilter.filter | orderBy:'start':true">
+        <div class="row {{getCompany(project.group).className}}">
+            <div class="col-md-3 wow fadeInLeft brand" ng-bind-html="trustAsHtml(getCompany(project.group).content)"></div>
+            <div class="col-md-5 wow fadeInUp">
+                <div class="">
+                    <h3>{{project.content}}</h3>
+                    <h4><a ng-href="{{project.website}}" target="_blank">{{project.website}}</a></h4>
+                    <h5>{{project.position}}</h5>
 
-                <div>
-                    <span>{{project.start}}</span> - <span>{{project.end}}</span>
-                </div>
-                <div>
-                    <span>{{project.description}}</span>
+                    <div>
+                        <span>{{project.start}}</span> - <span>{{project.end}}</span>
+                    </div>
+                    <div>
+                        <span>{{project.description}}</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4 wow fadeInRight technologies">
-            <div class="technology wow fadeIn">
-                {{project.technologies.slice().join(', ')}}
+            <div class="col-md-4 wow fadeInRight technologies">
+                <div class="technology wow fadeIn">
+                    {{project.technologies.slice().join(', ')}}
+                </div>
             </div>
         </div>
     </div>
