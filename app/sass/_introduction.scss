@@ -41,19 +41,14 @@ $lettersCellWidth: 35px;
     }
 
     .intro-row {
+        padding-top: 25px;
+    }
 
+    .border {
         border-bottom-color: #d7dddd;
         border-bottom-width: 2px;
         border-bottom-style: solid;
-        padding: 25px 0;
-
-        &:last-child {
-            border-bottom-style: none;
-        }
-
-        .intro-col {
-
-        }
+        padding-top: 25px;
     }
 
 }

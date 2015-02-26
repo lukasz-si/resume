@@ -2,6 +2,11 @@
     "columnsNum": 40,
     "rows": [
         {
+            "offset": 0,
+            "text": "",
+            "class": ""
+        },
+        {
             "offset": 8,
             "text": "WEB APPLICATIONS",
             "class": "letters-cell-marked"
@@ -12,7 +17,7 @@
             "class": "letters-cell-marked"
         },
         {
-            "offset": 7,
+            "offset": 0,
             "text": "",
             "class": ""
         },
@@ -35,7 +40,11 @@
             "offset": 13,
             "text": "REQUIREJS",
             "class": "letters-cell-marked"
+        },
+        {
+            "offset": 0,
+            "text": "",
+            "class": ""
         }
-
     ]
 }

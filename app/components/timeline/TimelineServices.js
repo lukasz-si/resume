@@ -10,6 +10,20 @@ define([
 ], function (ng, $, module, vis, moment) {
     'use strict';
 
+    module.factory('TimelinePromise', ['$q', function ($q) {
+
+        var deferred = $q.defer();
+
+        return {
+            getPromise: function () {
+                return deferred.promise;
+            },
+            getDefer: function () {
+                return deferred;
+            }
+        };
+    }]);
+
     module.factory('TimelineServices', ['$document', '$log', '$window', function ($document, $log, $window) {
 
         var timeline = null,

@@ -24,20 +24,26 @@ define([
 
                     timeline = TimelineServices.createTimeline('#timeline-container', data.projects, data.companies);
                     timeline.on('select', function (selectedItems) {
-                        var items = selectedItems.items, i;
+                        var items = selectedItems.items, i, j,
+                            selectedItems = [];
 
 
-                        if (ng.isArray(items) && items.length > 0) {
+                        if (ng.isArray(items)) {
                             for (i = $scope.projects.length; i--;) {
-                                if ($scope.projects[i].id === items[0]) {
-                                    updateScope(i);
-                                    break;
+                                for (j = items.length; j--;) {
+                                    if ($scope.projects[i].id === items[j]) {
+                                        selectedItems.push($scope.projects[i]);
+                                        continue;
+                                    }
                                 }
                             }
                         }
-                        else {
-                            updateScope(null);
-                        }
+
+                        $timeout(function () {
+                            $scope.selectedProjects = selectedItems;
+                            $log.log($scope.selectedProjects)
+                        }, 0);
+
                     });
 
                     $scope.companies = data.companies;
@@ -48,13 +54,13 @@ define([
             $scope.companies = [];
             $scope.projects = [];
             $scope.technologies = [];
-            $scope.selectedProject = {};
+            $scope.selectedProjects = [];
             $scope.getCompany = function (groupName) {
                 var companies = $scope.companies,
                     company, i;
 
                 if (ng.isArray(companies) && companies.length > 0) {
-                    for(i = companies.length; i--;) {
+                    for (i = companies.length; i--;) {
                         if (companies[i].id === groupName) {
                             company = companies[i];
                             break;
@@ -63,18 +69,6 @@ define([
                 }
 
                 return company || {};
-            }
-
-            function updateScope(i) {
-                $timeout(function () {
-                    if (i !== null) {
-                        $scope.selectedProject = $scope.projects[i];
-                    }
-                    else {
-                        $scope.selectedProject = {};
-                    }
-                    $log.log($scope.selectedProject)
-                }, 0);
             }
         }
     ]);

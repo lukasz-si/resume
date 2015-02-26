@@ -1,0 +1,20 @@
+<h2>Timeline</h2>
+
+<span data-toggle="tooltip" data-placement="right" title="Click on the timeline in order to zoom or move it"><span class="fa fa-info-circle info-sign"></span></span>
+
+<div id="timeline-container" class="wow flipInX"></div>
+<div class="row">
+    <div class="project-description col-md-6" ng-repeat="selectedProject in selectedProjects">
+        <h3>{{getCompany(selectedProject.group).name}}</h3>
+
+        <div>{{selectedProject.content}}</div>
+        <div>{{selectedProject.website}}</div>
+        <div>{{selectedProject.position}}</div>
+        <div>{{selectedProject.start}}{{(selectedProject.end ? ' - ' : '') + selectedProject.end}}</div>
+        <div>{{selectedProject.description}}</div>
+        <div>
+            <div>Technologies:</div>
+            <div>{{selectedProject.technologies.slice().join(', ')}}</div>
+        </div>
+    </div>
+</div>

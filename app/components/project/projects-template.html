@@ -1,18 +1,18 @@
-<h3>Filter projects by:</h3>Company:
+<h2>Projects</h2><h4>Filter by:</h4>Company:
 
 <div class="button-group clearfix" data-toggle="buttons">
     <label class="btn btn-warning active" ng-click="projectFilter.company='all'">
-        <input type="radio" name="options" autocomplete="off" checked>All </label>
+        <input type="radio" name="options" autocomplete="off" checked>All</label>
     <label class="btn btn-warning" ng-repeat="company in companies" ng-click="projectFilter.company=company.id">
-        <input type="radio" name="options" autocomplete="off">{{company.name}} </label>
+        <input type="radio" name="options" autocomplete="off">{{company.name}}</label>
 </div>
 
 Technology:
 <div class="button-group clearfix" data-toggle="buttons">
     <label class="btn btn-primary active" ng-click="projectFilter.technology='all'">
-        <input type="radio" name="options" autocomplete="off" checked>All </label>
+        <input type="radio" name="options" autocomplete="off" checked>All</label>
     <label class="btn btn-primary" ng-repeat="technology in technologies" ng-click="projectFilter.technology=technology">
-        <input type="radio" name="options" autocomplete="off">{{technology}} </label>
+        <input type="radio" name="options" autocomplete="off">{{technology}}</label>
 </div>
 
 <div class="project" ng-repeat="project in projects | filter:projectFilter.filter | orderBy:'start':true">
@@ -33,10 +33,8 @@ Technology:
             </div>
         </div>
         <div class="col-md-4 wow fadeInRight technologies">
-            <div>
-                <span class="technology wow fadeIn" ng-repeat="technology in project.technologies">
-                    {{technology}}
-                </span>
+            <div class="technology wow fadeIn">
+                {{project.technologies.slice().join(', ')}}
             </div>
         </div>
     </div>

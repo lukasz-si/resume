@@ -1,6 +1,6 @@
 define([
     'angular',
-    'components/timeline/TimelineController'
+    'components/timeline/TimelineDirective'
 ], function (ng) {
     return ng;
 });

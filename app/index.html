@@ -41,62 +41,132 @@
                     <div class="row">
                         <div ui-letters-component></div>
                     </div>
-                    <div class="clearfix">
-                        Something about me. <span class="fa fa-quote-left fa-3x pull-left"></span>
 
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="clearfix">
+                                Something about me. <span class="fa fa-quote-left fa-3x pull-left"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <h4>Find me on</h4>
+
+                            <div>
+                                <span class="fa fa-1x fa-github"></span>
+                                <a href="http://github.com/lukasz-si">GitHub</a>
+                            </div>
+                            <div>
+                                <span class="fa fa-1x fa-linkedin-square"></span>
+                                <a href="http://pl.linkedin.com/pub/lukasz-sitnik/45/856/514">LinkedIn</a>
+                            </div>
+                            <br>
+                            <h4>Contact</h4>
+
+                            <div>
+                                <span class="fa fa-1x fa-envelope"></span>
+                                <a href="mailto:l.sitnik@gmail.com">l.sitnik@gmail.com</a>
+                            </div>
+                        </div>
                     </div>
-                    <h4>Education</h4>
 
-                    <div class="education"></div>
+                    <br><br>
+
+                    <h3>Area of interest</h3>
+
+                    <br>
 
                     <div class="row intro-row">
-                        <div class="col-sm-6 col-sm-push-6">
+                        <div class="col-sm-5 col-sm-offset-1 col-sm-push-5">
                             <span class="fa fa-5x fa-html5"></span> <span class="fa fa-5x fa-css3"></span>
                         </div>
-                        <div class="col-sm-6 col-sm-pull-6 intro-col">
-                            Single Web Application Development - JavasScript, ,jQuery, HTML5, CSS3
+                        <div class="col-sm-5 col-sm-pull-5 intro-col">
+                            Single Page Web Applications - are Web apps that load a single HTML page and dynamically update that page as the user interacts with the app (using JavasScript OOP, jQuery, HTML5, CSS3).
                         </div>
+                        <div class="border clearfix col-sm-10 col-sm-offset-1"></div>
                     </div>
                     <div class="row intro-row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-5 col-sm-offset-1">
                             <span class="fa fa-3x fa-mobile"></span> <span class="fa fa-4x fa-tablet"></span>
                             <span class="fa fa-5x fa-desktop"></span>
                         </div>
-                        <div class="col-sm-6">
-                            Responsive Design - Twitter Bootstrap
+                        <div class="col-sm-5">
+                            Responsive Web Design (RWD) - the concept of developing a website design in a manner that helps the layout to get changed according to the user’s computer screen resolution: mobile phone, tablet or desktop.
                         </div>
+                        <div class="border clearfix col-sm-10 col-sm-offset-1"></div>
                     </div>
                     <div class="row intro-row">
-                        <div class="col-sm-6 col-sm-push-6">
+                        <div class="col-sm-5 col-sm-offset-1 col-sm-push-5">
                             <span class="fa fa-5x fa-cubes"></span>
                         </div>
-                        <div class="col-sm-6 col-sm-pull-6 intro-col">
-                            Modularity using AngularJS and RequireJS
+                        <div class="col-sm-5 col-sm-pull-5 intro-col">
+                            Modularity - modules are abstractions to make software easier to write and to maintain. AngularJS provides Model View Controller (MVC) architecture. Sass is a great tool to generate one CSS file. RequireJS.
+                        </div>
+                        <div class="border clearfix col-sm-10 col-sm-offset-1"></div>
+                    </div>
+                    <div class="row intro-row">
+                        <div class="col-sm-5 col-sm-offset-1">
+                            <span class="fa fa-5x fa-gears"></span>
+                        </div>
+                        <div class="col-sm-5">
+                            Optimization - join all JavaScript files into one via r.js tool.
                         </div>
                     </div>
+
+                    <br><br>
+
+                    <div class="education">
+                        <h3>Education</h3>
+
+                        <div class="row intro-row">
+                            <div class="col-sm-2 col-sm-offset-1">
+                                <span class="fa fa-5x fa-graduation-cap"></span>
+                            </div>
+                            <div class="col-sm-8">
+                                <h4>Technical University of Szczecin</h4>
+
+                                <div>Master of Science (MSc), Programming Techniques and Information Systems</div>
+                                <div>2006 - 2008</div>
+                                <div>Thesis theme: Technologies of Web Services document-making</div>
+                            </div>
+                            <div class="border clearfix col-sm-10 col-sm-offset-1"></div>
+                        </div>
+                        <div class="row intro-row">
+                            <div class="col-sm-2 col-sm-offset-1">
+                                <span class="fa fa-5x fa-graduation-cap"></span>
+                            </div>
+                            <div class="col-sm-8">
+                                <h4>Technical University of Szczecin</h4>
+
+                                <div>Bachelor of Science (BSc), Computer Software Engineering</div>
+                                <div>2002 - 2006</div>
+                                <div>Thesis theme: COM components and .NET objects interoperability</div>
+                            </div>
+                            <div class="border clearfix col-sm-10 col-sm-offset-1"></div>
+                        </div>
+                        <div class="row intro-row">
+                            <div class="col-sm-2 col-sm-offset-1">
+                                <span class="fa fa-5x fa-group"></span>
+                            </div>
+                            <div class="col-sm-8">
+                                <h4>Technical collage of Electrical Engineering</h4>
+
+                                <div>1997 - 2002</div>
+                                <div>Thesis theme: Car amplifier with digital control (MCS-51)</div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
         <!-- Timeline -->
-        <section id="timeline" ng-controller="TimelineController">
+        <section id="timeline">
             <div class="container-wrapper">
                 <div class="container">
-                    <span data-toggle="tooltip" data-placement="right" title="Click on the timeline in order to zoom or move it"><span class="fa fa-info-circle info-sign"></span></span>
-
-                    <div id="timeline-container" class="wow flipInX"></div>
-                    <div class="project-description">
-                        <h3>{{getCompany(selectedProject.group).name}}</h3>
-                        <div>{{selectedProject.content}}</div>
-                        <div>{{selectedProject.website}}</div>
-                        <div>{{selectedProject.position}}</div>
-                        <div>{{selectedProject.start}}{{(selectedProject.end ? ' - ' : '') + selectedProject.end}}</div>
-                        <div>{{selectedProject.description}}</div>
-                        <div>
-                            <div>{{(selectedProject.start ? 'Technologies:' : '')}}</div>
-                            <span ng-repeat="technology in selectedProject.technologies" class="technology">{{technology}}</span>
-                        </div>
-                    </div>
+                    <div ui-timeline-component></div>
                 </div>
             </div>
         </section>
@@ -105,9 +175,6 @@
         <section id="projects">
             <div ui-projects-component class="container"></div>
         </section>
-
-        <!-- Contact -->
-        <section id="contact"></section>
 
         <!-- Links -->
         <section id="links">

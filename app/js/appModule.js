@@ -16,9 +16,9 @@ define([
             'navigationModule',
             'introductionModule'
         ])
-        .run(['$q', 'OnImageLoadService', function ($q, OnImageLoadService) {
+        .run(['$q', 'OnImageLoadService', 'TimelinePromise', function ($q, OnImageLoadService, TimelinePromise) {
 
-            $q.all([/*OnImageLoadService.getPromise()*/])
+            $q.all([TimelinePromise.getPromise()/*OnImageLoadService.getPromise()*/])
                 .then(function (value) {
                     new wow().init();
                     $('[data-toggle="tooltip"]').tooltip();
