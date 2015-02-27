@@ -15,7 +15,7 @@ define([
             link: function () {
                 $("#navigation").onePageNav({
                     currentClass: 'current',
-                    changeHash: true,
+                    changeHash: false,
                     scrollSpeed: 750,
                     scrollThreshold: 0.2,
                     filter: '',

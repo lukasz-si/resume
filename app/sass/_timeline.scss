@@ -2,10 +2,19 @@
     #timeline {
 
         .container-wrapper {
-//            background-color: #f6f6f6;
+            //            background-color: #f6f6f6;
             border-top: 1px solid #d7dddd;
             border-bottom: 1px solid #d7dddd;
             overflow: hidden;
+        }
+
+        .info-sign-wrapper {
+            display: inline-block;
+
+            .info-sign {
+                font-size: 20px;
+                color: #1b809e;
+            }
         }
 
         .tieto, .meelogic, .freelance {
@@ -23,8 +32,8 @@
         }
         .meelogic {
             img {
-//                width: 80px;
-//                height: 30px;
+                //                width: 80px;
+                //                height: 30px;
             }
         }
         .freelance {
@@ -38,8 +47,6 @@
             float: left;
             margin-right: 5px;
         }
-
-
 
     }
 }

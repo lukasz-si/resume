@@ -22,6 +22,13 @@ $screen-md-max: ($screen-lg-min - 1);
 
 #resume {
 
+    background-color: #aaa;
+
+    .main-wrapper {
+        opacity: 0;
+        background-color: #fff;
+    }
+
     .main-wrapper > .container-fluid {
         padding-left: 0px;
         padding-right: 0px;
@@ -37,11 +44,6 @@ $screen-md-max: ($screen-lg-min - 1);
 
     :focus {
         outline: 0;
-    }
-
-    .info-sign {
-        font-size: 20px;
-        color: #1b809e;
     }
 
     .footer {

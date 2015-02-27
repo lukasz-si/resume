@@ -16,7 +16,7 @@ define([
             'navigationModule',
             'introductionModule'
         ])
-        .run(['$q', 'OnImageLoadService', 'TimelinePromise', function ($q, OnImageLoadService, TimelinePromise) {
+        .run(['$q', '$timeout', 'OnImageLoadService', 'TimelinePromise', function ($q, $timeout, OnImageLoadService, TimelinePromise) {
 
             $q.all([TimelinePromise.getPromise()/*OnImageLoadService.getPromise()*/])
                 .then(function (value) {
@@ -24,9 +24,9 @@ define([
                     $('[data-toggle="tooltip"]').tooltip();
                 })
                 .then(function () {
-                    $('.main-wrapper').removeClass("hidden");
-                })
-                .then(function () {
+                    $('.main-wrapper').animate({
+                        opacity: 1
+                    }, 2000);
                     $('.loader-wrapper').remove();
                 });
         }]);
