@@ -27,6 +27,7 @@ require.config({
     paths: {
         'jquery': '../bower_components/jquery/dist/jquery.min',
         'angular': '../bower_components/angular/angular',
+        'angular-animate': '../bower_components/angular-animate/angular-animate',
         'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap.min',
         'vis': '../bower_components/vis/dist/vis',
         'wow': '../bower_components/wow/dist/wow',

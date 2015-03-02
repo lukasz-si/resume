@@ -1,9 +1,10 @@
 define([
     'angular',
-    'templates'
+    'templates',
+    'angular-animate'
 ], function (ng) {
     'use strict';
 
-    return ng.module('projectModule', ['templates']);
+    return ng.module('projectModule', ['templates', 'ngAnimate']);
 });
 

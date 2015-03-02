@@ -1,8 +1,9 @@
 define([
-    'angular'
+    'angular',
+    'angular-animate'
 ], function (ng) {
     'use strict';
 
-    return ng.module('timelineModule', []);
+    return ng.module('timelineModule', ['ngAnimate']);
 });
 

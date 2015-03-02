@@ -25,15 +25,16 @@ define([
                     timeline = TimelineServices.createTimeline('#timeline-container', data.projects, data.companies);
                     timeline.on('select', function (selectedItems) {
                         var items = selectedItems.items, i, j,
+                            itemsLength = items.length,
                             selectedItems = [];
 
 
                         if (ng.isArray(items)) {
-                            for (i = $scope.projects.length; i--;) {
-                                for (j = items.length; j--;) {
+                            for (j = 0; j < itemsLength; j++) {
+                                for (i = $scope.projects.length; i--;) {
                                     if ($scope.projects[i].id === items[j]) {
                                         selectedItems.push($scope.projects[i]);
-                                        continue;
+                                        break;
                                     }
                                 }
                             }
@@ -41,6 +42,7 @@ define([
 
                         $timeout(function () {
                             $scope.selectedProjects = selectedItems;
+                            $log.log(items);
                             $log.log($scope.selectedProjects)
                         }, 0);
 
@@ -69,7 +71,19 @@ define([
                 }
 
                 return company || {};
-            }
+            };
+            $scope.zoomIn = function () {
+                TimelineServices.zoom(-0.2);
+            };
+            $scope.zoomOut = function () {
+                TimelineServices.zoom(0.2);
+            };
+            $scope.moveLeft = function () {
+                TimelineServices.move(0.2);
+            };
+            $scope.moveRight = function () {
+                TimelineServices.move(-0.2);
+            };
         }
     ]);
 

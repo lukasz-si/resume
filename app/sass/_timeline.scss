@@ -1,52 +1,87 @@
-#resume {
-    #timeline {
+#timeline {
 
-        .container-wrapper {
-            //            background-color: #f6f6f6;
-            border-top: 1px solid #d7dddd;
-            border-bottom: 1px solid #d7dddd;
+    .vis.timeline {
+        border-radius: 5px;
+
+        .item.point {
+            cursor: pointer;
+        }
+    }
+
+    .container-wrapper {
+        //            background-color: #f6f6f6;
+        border-top: 1px solid #d7dddd;
+        border-bottom: 1px solid #d7dddd;
+        overflow: hidden;
+    }
+
+    .navigation-buttons {
+        margin-bottom: 5px;
+
+        button:active, button:focus {
+            background-color: inherit;
+        }
+        button:hover {
+            background-color: $gray-lighter;
+        }
+    }
+
+    .tieto, .meelogic, .freelance {
+        text-align: center;
+        padding: 5px 5px 0px;
+
+    }
+
+    .tieto {
+        img {
+            width: 60px;
+            height: 60px;
+            background-color: #63b3e3;
+        }
+    }
+    .meelogic {
+        img {
+            //                width: 80px;
+            //                height: 30px;
+        }
+    }
+    .freelance {
+        span {
+            font-size: 30px;
+            color: #38607d;
+        }
+    }
+
+    .technology {
+        float: left;
+        margin-right: 5px;
+    }
+
+    .project-description {
+
+        &.ng-enter,
+//        &.ng-leave,
+        &.ng-move {
+            @include transition(0.5s linear all);
+        }
+
+        &.ng-enter,
+        &.ng-move {
+            opacity: 0;
             overflow: hidden;
         }
 
-        .info-sign-wrapper {
-            display: inline-block;
-
-            .info-sign {
-                font-size: 20px;
-                color: #1b809e;
-            }
+        &.ng-move.ng-move-active,
+        &.ng-enter.ng-enter-active {
+            opacity: 1;
         }
 
-        .tieto, .meelogic, .freelance {
-            text-align: center;
-            padding: 5px 5px 0px;
-
+        &.ng-leave {
+            opacity: 1;
         }
-
-        .tieto {
-            img {
-                width: 60px;
-                height: 60px;
-                background-color: #63b3e3;
-            }
+        &.ng-leave.ng-leave-active {
+            opacity: 0;
         }
-        .meelogic {
-            img {
-                //                width: 80px;
-                //                height: 30px;
-            }
-        }
-        .freelance {
-            span {
-                font-size: 30px;
-                color: #38607d;
-            }
-        }
-
-        .technology {
-            float: left;
-            margin-right: 5px;
-        }
-
     }
+
 }

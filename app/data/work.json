@@ -3,7 +3,7 @@
         {
             "id": "tieto",
             "name": "Tieto",
-            "content": "<img class='image-tieto' src='images/logo-tieto.png'><br>Tieto",
+            "content": "Tieto",
             "className": "tieto",
             "subgroupOrder": "start",
             "start": "2005-08-01",
@@ -12,7 +12,7 @@
         {
             "id": "meelogic",
             "name": "Meelogic",
-            "content": "<img src='images/logo-meelogic.png'><br>Meelogic",
+            "content": "Meelogic",
             "className": "meelogic",
             "subgroupOrder": "start",
             "start": "2005-08-01",
@@ -20,8 +20,8 @@
         },
         {
             "id": "freelance",
-            "name": "Freelance/OpenSource",
-            "content": "<span class='fa fa-terminal'></span><br>Freelance/OpenSource",
+            "name": "Freelance / OpenSource",
+            "content": "Freelance / OpenSource",
             "className": "freelance",
             "subgroupOrder": "start",
             "start": "2005-08-01",
