@@ -5,13 +5,30 @@
 
         .item.point {
             cursor: pointer;
+            border: 1px solid transparent;
+
+            &.selected {
+                background-color: #f4f4f4;
+                border: 1px solid #8c9292;
+                border-radius: 4px;
+            }
+
+            .item.dot {
+                background-color: #f5fbfb;
+                border-color: #969c9c;
+
+                &.selected {
+                    background-color: #f5fbfb;
+                    border-color: #434949;
+                }
+            }
         }
     }
 
     .container-wrapper {
         //            background-color: #f6f6f6;
-        border-top: 1px solid #d7dddd;
-        border-bottom: 1px solid #d7dddd;
+//        border-top: 1px solid #d7dddd;
+//        border-bottom: 1px solid #d7dddd;
         overflow: hidden;
     }
 
@@ -60,7 +77,7 @@
     .project-description {
 
         &.ng-enter,
-//        &.ng-leave,
+            //        &.ng-leave,
         &.ng-move {
             @include transition(0.5s linear all);
         }

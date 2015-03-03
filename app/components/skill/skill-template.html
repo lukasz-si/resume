@@ -1,0 +1,20 @@
+<div ng-controller="SkillController">
+    <h2>Skills</h2>
+
+    <br>
+
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="row wow fadeIn">
+                <div class="col-sm-3" ng-repeat="skill in skills | orderBy:'level':true">
+                    <div class="skill-wrapper">
+                        <div>
+                            {{skill.name}}
+                        </div>
+                        <input type="text" class="skill" value="{{skill.level}}" data-fgColor="{{getColor(skill.level)}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

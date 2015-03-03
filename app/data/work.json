@@ -170,5 +170,39 @@
             "description": "Responsible for implementation of web based applications & tools for company internal use.",
             "technologies": ["PHP", "HTML", "JavaScript", "Ajax", "XML", "CSS", "PostgreSQL", "MySQL"]
         }
+    ],
+    "skills": [
+        {
+            "name": "JavaScript",
+            "level": 90
+        },
+        {
+            "name": "jQuery",
+            "level": 90
+        },
+        {
+            "name": "RequireJS",
+            "level": 90
+        },
+        {
+            "name": "CSS3",
+            "level": 90
+        },
+        {
+            "name": "HTML5",
+            "level": 90
+        },
+        {
+            "name": "Java",
+            "level": 80
+        },
+        {
+            "name": "Spring",
+            "level": 70
+        },
+        {
+            "name": "PHP",
+            "level": 80
+        }
     ]
 }

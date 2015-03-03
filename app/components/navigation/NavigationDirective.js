@@ -12,8 +12,8 @@ define([
             restrict: 'A',
 //            controller: 'NavigationController',
             templateUrl: 'navigation-template.html',
-            link: function () {
-                $("#navigation").onePageNav({
+            link: function (scope, element, attrs) {
+                $(element).onePageNav({
                     currentClass: 'current',
                     changeHash: false,
                     scrollSpeed: 750,

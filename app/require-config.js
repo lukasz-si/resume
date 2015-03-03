@@ -35,10 +35,18 @@ require.config({
         'moment': '../bower_components/moment/moment',
         'one-page-nav': '../bower_components/jQuery-One-Page-Nav/jquery.nav',
         'main': 'js/main',
-        'templates': 'js/templates'
+        'templates': 'js/templates',
+        'jquery.knob': 'js/libs/jquery.knob',
+        'chroma-js': '../bower_components/chroma-js/chroma'
     },
 
-    packages: ['components/timeline', 'components/project', 'components/navigation', 'components/introduction'],
+    packages: [
+        'components/timeline',
+        'components/project',
+        'components/navigation',
+        'components/introduction',
+        'components/skill'
+    ],
 
     shim: {
         'jquery': {
