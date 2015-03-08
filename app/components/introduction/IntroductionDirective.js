@@ -21,7 +21,7 @@ define([
     module.directive('uiLettersComponent', function () {
         return {
             restrict: 'A',
-            templateUrl: 'letters-template.html',
+            templateUrl: 'letters-template.html'
         }
     });
 

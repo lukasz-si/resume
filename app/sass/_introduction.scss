@@ -3,21 +3,20 @@ $lettersCellWidth: 35px;
 #home {
     .letters-container {
 
-        padding: 20px 0;
+        padding: 20px 0 50px;
 
         .letters-row {
             height: $lettersCellWidth;
             overflow: hidden;
 
-            @media (max-width: $screen-xs-max) {
-                display: none;
-            }
+//            @media (max-width: $screen-xs-max) {
+//                display: none;
+//            }
 
             @media (max-width: $screen-sm-max) {
                 text-indent: -($lettersCellWidth * 4 - 5);
                 white-space: nowrap;
             }
-
 
             @media (max-width: $screen-md-max) and (min-width: $screen-md-min) {
                 text-indent: -($lettersCellWidth * 2);
@@ -41,19 +40,26 @@ $lettersCellWidth: 35px;
     }
 
     .hobbies {
-        .hobby {
-            display: inline;
-            float: left;
-            margin: 20px 18px 0 0;
-            padding-top: 10px;
-            border: 3px solid;
-            border-radius: 50%;
-            height: 100px;
-            width: 100px;
+        //        text-align: center;
+
+        .hobby-wrapper {
             text-align: center;
 
-            span {
-                margin-bottom: 7px;
+            .hobby {
+                            display: inline-block;
+                //            float: left;
+                //            margin: 20px 18px 0 0;
+                padding-top: 10px;
+                margin-top: 20px;
+                border: 3px solid;
+                border-radius: 50%;
+                height: 100px;
+                width: 100px;
+                text-align: center;
+
+                span {
+                    margin-bottom: 7px;
+                }
             }
         }
     }

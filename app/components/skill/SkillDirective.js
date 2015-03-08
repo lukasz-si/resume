@@ -10,7 +10,7 @@ define([
 
         return {
             restrict: 'A',
-            templateUrl: 'skill-template.html',
+            templateUrl: 'skill-template.html'
         }
     }]);
 

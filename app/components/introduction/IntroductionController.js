@@ -10,21 +10,30 @@ define([
     module.controller('IntroductionController', ['$scope', '$http', '$log', '$sce',
         function ($scope, $http, $log, $sce) {
 
-            var index = (Math.floor((Math.random() * 100)) % imageList.length),
-                name = imageList[index];
-            $log.log(name + ' : ' + index)
+//            var index = (Math.floor((Math.random() * 100)) % imageList.length),
+//                name = imageList[index];
+//            $log.log(name + ' : ' + index)
+//
+//            $scope.imageName = name;
 
-            $scope.imageName = name;
+            $http.get('data/work.json', {cache: true})
+                .success(function (data) {
+                    $log.log("work.json loaded - intro");
+
+                    $scope.hobbies = data.hobbies;
+                });
+
         }
     ]);
 
-    module.controller('LettersController', ['$scope', '$http', '$log', 'LettersService',
-        function ($scope, $http, $log, LettersService) {
+    module.controller('LettersController', ['$scope', '$http', '$log', 'LettersService', 'LettersPromise',
+        function ($scope, $http, $log, LettersService, LettersPromise) {
             $http.get('data/letters.json', {cache: true})
                 .success(function (data) {
-
-                    $scope.rows = LettersService.generateRandomLetters(data);
-                    LettersService.setInterval($scope.rows);
+                    LettersPromise.getPromise().then(function () {
+                        $scope.rows = LettersService.generateRandomLetters(data);
+                        LettersService.setInterval($scope.rows);
+                    });
                 });
 
             $scope.rows = [];

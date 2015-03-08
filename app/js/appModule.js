@@ -18,7 +18,8 @@ define([
             'introductionModule',
             'skillModule'
         ])
-        .run(['$q', '$timeout', 'OnImageLoadService', 'TimelinePromise', 'SkillPromise', function ($q, $timeout, OnImageLoadService, TimelinePromise, SkillPromise) {
+        .run(['$q', '$timeout', 'OnImageLoadService', 'TimelinePromise', 'SkillPromise', 'LettersPromise',
+            function ($q, $timeout, OnImageLoadService, TimelinePromise, SkillPromise, LettersPromise) {
 
             $q.all([TimelinePromise.getPromise(), SkillPromise.getPromise()/*OnImageLoadService.getPromise()*/])
                 .then(function (value) {
@@ -30,6 +31,8 @@ define([
                         opacity: 1
                     }, 2000);
                     $('.loader-wrapper').remove();
+
+                    LettersPromise.getDefer().resolve();
                 });
         }]);
 

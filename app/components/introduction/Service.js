@@ -22,6 +22,20 @@ define([
         };
     }]);
 
+    module.factory('LettersPromise', ['$q', function ($q) {
+
+        var deferred = $q.defer();
+
+        return {
+            getPromise: function () {
+                return deferred.promise;
+            },
+            getDefer: function () {
+                return deferred;
+            }
+        };
+    }]);
+
     module.factory('LettersService', ['$interval', function ($interval) {
 
         var aCharCode = 'A'.charCodeAt(0),

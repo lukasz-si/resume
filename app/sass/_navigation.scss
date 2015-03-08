@@ -1,12 +1,22 @@
 
 #navigation {
+    $navbarColor: #f8f8f8;
+
     text-transform: uppercase;
     border-bottom: 4px solid #d4d4d4;
     border-top: 4px solid #d24837;
+    background-color: rgba(1, 1, 1, 0.8);
+    color: $navbarColor;
+    //    opacity: 0.8;
 
     .navbar-header {
         padding-top: 12px;
         padding-bottom: 5px;
+
+        .navbar-brand, .navbar-brand:hover {
+            color: $navbarColor;
+
+        }
     }
 
     li {
@@ -14,7 +24,7 @@
         text-align: center;
 
         a {
-            color: #111;
+            color: $navbarColor;
         }
 
         &.current a, a:hover {

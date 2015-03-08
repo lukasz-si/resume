@@ -171,6 +171,40 @@
             "technologies": ["PHP", "HTML", "JavaScript", "Ajax", "XML", "CSS", "PostgreSQL", "MySQL"]
         }
     ],
+    "hobbies": [
+        {
+            "name": "Football",
+            "icon": "fa-futbol-o"
+        },
+        {
+            "name": "Bicycle",
+            "icon": "fa-bicycle"
+        },
+        {
+            "name": "Beer",
+            "icon": "fa-beer"
+        },
+        {
+            "name": "Books",
+            "icon": "fa-book"
+        },
+        {
+            "name": "Motorcycle",
+            "icon": "fa-motorcycle"
+        },
+        {
+            "name": "Music",
+            "icon": "fa-music"
+        },
+        {
+            "name": "Web",
+            "icon": "fa-html5"
+        },
+        {
+            "name": "Coffee",
+            "icon": "fa-coffee"
+        }
+    ],
     "skills": [
         {
             "name": "JavaScript",
