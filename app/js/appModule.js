@@ -2,11 +2,11 @@ define([
     'angular',
     'jquery',
     'wow',
-    'components/timeline',
-    'components/project',
-    'components/navigation',
-    'components/introduction',
-    'components/skill',
+    'components/timeline/main',
+    'components/project/main',
+    'components/navigation/main',
+    'components/introduction/main',
+    'components/skill/main',
     'bootstrap'
 ], function (ng, $, wow) {
     'use strict';

@@ -5,6 +5,7 @@ module.exports = function (grunt) {
         paths = {
             'jquery': '../bower_components/jquery/dist/jquery.min',
             'angular': '../bower_components/angular/angular',
+            'angular-animate': '../bower_components/angular-animate/angular-animate',
             'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap.min',
             'vis': '../bower_components/vis/dist/vis',
             'wow': '../bower_components/wow/dist/wow',
@@ -12,9 +13,17 @@ module.exports = function (grunt) {
             'moment': '../bower_components/moment/moment',
             'one-page-nav': '../bower_components/jQuery-One-Page-Nav/jquery.nav',
             'main': 'js/main',
-            'templates': 'js/templates'
+            'templates': 'js/templates',
+            'jquery.knob': 'js/libs/jquery.knob',
+            'chroma-js': '../bower_components/chroma-js/chroma'
         },
-        packages = ['components/timeline', 'components/project', 'components/navigation', 'components/introduction'],
+        packages = [
+            'components/timeline',
+            'components/project',
+            'components/navigation',
+            'components/introduction',
+            'components/skill'
+        ],
         shim = {
             'jquery': {
                 exports: '$'
@@ -25,6 +34,9 @@ module.exports = function (grunt) {
             'angular': {
                 exports: 'angular',
                 deps: ['jquery']
+            },
+            'angular-animate': {
+                deps: ['angular']
             },
             'one-page-nav': {
                 deps: ['jquery']
@@ -62,13 +74,13 @@ module.exports = function (grunt) {
         requirejs: {
             compile: {
                 options: {
-                    baseUrl: baseUrl,
-                    paths: paths,
-                    packages: packages,
-                    shim: shim,
-                    config: config,
+//                    baseUrl: baseUrl,
+//                    paths: paths,
+//                    packages: packages,
+//                    shim: shim,
+//                    config: config,
                     // build file destination, relative to the build file itself
-                    out: function (text, sourceMapText) {
+                    out: function (text) {
                         var configFile = grunt.file.readJSON('bower.json'),
                             version = configFile.version,
                             newDirectory = "dist/" + version,
@@ -113,8 +125,15 @@ module.exports = function (grunt) {
                     },
                     // none | uglify | uglify2
                     optimize: "none",
-                    include: ["js/main"],
-                    exclude: []
+                    name: "js/main",
+                    insertRequire: ["js/main"],
+                    mainConfigFile: "app/require-config.js",
+                    include: "../bower_components/requirejs/require",
+                    exclude: [],
+                    wrap: {
+                        startFile: "startLib.js",
+                        endFile: "endLib.js"
+                    }
                 }
             }
         },
@@ -137,6 +156,23 @@ module.exports = function (grunt) {
             ngtemplates: {
                 files: ['app/**/*-template.html'],
                 tasks: ['ngtemplates']
+            }
+        },
+        htmlmin: {
+            dist: {
+                options: {
+                    collapseBooleanAttributes: true,
+                    collapseWhitespace: true,
+                    removeAttributeQuotes: true,
+                    removeComments: true, // Only if you don't use comment directives!
+                    removeEmptyAttributes: true,
+                    removeRedundantAttributes: true,
+                    removeScriptTypeAttributes: true,
+                    removeStyleLinkTypeAttributes: true
+                },
+                files: {
+                    'dist/index.html': 'app/index.html'
+                }
             }
         },
         ngtemplates: {
@@ -236,6 +272,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     // Default task.
     grunt.registerTask('default', ['sass', 'ngtemplates', 'requirejs', 'uglify']);

@@ -25,7 +25,7 @@ require.config({
     baseUrl: '.',
 
     paths: {
-        'jquery': '../bower_components/jquery/dist/jquery.min',
+        'jquery': '../bower_components/jquery/dist/jquery',
         'angular': '../bower_components/angular/angular',
         'angular-animate': '../bower_components/angular-animate/angular-animate',
         'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap.min',
@@ -40,14 +40,13 @@ require.config({
         'chroma-js': '../bower_components/chroma-js/chroma'
     },
 
-    packages: [
-        'components/timeline',
-        'components/project',
-        'components/navigation',
-        'components/introduction',
-        'components/skill'
-    ],
-
+//    packages: [
+//        'components/timeline',
+//        'components/project',
+//        'components/navigation',
+//        'components/introduction',
+//        'components/skill'
+//    ],
     shim: {
         'jquery': {
             exports: '$'
@@ -58,6 +57,9 @@ require.config({
         'angular': {
             exports: 'angular',
             deps: ['jquery']
+        },
+        'angular-animate': {
+            deps: ['angular']
         },
         'one-page-nav': {
             deps: ['jquery']
