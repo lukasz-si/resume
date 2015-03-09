@@ -9,7 +9,7 @@ define([
     module.controller('ProjectController', ['$scope', '$http', '$log', '$sce',
         function ($scope, $http, $log, $sce) {
 
-            $http.get('data/work.json', {cache: true})
+            $http.get('%%VERSION%%/data/work.json', {cache: true})
                 .success(function (data) {
                     $log.log("work.json loaded - project");
 

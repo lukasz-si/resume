@@ -77958,7 +77958,7 @@ define('components/timeline/TimelineController',[
     module.controller('TimelineController', ['$scope', '$http', '$log', 'TimelineServices', '$timeout',
         function ($scope, $http, $log, TimelineServices, $timeout) {
 
-            $http.get('data/work.json', {cache: true})
+            $http.get('0.0.1/data/work.json', {cache: true})
                 .success(function (data) {
                     var projects = ng.isArray(data.projects) ? data.projects.slice() : [],
                         months, timeline;
@@ -78123,7 +78123,7 @@ define('components/project/ProjectController',[
     module.controller('ProjectController', ['$scope', '$http', '$log', '$sce',
         function ($scope, $http, $log, $sce) {
 
-            $http.get('data/work.json', {cache: true})
+            $http.get('0.0.1/data/work.json', {cache: true})
                 .success(function (data) {
                     $log.log("work.json loaded - project");
 
@@ -78691,7 +78691,7 @@ define('components/introduction/IntroductionController',[
 //
 //            $scope.imageName = name;
 
-            $http.get('data/work.json', {cache: true})
+            $http.get('0.0.1/data/work.json', {cache: true})
                 .success(function (data) {
                     $log.log("work.json loaded - intro");
 
@@ -78703,7 +78703,7 @@ define('components/introduction/IntroductionController',[
 
     module.controller('LettersController', ['$scope', '$http', '$log', 'LettersService', 'LettersPromise',
         function ($scope, $http, $log, LettersService, LettersPromise) {
-            $http.get('data/letters.json', {cache: true})
+            $http.get('0.0.1/data/letters.json', {cache: true})
                 .success(function (data) {
                     LettersPromise.getPromise().then(function () {
                         $scope.rows = LettersService.generateRandomLetters(data);
@@ -81482,7 +81482,7 @@ define('components/skill/SkillController',[
     module.controller('SkillController', ['$scope', '$http', 'SkillPromise', '$log', '$timeout',
         function ($scope, $http, SkillPromise, $log, $timeout) {
 
-            $http.get('data/work.json', {cache: true})
+            $http.get('0.0.1/data/work.json', {cache: true})
                 .success(function (data) {
 
                     var skills = ng.isArray(data.skills) ? data.skills.slice() : [];

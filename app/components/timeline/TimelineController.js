@@ -8,7 +8,7 @@ define([
     module.controller('TimelineController', ['$scope', '$http', '$log', 'TimelineServices', '$timeout',
         function ($scope, $http, $log, TimelineServices, $timeout) {
 
-            $http.get('data/work.json', {cache: true})
+            $http.get('%%VERSION%%/data/work.json', {cache: true})
                 .success(function (data) {
                     var projects = ng.isArray(data.projects) ? data.projects.slice() : [],
                         months, timeline;

@@ -22,7 +22,7 @@
 })();
 
 require.config({
-    baseUrl: '.',
+    baseUrl: '../app',
 
     paths: {
         'jquery': '../bower_components/jquery/dist/jquery',

@@ -16,7 +16,7 @@ define([
 //
 //            $scope.imageName = name;
 
-            $http.get('data/work.json', {cache: true})
+            $http.get('%%VERSION%%/data/work.json', {cache: true})
                 .success(function (data) {
                     $log.log("work.json loaded - intro");
 
@@ -28,7 +28,7 @@ define([
 
     module.controller('LettersController', ['$scope', '$http', '$log', 'LettersService', 'LettersPromise',
         function ($scope, $http, $log, LettersService, LettersPromise) {
-            $http.get('data/letters.json', {cache: true})
+            $http.get('%%VERSION%%/data/letters.json', {cache: true})
                 .success(function (data) {
                     LettersPromise.getPromise().then(function () {
                         $scope.rows = LettersService.generateRandomLetters(data);

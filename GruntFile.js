@@ -1,56 +1,9 @@
 /*global module:false*/
 module.exports = function (grunt) {
     var fs = require('fs-sync'),
-        baseUrl = "app",
-        paths = {
-            'jquery': '../bower_components/jquery/dist/jquery.min',
-            'angular': '../bower_components/angular/angular',
-            'angular-animate': '../bower_components/angular-animate/angular-animate',
-            'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap.min',
-            'vis': '../bower_components/vis/dist/vis',
-            'wow': '../bower_components/wow/dist/wow',
-            'image-scroll': '../bower_components/Parallax-ImageScroll/jquery.imageScroll',
-            'moment': '../bower_components/moment/moment',
-            'one-page-nav': '../bower_components/jQuery-One-Page-Nav/jquery.nav',
-            'main': 'js/main',
-            'templates': 'js/templates',
-            'jquery.knob': 'js/libs/jquery.knob',
-            'chroma-js': '../bower_components/chroma-js/chroma'
-        },
-        packages = [
-            'components/timeline',
-            'components/project',
-            'components/navigation',
-            'components/introduction',
-            'components/skill'
-        ],
-        shim = {
-            'jquery': {
-                exports: '$'
-            },
-            'bootstrap': {
-                deps: ['jquery']
-            },
-            'angular': {
-                exports: 'angular',
-                deps: ['jquery']
-            },
-            'angular-animate': {
-                deps: ['angular']
-            },
-            'one-page-nav': {
-                deps: ['jquery']
-            },
-            'wow': {
-                exports: 'WOW'
-            }
-        },
-        config = {
-            moment: {
-                noGlobal: true
-            }
-        }
-        ;
+        baseUrl = 'app',
+        debug = true;
+
     // Project configuration.
     grunt.initConfig({
         // Metadata.
@@ -74,11 +27,6 @@ module.exports = function (grunt) {
         requirejs: {
             compile: {
                 options: {
-//                    baseUrl: baseUrl,
-//                    paths: paths,
-//                    packages: packages,
-//                    shim: shim,
-//                    config: config,
                     // build file destination, relative to the build file itself
                     out: function (text) {
                         var configFile = grunt.file.readJSON('bower.json'),
@@ -88,43 +36,16 @@ module.exports = function (grunt) {
 
                         if (!fs.exists(newDirectory)) {
                             fs.mkdir(newDirectory);
-                            appendVersion = true;
+//                            appendVersion = true;
                         }
 
-                        fs.write("dist/resume.js", text);
-                        fs.copy("dist/resume.js", newDirectory + "/resume.js", {force: true});
+                        fs.write("dist/" + version + "/js/resume-no-version.js", text);
 
-                        fs.copy("app/js/styles/resume.css", newDirectory + "/resume.css", {force: true});
-                        fs.copy("app/js/styles/resume.css", "dist/resume.css", {force: true});
-
-                        if (appendVersion) {
-                            var file = fs.read('dist/versions.txt'),
-                                versions = file.split('\n'),
-                                output = "",
-                                alreadyinList = false,
-                                i;
-
-                            versions.splice(versions.length - 1, 1);
-
-                            for (i = 0; i < versions.length; i++) {
-                                if (versions[i] === version) {
-                                    alreadyinList = true;
-                                    break;
-                                }
-                            }
-                            if (!alreadyinList) {
-                                versions.push(version);
-                            }
-
-                            for (i = 0; i < versions.length; i++) {
-                                output += versions[i] + '\n';
-                            }
-
-                            fs.write('dist/versions.txt', output);
-                        }
+//                        fs.copy("app/js/styles/resume.css", newDirectory + "/resume.css", {force: true});
+//                        fs.copy("app/js/styles/resume.css", "dist/resume.css", {force: true});
                     },
                     // none | uglify | uglify2
-                    optimize: "none",
+                    optimize: debug ? "none" : "uglify2",
                     name: "js/main",
                     insertRequire: ["js/main"],
                     mainConfigFile: "app/require-config.js",
@@ -144,7 +65,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                    'app/css/resume.css': 'app/sass/resume.scss'
+                    'dist/<%= pkg.version %>/css/resume.css': 'app/sass/resume.scss'
                 }
             }
         },
@@ -171,8 +92,54 @@ module.exports = function (grunt) {
                     removeStyleLinkTypeAttributes: true
                 },
                 files: {
-                    'dist/index.html': 'app/index.html'
+                    'dist/index.html': 'dist/index-uncompressed.html'
                 }
+            }
+        },
+        'string-replace': {
+            dist: {
+                files: {
+                    'dist/index-uncompressed.html': 'app/index.html',
+                    'dist/<%= pkg.version %>/js/resume.js': 'dist/<%= pkg.version %>/js/resume-no-version.js'
+                },
+                options: {
+                    replacements: [
+                        {
+                            pattern: /%%VERSION%%/g,
+                            replacement: '<%= pkg.version %>'
+                        },
+                        {
+                            pattern: /%%BASE_SCRIPT%%/g,
+                            replacement: debug ? '<script data-main="../app/require-config" src="../bower_components/requirejs/require.js"></script>' :
+                                '<script src="<%= pkg.version %>/js/resume.js"></script>'
+                        }
+                    ]
+                }
+            }
+        },
+        copy: {
+//            index: {
+//                src: 'app/index.html',
+//                dest: 'dist/index-uncompressed.html',
+//                options: {
+//                    process: function (content, srcpath) {
+//                        var configFile = grunt.file.readJSON('bower.json');
+//
+//                        return content.replace(/%%VERSION%%/g, configFile.version);
+//                    }
+//                }
+//            },
+            fonts: {
+                src: 'app/fonts/*',
+                dest: 'dist/<%= pkg.version %>/fonts/',
+                expand: true,
+                flatten: true
+            },
+            data: {
+                src: 'app/data/*',
+                dest: 'dist/<%= pkg.version %>/data/',
+                expand: true,
+                flatten: true
             }
         },
         ngtemplates: {
@@ -245,8 +212,8 @@ module.exports = function (grunt) {
                 banner: '<%= banner %>'
             },
             dist: {
-                src: 'dist/<%= pkg.name %>.js',
-                dest: 'dist/<%= pkg.name %>.min.js'
+                src: 'dist/<%= pkg.version %>/js/<%= pkg.name %>.js',
+                dest: 'dist/<%= pkg.version %>/js/<%= pkg.name %>.min.js'
             }
         },
         jsdoc: {
@@ -273,9 +240,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-string-replace');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Default task.
-    grunt.registerTask('default', ['sass', 'ngtemplates', 'requirejs', 'uglify']);
+    grunt.registerTask('default', ['sass', 'ngtemplates', 'requirejs', 'string-replace', 'copy', 'htmlmin'/*, 'uglify'*/]);
 
     grunt.registerTask('doc', ['jsdoc']);
     grunt.registerTask('test', ['jasmine:coverage']);

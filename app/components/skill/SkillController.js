@@ -13,7 +13,7 @@ define([
     module.controller('SkillController', ['$scope', '$http', 'SkillPromise', '$log', '$timeout',
         function ($scope, $http, SkillPromise, $log, $timeout) {
 
-            $http.get('data/work.json', {cache: true})
+            $http.get('%%VERSION%%/data/work.json', {cache: true})
                 .success(function (data) {
 
                     var skills = ng.isArray(data.skills) ? data.skills.slice() : [];
