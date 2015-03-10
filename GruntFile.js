@@ -2,8 +2,7 @@
 module.exports = function (grunt) {
     var fs = require('fs-sync'),
         baseUrl = 'app',
-        debug = true,
-        devVersion = new Date().getTime();
+        debug = false;
 
     // Project configuration.
     grunt.initConfig({
