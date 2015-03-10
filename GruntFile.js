@@ -2,7 +2,8 @@
 module.exports = function (grunt) {
     var fs = require('fs-sync'),
         baseUrl = 'app',
-        debug = true;
+        debug = true,
+        devVersion = new Date().getTime();
 
     // Project configuration.
     grunt.initConfig({
@@ -28,22 +29,7 @@ module.exports = function (grunt) {
             compile: {
                 options: {
                     // build file destination, relative to the build file itself
-                    out: function (text) {
-                        var configFile = grunt.file.readJSON('bower.json'),
-                            version = configFile.version,
-                            newDirectory = "dist/" + version,
-                            appendVersion = false;
-
-                        if (!fs.exists(newDirectory)) {
-                            fs.mkdir(newDirectory);
-//                            appendVersion = true;
-                        }
-
-                        fs.write("dist/" + version + "/js/resume-no-version.js", text);
-
-//                        fs.copy("app/js/styles/resume.css", newDirectory + "/resume.css", {force: true});
-//                        fs.copy("app/js/styles/resume.css", "dist/resume.css", {force: true});
-                    },
+                    out: "dist/prod/<%= pkg.version %>/js/resume-no-version.js",
                     // none | uglify | uglify2
                     optimize: debug ? "none" : "uglify2",
                     name: "js/main",
@@ -65,7 +51,8 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                    'dist/<%= pkg.version %>/css/resume.css': 'app/sass/resume.scss'
+                    'dist/prod/<%= pkg.version %>/css/resume.css': 'app/sass/resume.scss',
+                    'dist/dev/css/resume.css': 'app/sass/resume.scss'
                 }
             }
         },
@@ -92,15 +79,15 @@ module.exports = function (grunt) {
                     removeStyleLinkTypeAttributes: true
                 },
                 files: {
-                    'dist/index.html': 'dist/index-uncompressed.html'
+                    'dist/prod/index.html': 'dist/prod/index-uncompressed.html'
                 }
             }
         },
         'string-replace': {
-            dist: {
+            prod: {
                 files: {
-                    'dist/index-uncompressed.html': 'app/index.html',
-                    'dist/<%= pkg.version %>/js/resume.js': 'dist/<%= pkg.version %>/js/resume-no-version.js'
+                    'dist/prod/index-uncompressed.html': 'app/index.html',
+                    'dist/prod/<%= pkg.version %>/js/resume.js': 'dist/prod/<%= pkg.version %>/js/resume-no-version.js'
                 },
                 options: {
                     replacements: [
@@ -110,8 +97,27 @@ module.exports = function (grunt) {
                         },
                         {
                             pattern: /%%BASE_SCRIPT%%/g,
-                            replacement: debug ? '<script data-main="../app/require-config" src="../bower_components/requirejs/require.js"></script>' :
-                                '<script src="<%= pkg.version %>/js/resume.js"></script>'
+                            replacement: '<script src="<%= pkg.version %>/js/resume.js"></script>'
+                        }
+                    ]
+                }
+            },
+            dev: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/',
+                    dest: 'dist/dev/',
+                    src: ['index.html', 'require-config.js', 'js/**', 'css/*.*', 'components/**', 'data/**']
+                }],
+                options: {
+                    replacements: [
+                        {
+                            pattern: /%%VERSION%%/g,
+                            replacement: '.'
+                        },
+                        {
+                            pattern: /%%BASE_SCRIPT%%/g,
+                            replacement: '<script data-main="require-config" src="../../bower_components/requirejs/require.js"></script>'
                         }
                     ]
                 }
@@ -131,16 +137,26 @@ module.exports = function (grunt) {
 //            },
             fonts: {
                 src: 'app/fonts/*',
-                dest: 'dist/<%= pkg.version %>/fonts/',
+                dest: 'dist/prod/<%= pkg.version %>/fonts/',
+                expand: true,
+                flatten: true
+            },
+            'fonts-dev': {
+                src: 'app/fonts/*',
+                dest: 'dist/dev/fonts/',
                 expand: true,
                 flatten: true
             },
             data: {
                 src: 'app/data/*',
-                dest: 'dist/<%= pkg.version %>/data/',
+                dest: 'dist/prod/<%= pkg.version %>/data/',
                 expand: true,
                 flatten: true
             }
+        },
+        clean: {
+            prod: ['dist/prod'],
+            dev: ['dist/dev']
         },
         ngtemplates: {
             app: {
@@ -242,9 +258,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-string-replace');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Default task.
-    grunt.registerTask('default', ['sass', 'ngtemplates', 'requirejs', 'string-replace', 'copy', 'htmlmin'/*, 'uglify'*/]);
+    grunt.registerTask('default', ['dev', 'prod']);
+
+    grunt.registerTask('prod', ['sass', 'ngtemplates', 'requirejs', 'string-replace:prod', 'copy:fonts', 'copy:data', 'htmlmin']);
+    grunt.registerTask('dev', ['sass', 'ngtemplates', 'string-replace:dev', 'copy:fonts-dev']);
 
     grunt.registerTask('doc', ['jsdoc']);
     grunt.registerTask('test', ['jasmine:coverage']);

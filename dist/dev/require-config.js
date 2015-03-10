@@ -27,20 +27,20 @@
         baseUrl: '.',
 
         paths: {
-            // statement "('%%VERSION%%'.length === 1 ? '../' : '')" must be repeated because r.js doesn't read variables
-            'jquery': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/jquery/dist/jquery',
-            'angular': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/angular/angular',
-            'angular-animate': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/angular-animate/angular-animate',
-            'bootstrap': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/bootstrap/dist/js/bootstrap.min',
-            'vis': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/vis/dist/vis',
-            'wow': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/wow/dist/wow',
-            'image-scroll': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/Parallax-ImageScroll/jquery.imageScroll',
-            'moment': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/moment/moment',
-            'one-page-nav': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/jQuery-One-Page-Nav/jquery.nav',
+            // statement "('.'.length === 1 ? '../' : '')" must be repeated because r.js doesn't read variables
+            'jquery': ('.'.length === 1 ? '../' : '') + '../bower_components/jquery/dist/jquery',
+            'angular': ('.'.length === 1 ? '../' : '') + '../bower_components/angular/angular',
+            'angular-animate': ('.'.length === 1 ? '../' : '') + '../bower_components/angular-animate/angular-animate',
+            'bootstrap': ('.'.length === 1 ? '../' : '') + '../bower_components/bootstrap/dist/js/bootstrap.min',
+            'vis': ('.'.length === 1 ? '../' : '') + '../bower_components/vis/dist/vis',
+            'wow': ('.'.length === 1 ? '../' : '') + '../bower_components/wow/dist/wow',
+            'image-scroll': ('.'.length === 1 ? '../' : '') + '../bower_components/Parallax-ImageScroll/jquery.imageScroll',
+            'moment': ('.'.length === 1 ? '../' : '') + '../bower_components/moment/moment',
+            'one-page-nav': ('.'.length === 1 ? '../' : '') + '../bower_components/jQuery-One-Page-Nav/jquery.nav',
             'main': 'js/main',
             'templates': 'js/templates',
             'jquery.knob': 'js/libs/jquery.knob',
-            'chroma-js': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/chroma-js/chroma'
+            'chroma-js': ('.'.length === 1 ? '../' : '') + '../bower_components/chroma-js/chroma'
         },
         shim: {
             'jquery': {

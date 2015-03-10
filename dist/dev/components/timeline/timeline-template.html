@@ -1,0 +1,38 @@
+<div ng-controller="TimelineController">
+    <h2>Timeline</h2>
+
+    <br>
+
+    <div class="navigation-buttons">
+        <button class="btn btn-default zoomIn" ng-click="zoomIn()"><span class="fa fa-plus-square"></span> Zoom In
+        </button>
+        <button class="btn btn-default zoomOut" ng-click="zoomOut()"><span class="fa fa-minus-square"></span> Zoom Out
+        </button>
+        <button class="btn btn-default moveLeft" ng-click="moveLeft()">
+            <span class="fa fa-chevron-left"></span> Move Left
+        </button>
+        <button class="btn btn-default moveRight" ng-click="moveRight()">Move Right
+            <span class="fa fa-chevron-right"></span></button>
+    </div>
+
+    <div id="timeline-container" class="wow fadeIn" data-wow-delay="0.3s" data-wow-duration="1s"></div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <div class="project-description col-md-6" ng-repeat="selectedProject in selectedProjects track by $index">
+                    <h3>{{getCompany(selectedProject.group).name}}</h3>
+
+                    <div>{{selectedProject.content}}</div>
+                    <div>{{selectedProject.website}}</div>
+                    <div>{{selectedProject.position}}</div>
+                    <div>{{selectedProject.start}}{{(selectedProject.end ? ' - ' : '') + selectedProject.end}}</div>
+                    <div>{{selectedProject.description}}</div>
+                    <div>
+                        <div>Technologies:</div>
+                        <div>{{selectedProject.technologies.slice().join(', ')}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

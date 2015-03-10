@@ -1,0 +1,63 @@
+<div ng-controller="ProjectController">
+
+    <h2>Projects</h2><br>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <h4>Filter by company</h4>
+
+            <div class="button-group clearfix" data-toggle="buttons">
+                <label class="btn btn-default active" ng-click="projectFilter.company='all'">
+                    <input type="radio" name="options" autocomplete="off" checked>All</label>
+                <label class="btn btn-default" ng-repeat="company in companies" ng-click="projectFilter.company=company.id">
+                    <input type="radio" name="options" autocomplete="off">{{company.name}}</label>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <h4>Filter by language / technology</h4>
+
+            <div class="button-group clearfix" data-toggle="buttons">
+                <label class="btn btn-default active" ng-click="projectFilter.technology='all'">
+                    <input type="radio" name="options" autocomplete="off" checked>All</label>
+                <label class="btn btn-default" ng-repeat="technology in technologies" ng-click="projectFilter.technology=technology">
+                    <input type="radio" name="options" autocomplete="off">{{technology}}</label>
+            </div>
+        </div>
+    </div>
+
+
+    <br><br>
+
+    <div class="row wow fadeIn" data-wow-delay="0.3s">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="project" ng-repeat="project in projects | filter:projectFilter.filter | orderBy:'start':true as results">
+                <div class="row {{getCompany(project.group).className}}">
+                    <div class="col-md-3 brand" ng-bind-html="trustAsHtml(getCompany(project.group).content)"></div>
+                    <div class="col-md-5">
+                        <div class="">
+                            <h3>{{project.content}}</h3>
+                            <h4><a ng-href="{{project.website}}" target="_blank">{{project.website}}</a></h4>
+                            <h5>{{project.position}}</h5>
+
+                            <div>
+                                <span>{{project.start}} - {{project.end}}</span>
+                            </div>
+                            <div>
+                                <span>{{project.description}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 technologies">
+                        <div class="technology">
+                            {{project.technologies.slice().join(', ')}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project" ng-if="results.length == 0">
+                <span>No results found...</span>
+            </div>
+        </div>
+    </div>
+
+</div>
