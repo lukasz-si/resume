@@ -103,12 +103,14 @@ module.exports = function (grunt) {
                 }
             },
             dev: {
-                files: [{
-                    expand: true,
-                    cwd: 'app/',
-                    dest: 'dist/dev/',
-                    src: ['index.html', 'require-config.js', 'js/**', 'css/*.*', 'components/**', 'data/**']
-                }],
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'app/',
+                        dest: 'dist/dev/',
+                        src: ['index.html', 'require-config.js', 'js/**', 'css/*.*', 'components/**', 'data/**']
+                    }
+                ],
                 options: {
                     replacements: [
                         {
@@ -263,8 +265,8 @@ module.exports = function (grunt) {
     // Default task.
     grunt.registerTask('default', ['dev', 'prod']);
 
-    grunt.registerTask('prod', ['sass', 'ngtemplates', 'requirejs', 'string-replace:prod', 'copy:fonts', 'copy:data', 'htmlmin']);
-    grunt.registerTask('dev', ['sass', 'ngtemplates', 'string-replace:dev', 'copy:fonts-dev']);
+    grunt.registerTask('prod', ['clean:prod', 'sass', 'ngtemplates', 'requirejs', 'string-replace:prod', 'copy:fonts', 'copy:data', 'htmlmin']);
+    grunt.registerTask('dev', ['clean:dev', 'sass', 'ngtemplates', 'string-replace:dev', 'copy:fonts-dev']);
 
     grunt.registerTask('doc', ['jsdoc']);
     grunt.registerTask('test', ['jasmine:coverage']);
