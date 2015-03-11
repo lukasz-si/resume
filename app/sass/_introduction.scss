@@ -1,6 +1,9 @@
 $lettersCellWidth: 35px;
 
 #home {
+
+    background-color: $homeBackgroundColor;
+
     .letters-container {
 
         padding: 20px 0 50px;
@@ -8,10 +11,6 @@ $lettersCellWidth: 35px;
         .letters-row {
             height: $lettersCellWidth;
             overflow: hidden;
-
-//            @media (max-width: $screen-xs-max) {
-//                display: none;
-//            }
 
             @media (max-width: $screen-sm-max) {
                 text-indent: -($lettersCellWidth * 4 - 5);
@@ -40,15 +39,12 @@ $lettersCellWidth: 35px;
     }
 
     .hobbies {
-        //        text-align: center;
 
         .hobby-wrapper {
             text-align: center;
 
             .hobby {
-                            display: inline-block;
-                //            float: left;
-                //            margin: 20px 18px 0 0;
+                display: inline-block;
                 padding-top: 10px;
                 margin-top: 20px;
                 border: 3px solid;
@@ -69,9 +65,11 @@ $lettersCellWidth: 35px;
     }
 
     .border {
-        border-bottom-color: #d7dddd;
-        border-bottom-width: 2px;
-        border-bottom-style: solid;
+//        border-bottom-color: #d7dddd;
+//        border-bottom-width: 2px;
+//        border-bottom-style: solid;
+//        border-radius: 1px;
+        box-shadow: $boxShadowLineDark;
         padding-top: 25px;
     }
 

@@ -1,4 +1,10 @@
 #skills {
+    background-color: $projectsBackgroundColor;
+
+    .container-wrapper {
+        background-color: $skillsBackgroundColor;
+    }
+
     .skill-wrapper {
         text-align: center;
         padding: 10px 0;

@@ -6,4 +6,4 @@ npm-debug.log
 _SpecRunner.html
 test/code-coverage/coverage.json
 test/code-coverage/html/
-doc/
+/doc/

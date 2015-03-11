@@ -2,6 +2,11 @@
     position: relative;
     overflow: hidden;
     width: 100%;
+    background-color: $timelineBackgroundColor;
+
+    .container-wrapper {
+        background-color: $projectsBackgroundColor;
+    }
 
     .button-group {
         margin-top: 10px;
@@ -13,13 +18,16 @@
         }
     }
     .project {
-        border-bottom-color: #d7dddd;
-        border-bottom-width: 2px;
-        border-bottom-style: solid;
-        padding-bottom: 25px;
+//        border-bottom-color: #d7dddd;
+//        border-bottom-width: 2px;
+//        border-bottom-style: solid;
+//        padding-bottom: 25px;
+
+        box-shadow: $boxShadowLine;
 
         &:last-child {
-            border-bottom-style: none;
+//            border-bottom-style: none;
+            box-shadow: none;
         }
 
         &:nth-child {

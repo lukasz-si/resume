@@ -1,5 +1,7 @@
 #timeline {
 
+    background-color: $homeBackgroundColor;
+
     .vis.timeline {
         border-radius: 5px;
 
@@ -26,9 +28,9 @@
     }
 
     .container-wrapper {
-        //            background-color: #f6f6f6;
-//        border-top: 1px solid #d7dddd;
-//        border-bottom: 1px solid #d7dddd;
+        background-color: $timelineBackgroundColor;
+        //        border-top: 1px solid #d7dddd;
+        //        border-bottom: 1px solid #d7dddd;
         overflow: hidden;
     }
 

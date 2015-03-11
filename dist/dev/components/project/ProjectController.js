@@ -4,7 +4,8 @@ define([
 ], function (ng, module) {
     'use strict';
 
-    var technologies = ["JavaScript", "Java", "PHP", "HTML5", "CSS5", "jQuery", "AngularJS", "RequireJS", "Smarty", "Sass", "Less", "Grunt", "Bower", "Jasmine", "Git", "Scrum", "D3"]
+    var technologies = ["JavaScript", "Java", "PHP", "HTML5", "CSS5", "jQuery", "AngularJS", "RequireJS",
+        "Smarty", "Sass", "Less", "Grunt", "Bower", "Jasmine", "Git", "Scrum", "D3"];
 
     module.controller('ProjectController', ['$scope', '$http', '$log', '$sce',
         function ($scope, $http, $log, $sce) {
@@ -26,7 +27,7 @@ define([
             $scope.projectFilter.company = "all";
             $scope.projectFilter.technology = "all";
 
-            $scope.projectFilter.filter = function (value, index) {
+            $scope.projectFilter.filter = function (value) {
 
                 var result = false,
                     technology = $scope.projectFilter.technology,
@@ -37,7 +38,7 @@ define([
                     result = true;
                 }
 //                $log.log(result)
-//                $log.log(value)
+                //                $log.log(value)
                 return result;
             };
 

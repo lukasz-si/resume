@@ -63,6 +63,14 @@ module.exports = function (grunt) {
             ngtemplates: {
                 files: ['app/**/*-template.html'],
                 tasks: ['ngtemplates']
+            },
+            'fonts-dev': {
+                files: ['app/fonts/**'],
+                tasks: ['copy:fonts-dev']
+            },
+            dev: {
+                files: ['app/**/*.html', 'app/**/*.js', 'app/data/*.json'],
+                tasks: ['string-replace:dev']
             }
         },
         htmlmin: {
@@ -107,7 +115,7 @@ module.exports = function (grunt) {
                         expand: true,
                         cwd: 'app/',
                         dest: 'dist/dev/',
-                        src: ['index.html', 'require-config.js', 'js/**', 'css/*.*', 'components/**', 'data/**']
+                        src: ['index.html', 'require-config.js', 'js/**', 'components/**', 'data/**']
                     }
                 ],
                 options: {
@@ -266,6 +274,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('prod', ['clean:prod', 'sass', 'ngtemplates', 'requirejs', 'string-replace:prod', 'copy:fonts', 'copy:data', 'htmlmin']);
     grunt.registerTask('dev', ['clean:dev', 'sass', 'ngtemplates', 'string-replace:dev', 'copy:fonts-dev']);
+
+    grunt.registerTask('watch-dev', ['watch']);
 
     grunt.registerTask('doc', ['jsdoc']);
     grunt.registerTask('test', ['jasmine:coverage']);
