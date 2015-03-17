@@ -26,6 +26,8 @@ $screen-md-max: ($screen-lg-min - 1);
 @import "_vis";
 @import "_introduction";
 @import "_skill";
+@import "_sunlight";
+@import "_background-code";
 
 #resume {
 
@@ -33,7 +35,8 @@ $screen-md-max: ($screen-lg-min - 1);
 
     .main-wrapper {
         opacity: 0;
-        background-color: #fff;
+//        background-color: #fff;
+        z-index: 1;
     }
 
     .main-wrapper > .container-fluid {
@@ -43,10 +46,11 @@ $screen-md-max: ($screen-lg-min - 1);
 
     section {
         padding-top: $navbarHeight;
+        position: relative;
     }
 
     .container-wrapper {
-//        padding: 20px 0;
+        //        padding: 20px 0;
         border-top: 4px solid #d24837;
 
         &.first-wrapper {

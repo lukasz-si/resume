@@ -5,8 +5,8 @@ define([
 ], function (ng, module) {
     'use strict';
 
-    module.controller('TimelineController', ['$scope', '$http', '$log', 'TimelineServices', '$timeout',
-        function ($scope, $http, $log, TimelineServices, $timeout) {
+    module.controller('TimelineController', ['$scope', '$http', '$log', 'TimelineServices', 'TimelinePromise', '$timeout',
+        function ($scope, $http, $log, TimelineServices, TimelinePromise, $timeout) {
 
             $http.get('%%VERSION%%/data/work.json', {cache: true})
                 .success(function (data) {
@@ -45,13 +45,13 @@ define([
                             $log.log(items);
                             $log.log($scope.selectedProjects)
                         }, 0);
-
                     });
 
                     $scope.companies = data.companies;
                     $scope.projects = projects;
                     $scope.technologies = data.technologies;
 
+                    TimelinePromise.getDefer().resolve();
                 });
             $scope.companies = [];
             $scope.projects = [];

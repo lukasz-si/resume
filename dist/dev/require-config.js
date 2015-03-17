@@ -40,7 +40,11 @@
             'main': 'js/main',
             'templates': 'js/templates',
             'jquery.knob': 'js/libs/jquery.knob',
-            'chroma-js': ('.'.length === 1 ? '../' : '') + '../bower_components/chroma-js/chroma'
+            'chroma-js': ('.'.length === 1 ? '../' : '') + '../bower_components/chroma-js/chroma',
+            'sunlight': 'js/libs/sunlight-min',
+            'sunlight.css': 'js/libs/sunlight.css-min',
+            'sunlight.javascript': 'js/libs/sunlight.javascript-min',
+            'sunlight.xml': 'js/libs/sunlight.xml-min'
         },
         shim: {
             'jquery': {
@@ -61,6 +65,18 @@
             },
             'wow': {
                 exports: 'WOW'
+            },
+            'sunlight': {
+                exports: 'Sunlight'
+            },
+            'sunlight.css': {
+                deps: ['sunlight']
+            },
+            'sunlight.javascript': {
+                deps: ['sunlight']
+            },
+            'sunlight.xml': {
+                deps: ['sunlight']
             }
         },
         config: {

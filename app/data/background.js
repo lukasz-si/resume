@@ -2,18 +2,13 @@ define([
     'angular',
     'jquery',
     'wow',
-    'sunlight',
-    'sunlight.javascript',
-    'sunlight.css',
-    'sunlight.xml',
     'components/timeline/main',
     'components/project/main',
     'components/navigation/main',
     'components/introduction/main',
     'components/skill/main',
-    'components/background-code/main',
     'bootstrap'
-], function (ng, $, wow, sunlight) {
+], function (ng, $, wow) {
     'use strict';
 
     return ng.module('resumeApp', [
@@ -21,23 +16,15 @@ define([
             'projectModule',
             'navigationModule',
             'introductionModule',
-            'skillModule',
-            'backgroundModule'
+            'skillModule'
         ])
-        .run(['$q', '$timeout', 'OnImageLoadService', 'TimelinePromise', 'SkillPromise', 'LettersPromise', 'BackgroundPromise',
-            function ($q, $timeout, OnImageLoadService, TimelinePromise, SkillPromise, LettersPromise, BackgroundPromise) {
+        .run(['$q', '$timeout', 'OnImageLoadService', 'TimelinePromise', 'SkillPromise', 'LettersPromise',
+            function ($q, $timeout, OnImageLoadService, TimelinePromise, SkillPromise, LettersPromise) {
 
-                var sunlightOptions = {
-                    lineNumbers: false
-                };
-
-                $q.all([TimelinePromise.getPromise(), SkillPromise.getPromise(), BackgroundPromise.getPromise()])
+                $q.all([TimelinePromise.getPromise(), SkillPromise.getPromise()/*OnImageLoadService.getPromise()*/])
                     .then(function (value) {
                         new wow().init();
                         $('[data-toggle="tooltip"]').tooltip();
-
-                        sunlight.highlightAll(sunlightOptions);
-
                     })
                     .then(function () {
                         $('.main-wrapper').animate({

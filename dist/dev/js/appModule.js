@@ -2,13 +2,18 @@ define([
     'angular',
     'jquery',
     'wow',
+    'sunlight',
+    'sunlight.javascript',
+    'sunlight.css',
+    'sunlight.xml',
     'components/timeline/main',
     'components/project/main',
     'components/navigation/main',
     'components/introduction/main',
     'components/skill/main',
+    'components/background-code/main',
     'bootstrap'
-], function (ng, $, wow) {
+], function (ng, $, wow, sunlight) {
     'use strict';
 
     return ng.module('resumeApp', [
@@ -16,25 +21,33 @@ define([
             'projectModule',
             'navigationModule',
             'introductionModule',
-            'skillModule'
+            'skillModule',
+            'backgroundModule'
         ])
-        .run(['$q', '$timeout', 'OnImageLoadService', 'TimelinePromise', 'SkillPromise', 'LettersPromise',
-            function ($q, $timeout, OnImageLoadService, TimelinePromise, SkillPromise, LettersPromise) {
+        .run(['$q', '$timeout', 'OnImageLoadService', 'TimelinePromise', 'SkillPromise', 'LettersPromise', 'BackgroundPromise',
+            function ($q, $timeout, OnImageLoadService, TimelinePromise, SkillPromise, LettersPromise, BackgroundPromise) {
 
-            $q.all([TimelinePromise.getPromise(), SkillPromise.getPromise()/*OnImageLoadService.getPromise()*/])
-                .then(function (value) {
-                    new wow().init();
-                    $('[data-toggle="tooltip"]').tooltip();
-                })
-                .then(function () {
-                    $('.main-wrapper').animate({
-                        opacity: 1
-                    }, 2000);
-                    $('.loader-wrapper').remove();
+                var sunlightOptions = {
+                    lineNumbers: false
+                };
 
-                    LettersPromise.getDefer().resolve();
-                });
-        }]);
+                $q.all([TimelinePromise.getPromise(), SkillPromise.getPromise(), BackgroundPromise.getPromise()])
+                    .then(function (value) {
+                        new wow().init();
+                        $('[data-toggle="tooltip"]').tooltip();
+
+                        sunlight.highlightAll(sunlightOptions);
+
+                    })
+                    .then(function () {
+                        $('.main-wrapper').animate({
+                            opacity: 1
+                        }, 2000);
+                        $('.loader-wrapper').remove();
+
+                        LettersPromise.getDefer().resolve();
+                    });
+            }]);
 
 });
 

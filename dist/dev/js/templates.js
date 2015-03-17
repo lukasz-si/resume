@@ -1,5 +1,22 @@
 define(["angular"], function(ng) { ng.module("templates", []).run(["$templateCache", function($templateCache) {  'use strict';
 
+  $templateCache.put('background-template.html',
+    "<div class=background-code ng-controller=BackgroundController><div class=js-code><pre class=sunlight-highlight-javascript>\r" +
+    "\n" +
+    "{{javascript}}\r" +
+    "\n" +
+    "        </pre></div><div class=html-code><pre class=sunlight-highlight-xml>\r" +
+    "\n" +
+    "{{html}}\r" +
+    "\n" +
+    "        </pre></div><div class=css-code><pre class=sunlight-highlight-css>\r" +
+    "\n" +
+    "{{css}}\r" +
+    "\n" +
+    "        </pre></div></div>"
+  );
+
+
   $templateCache.put('letters-template.html',
     "<div ng-controller=LettersController class=\"letters-container hidden-xs\"><div class=letters-row ng-repeat=\"row in rows\"><span class=\"letters-cell {{cell.class}}\" ng-class=\"\" ng-repeat=\"cell in row.cells\">{{cell.random}}</span></div></div>"
   );

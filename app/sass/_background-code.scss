@@ -1,0 +1,33 @@
+$backgroundCodeColor: #262626;
+
+#background-code {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    background-color: $backgroundCodeColor;
+
+    .js-code, .html-code, .css-code {
+        position: absolute;
+        top: $navbarHeight;
+    }
+
+    .js-code {
+        margin-left: 10px;
+    }
+
+    .html-code {
+        margin-left: 600px;
+    }
+
+    .css-code {
+        margin-left: 1000px;
+    }
+
+    pre {
+        background-color: $backgroundCodeColor;
+        border: none;
+    }
+}

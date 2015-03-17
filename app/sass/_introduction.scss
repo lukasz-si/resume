@@ -2,8 +2,12 @@ $lettersCellWidth: 35px;
 
 #home {
 
-    background-color: $homeBackgroundColor;
-
+    .container-wrapper {
+        background-color: $homeBackgroundColor;
+    }
+    .container-wrapper.introduction-header {
+        background-color: rgba(239, 239, 239, 0.9);
+    }
     .letters-container {
 
         padding: 20px 0 50px;
@@ -65,10 +69,10 @@ $lettersCellWidth: 35px;
     }
 
     .border {
-//        border-bottom-color: #d7dddd;
-//        border-bottom-width: 2px;
-//        border-bottom-style: solid;
-//        border-radius: 1px;
+        //        border-bottom-color: #d7dddd;
+        //        border-bottom-width: 2px;
+        //        border-bottom-style: solid;
+        //        border-radius: 1px;
         box-shadow: $boxShadowLineDark;
         padding-top: 25px;
     }
