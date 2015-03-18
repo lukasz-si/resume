@@ -22,10 +22,10 @@
                 <div class="project-description col-md-6" ng-repeat="selectedProject in selectedProjects track by $index">
                     <h3>{{getCompany(selectedProject.group).name}}</h3>
 
-                    <div>{{selectedProject.content}}</div>
+                    <div>{{selectedProject.contentParsed}}</div>
                     <div>{{selectedProject.website}}</div>
                     <div>{{selectedProject.position}}</div>
-                    <div>{{selectedProject.start}}{{(selectedProject.end ? ' - ' : '') + selectedProject.end}}</div>
+                    <div>{{selectedProject.start}}{{(selectedProject.end ? ' - ' : '') + selectedProject.end}}{{selectedProject.months}}</div>
                     <div>{{selectedProject.description}}</div>
                     <div>
                         <div>Technologies:</div>

@@ -34,7 +34,7 @@
             'bootstrap': ('.'.length === 1 ? '../' : '') + '../bower_components/bootstrap/dist/js/bootstrap.min',
             'vis': ('.'.length === 1 ? '../' : '') + '../bower_components/vis/dist/vis',
             'wow': ('.'.length === 1 ? '../' : '') + '../bower_components/wow/dist/wow',
-            'image-scroll': ('.'.length === 1 ? '../' : '') + '../bower_components/Parallax-ImageScroll/jquery.imageScroll',
+//            'image-scroll': ('.'.length === 1 ? '../' : '') + '../bower_components/Parallax-ImageScroll/jquery.imageScroll',
             'moment': ('.'.length === 1 ? '../' : '') + '../bower_components/moment/moment',
             'one-page-nav': ('.'.length === 1 ? '../' : '') + '../bower_components/jQuery-One-Page-Nav/jquery.nav',
             'main': 'js/main',

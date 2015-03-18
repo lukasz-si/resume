@@ -2,15 +2,13 @@ $lettersCellWidth: 35px;
 
 #home {
 
-    .container-wrapper {
+    .container-wrapper, .header-padding {
         background-color: $homeBackgroundColor;
     }
-    .container-wrapper.introduction-header {
-        background-color: rgba(239, 239, 239, 0.9);
-    }
+
     .letters-container {
 
-        padding: 20px 0 50px;
+        padding: 30px 0;
 
         .letters-row {
             height: $lettersCellWidth;
@@ -51,7 +49,7 @@ $lettersCellWidth: 35px;
                 display: inline-block;
                 padding-top: 10px;
                 margin-top: 20px;
-                border: 3px solid;
+                border: 3px solid #a0a0a0;
                 border-radius: 50%;
                 height: 100px;
                 width: 100px;
@@ -77,7 +75,15 @@ $lettersCellWidth: 35px;
         padding-top: 25px;
     }
 
-    .quote-margin {
-        margin: 0 20px 20px 0;
+    .about-me {
+        padding: 20px 0;
+
+        .header {
+            font-size: 18px;
+        }
+
+        .quote-margin {
+            margin: 0 20px 20px 0;
+        }
     }
 }

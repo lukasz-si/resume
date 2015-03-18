@@ -11,14 +11,17 @@ define([
             $http.get('%%VERSION%%/data/work.json', {cache: true})
                 .success(function (data) {
                     var projects = ng.isArray(data.projects) ? data.projects.slice() : [],
-                        months, timeline;
+                        months, timeline, monthsText;
 
                     $log.log("work.json loaded");
 
                     ng.forEach(projects, function (value) {
                         months = TimelineServices.calculateMonths(value.start, value.end);
                         if (months >= 0) {
-                            value.content += ' (' + months + ' month' + (months !== 1 ? 's' : '') + (value.end ? '' : ', until now') + ')';
+                            monthsText = ' (' + months + ' month' + (months !== 1 ? 's' : '') + (value.end ? '' : ', until now') + ')';
+                            value.contentParsed = value.content;
+                            value.content += '<br>' + monthsText;
+                            value.months = monthsText;
                         }
                     });
 

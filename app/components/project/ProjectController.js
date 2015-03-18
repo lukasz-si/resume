@@ -37,8 +37,6 @@ define([
                     && (technology === "all" || ng.isArray(value.technologies) && value.technologies.indexOf(technology) !== -1)) {
                     result = true;
                 }
-//                $log.log(result)
-                //                $log.log(value)
                 return result;
             };
 
@@ -62,6 +60,5 @@ define([
     ]);
 
     return module;
-})
-;
+});
 

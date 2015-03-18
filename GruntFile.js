@@ -194,44 +194,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-        jasmine: {
-            coverage: {
-                src: "app/js/**/*.js",
-                options: {
-                    specs: 'test/unit/**/*Test.js',
-                    template: require('grunt-template-jasmine-istanbul'),
-                    templateOptions: {
-                        coverage: 'test/code-coverage/coverage.json',
-                        report: [
-                            {
-                                type: 'html',
-                                options: {
-                                    dir: 'test/code-coverage/html'
-                                }
-                            },
-                            {
-                                type: 'text',
-                                options: {
-                                    file: 'test/code-coverage/summary/summary.txt'
-                                }
-                            },
-                            {
-                                type: 'text'
-                            }
-                        ],
-                        template: require('grunt-template-jasmine-requirejs'),
-                        templateOptions: {
-                            requireConfig: {
-                                baseUrl: ".grunt/grunt-contrib-jasmine/" + baseUrl,
-                                paths: {
-                                    "jquery": "../../../bower_components/jquery/dist/jquery"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         uglify: {
             options: {
                 banner: '<%= banner %>'
@@ -239,18 +201,6 @@ module.exports = function (grunt) {
             dist: {
                 src: 'dist/<%= pkg.version %>/js/<%= pkg.name %>.js',
                 dest: 'dist/<%= pkg.version %>/js/<%= pkg.name %>.min.js'
-            }
-        },
-        jsdoc: {
-            dist: {
-                src: ['app/js/**/*.js', 'README.md'],
-                options: {
-//                    tutorials: "tutorials/",
-                    private: false,
-                    destination: 'doc',
-                    template: "node_modules/ink-docstrap/template",
-                    config: "jsdoc.conf.json"
-                }
             }
         }
     });
@@ -274,9 +224,4 @@ module.exports = function (grunt) {
 
     grunt.registerTask('prod', ['clean:prod', 'sass', 'ngtemplates', 'requirejs', 'string-replace:prod', 'copy:fonts', 'copy:data', 'htmlmin']);
     grunt.registerTask('dev', ['clean:dev', 'sass', 'ngtemplates', 'string-replace:dev', 'copy:fonts-dev']);
-
-    grunt.registerTask('watch-dev', ['watch']);
-
-    grunt.registerTask('doc', ['jsdoc']);
-    grunt.registerTask('test', ['jasmine:coverage']);
 };

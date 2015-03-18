@@ -1,8 +1,12 @@
 #skills {
-    background-color: $projectsBackgroundColor;
+//
 
     .container-wrapper {
         background-color: $skillsBackgroundColor;
+    }
+
+    .header-padding {
+        background-color: $projectsBackgroundColor;
     }
 
     .skill-wrapper {

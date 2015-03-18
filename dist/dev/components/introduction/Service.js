@@ -109,7 +109,7 @@ define([
 
                 promise = $interval(function () {
                     that.incrementLetters(scopeRows);
-                }, 200, azDiff);
+                }, 250, azDiff);
 
                 promise.then(function () {
                     that.setFinalLetters(scopeRows);

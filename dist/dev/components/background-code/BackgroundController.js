@@ -18,7 +18,7 @@ define([
                     $log.log("background.js loaded");
                 });
 
-            $http.get('./data/background.css', {cache: true})
+            $http.get('./data/background.scss', {cache: true})
                 .success(function (data) {
                     counter++;
                     $scope.css = data;
