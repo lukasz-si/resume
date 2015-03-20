@@ -39,7 +39,7 @@
 
 <div class="main-wrapper">
 
-<nav ui-navigation-component></nav>
+<nav ui-navigation-component class="no-selection"></nav>
 
 <div class="container-fluid container-extended">
 
@@ -47,7 +47,7 @@
     <div class="header-padding"></div>
     <div class="container-wrapper first-wrapper">
         <div class="container">
-            <div ui-letters-component></div>
+            <div ui-letters-component class="no-selection"></div>
         </div>
     </div>
     <div class="container-wrapper first-wrapper background-code-header about-me dark-background">
@@ -193,7 +193,7 @@
                             <div class="row">
                                 <div class="col-sm-3 hobby-wrapper wow fadeIn" ng-repeat="hobby in hobbies" data-wow-delay="{{$index * 0.2}}s">
                                     <div class="hobby">
-                                        <span class="fa fa-3x {{hobby.icon}}"></span><br>{{hobby.name}}
+                                        <span class="fa fa-3x {{hobby.icon}}"></span>{{hobby.name}}
                                     </div>
                                 </div>
                             </div>

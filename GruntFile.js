@@ -145,16 +145,18 @@ module.exports = function (grunt) {
 //                }
 //            },
             fonts: {
-                src: 'app/fonts/*',
+                src: '**',
                 dest: 'dist/prod/<%= pkg.version %>/fonts/',
+                cwd: 'app/fonts/',
                 expand: true,
-                flatten: true
+                flatten: false
             },
             'fonts-dev': {
-                src: 'app/fonts/*',
+                src: '**',
                 dest: 'dist/dev/fonts/',
+                cwd: 'app/fonts/',
                 expand: true,
-                flatten: true
+                flatten: false
             },
             data: {
                 src: 'app/data/*',

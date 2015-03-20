@@ -148,7 +148,7 @@
             "content": "EM Frame",
             "position": "Team Leader",
             "description": "Responsible for managing a team of developers, gathering requirements, planning and writing specifications for new features, participating in teleconferences.",
-            "technologies": ["C++", "Java", "CORBA", "Continuous Integration", "SVN", "Maven", "Ant","Scrum"]
+            "technologies": ["C++", "Java", "CORBA", "Continuous Integration", "SVN", "Maven", "Ant", "Scrum"]
         },
         {
             "id": 2,
@@ -197,7 +197,7 @@
             "icon": "fa-music"
         },
         {
-            "name": "Web",
+            "name": "WebDev",
             "icon": "fa-html5"
         },
         {

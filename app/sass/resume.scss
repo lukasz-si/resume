@@ -17,6 +17,13 @@ $screen-sm-max: ($screen-md-min - 1);
 $screen-lg-min: 1200px;
 $screen-md-max: ($screen-lg-min - 1);
 
+@font-face {
+    font-family: 'diavlo';
+    src: url('../fonts/diavlo/Diavlo_Book.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @import "font-awesome/font-awesome";
 @import "_animate";
 @import "bootstrap/_bootstrap";
@@ -34,6 +41,37 @@ $screen-md-max: ($screen-lg-min - 1);
 #resume {
 
     background-color: $bodyBackgroundColor;
+    font-family: "diavlo", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+    h1 {
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    // Changes Highlight color
+    ::-moz-selection {
+        background: #ddd;
+        color: #111;
+    }
+    ::selection {
+        background: #ddd;
+        color: #111;
+    }
+
+    .no-selection {
+        // Changes Highlight color
+        ::-moz-selection {
+            background: none transparent;
+            color: inherit;
+            text-shadow: inherit;
+        }
+        ::selection {
+            background: none transparent;
+            color: inherit;
+            text-shadow: inherit;
+        }
+    }
 
     .main-wrapper {
         opacity: 0;
@@ -120,7 +158,7 @@ $screen-md-max: ($screen-lg-min - 1);
     }
 
     .fa-gears {
-        color: #800e00;
+        color: #6dc0ff;
     }
 
     .fa-cubes {

@@ -4,7 +4,7 @@
             "id": "tieto",
             "name": "Tieto",
             "content": "Tieto",
-            "className": "tieto",
+            "className": "tieto company",
             "subgroupOrder": "start",
             "start": "2005-08-01",
             "end": ""
@@ -13,7 +13,7 @@
             "id": "meelogic",
             "name": "Meelogic",
             "content": "Meelogic",
-            "className": "meelogic",
+            "className": "meelogic company",
             "subgroupOrder": "start",
             "start": "2005-08-01",
             "end": ""
@@ -22,7 +22,7 @@
             "id": "freelance",
             "name": "Freelance / OpenSource",
             "content": "Freelance / OpenSource",
-            "className": "freelance",
+            "className": "freelance company",
             "subgroupOrder": "start",
             "start": "2005-08-01",
             "end": ""
@@ -106,7 +106,7 @@
             "position": "Frontend Developer",
             "description": "Website designed to rent motorhomes. The application supports all devices – desktops, tablets and mobile phones (responsive design). Twitter Bootstrap framework provides modern layout. User interactive interface is provided by JavaScript frameworks. Project management methodology is Scrum.",
             "website": "http://www.campanda.com/",
-            "technologies": ["JavaScript", "jQuery", "RequireJS", "Underscore", "Twitter Bootstrap", "PHP", "Zend Framework 2", "HTML5", "CSS5", "Less", "Git", "GitFlow", "REST", "Scrum"]
+            "technologies": ["JavaScript", "jQuery", "RequireJS", "Underscore", "Twitter Bootstrap", "PHP", "Zend Framework 2", "HTML5", "CSS5", "Less", "Git", "GitFlow", "REST", "Scrum", "Selenium"]
         },
 
 
@@ -148,7 +148,7 @@
             "content": "EM Frame",
             "position": "Team Leader",
             "description": "Responsible for managing a team of developers, gathering requirements, planning and writing specifications for new features, participating in teleconferences.",
-            "technologies": ["C++", "Java", "CORBA", "Continuous Integration", "SVN", "Maven", "Ant","Scrum"]
+            "technologies": ["C++", "Java", "CORBA", "Continuous Integration", "SVN", "Maven", "Ant", "Scrum"]
         },
         {
             "id": 2,
@@ -197,7 +197,7 @@
             "icon": "fa-music"
         },
         {
-            "name": "Web",
+            "name": "WebDev",
             "icon": "fa-html5"
         },
         {
