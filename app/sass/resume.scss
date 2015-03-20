@@ -7,6 +7,8 @@ $homeBackgroundColor: #efefef;
 $timelineBackgroundColor: #fafafa;
 $projectsBackgroundColor: #efefef;
 $skillsBackgroundColor: #fafafa;
+$linksBackgroundColor: #efefef;
+
 $boxShadowLine: 0 -1px 0 rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.6);
 $boxShadowLineDark: 0 -1px 0 rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.6);
 
@@ -37,6 +39,7 @@ $screen-md-max: ($screen-lg-min - 1);
 @import "_sunlight";
 @import "_background-code";
 @import "_footer";
+@import "_links";
 
 #resume {
 
@@ -194,7 +197,7 @@ $screen-md-max: ($screen-lg-min - 1);
     }
 
     .fa-beer {
-        color: #b89400;
+        color: #cca700;
     }
 
     .fa-book {
