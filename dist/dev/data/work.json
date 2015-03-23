@@ -4,7 +4,7 @@
             "id": "tieto",
             "name": "Tieto",
             "content": "Tieto",
-            "className": "tieto company",
+            "className": "tieto company-timeline",
             "subgroupOrder": "start",
             "start": "2005-08-01",
             "end": ""
@@ -13,7 +13,7 @@
             "id": "meelogic",
             "name": "Meelogic",
             "content": "Meelogic",
-            "className": "meelogic company",
+            "className": "meelogic company-timeline",
             "subgroupOrder": "start",
             "start": "2005-08-01",
             "end": ""
@@ -22,7 +22,7 @@
             "id": "freelance",
             "name": "Freelance / OpenSource",
             "content": "Freelance / OpenSource",
-            "className": "freelance company",
+            "className": "freelance company-timeline",
             "subgroupOrder": "start",
             "start": "2005-08-01",
             "end": ""

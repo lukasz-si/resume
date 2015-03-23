@@ -33,25 +33,19 @@
         <div class="col-sm-10 col-sm-offset-1">
             <div class="project" ng-repeat="project in projects | filter:projectFilter.filter | orderBy:'start':true as results">
                 <div class="row {{getCompany(project.group).className}}">
-                    <div class="col-md-3 brand" ng-bind-html="trustAsHtml(getCompany(project.group).content)"></div>
+                    <div class="col-md-3 company" ng-bind-html="trustAsHtml(getCompany(project.group).content)"></div>
                     <div class="col-md-5">
                         <div class="">
-                            <h3>{{project.content}}</h3>
-                            <h4><a ng-href="{{project.website}}" target="_blank">{{project.website}}</a></h4>
-                            <h5>{{project.position}}</h5>
-
-                            <div>
-                                <span>{{project.start}} - {{project.end}}</span>
-                            </div>
-                            <div>
-                                <span>{{project.description}}</span>
-                            </div>
+                            <div class="name">{{project.content}}</div>
+                            <div class="website">
+                                <a ng-href="{{project.website}}" target="_blank">{{project.website}}</a></div>
+                            <div class="position">{{project.position}}</div>
+                            <div class="date">{{project.start}} - {{project.end}}</div>
+                            <div class="description">{{project.description}}</div>
                         </div>
                     </div>
                     <div class="col-md-4 technologies">
-                        <div class="technology">
-                            {{project.technologies.slice().join(', ')}}
-                        </div>
+                        {{project.technologies.slice().join(', ')}}
                     </div>
                 </div>
             </div>

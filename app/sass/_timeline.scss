@@ -46,18 +46,18 @@
         }
     }
 
-    .company {
+    .company-timeline {
         text-align: center;
         padding: 5px 5px 0px;
 
     }
 
-    .technology {
-        float: left;
-        margin-right: 5px;
-    }
+//    .technology {
+//        float: left;
+//        margin-right: 5px;
+//    }
 
-    .project-description {
+    .project {
 
         &.ng-enter,
         &.ng-move {

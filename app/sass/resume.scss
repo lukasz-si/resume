@@ -2,6 +2,9 @@
 // background: url("../images/bg1.jpg") no-repeat fixed center center / cover  rgba(0, 0, 0, 0)
 $navbarHeight: 78px;
 $sectionPadding: 30px 0 0 30px;
+$projectBottomPadding: 5px;
+
+
 $bodyBackgroundColor: #282828;
 $homeBackgroundColor: #efefef;
 $timelineBackgroundColor: #fafafa;
@@ -148,6 +151,32 @@ $screen-md-max: ($screen-lg-min - 1);
             position: relative;
             display: table-cell;
             vertical-align: middle;
+        }
+    }
+
+    .project {
+        text-align: left;
+
+        .company {
+            font-size: 24px;
+        }
+        .name {
+            font-weight: bold;
+            font-size: 20px;
+//            padding-bottom: $projectBottomPadding;
+        }
+        .website {
+//            padding-bottom: $projectBottomPadding;
+        }
+        .position {
+            font-size: 18px;
+//            padding-bottom: $projectBottomPadding;
+        }
+        .date {
+            padding-bottom: $projectBottomPadding;
+        }
+        .description {
+            padding-bottom: $projectBottomPadding;
         }
     }
 
