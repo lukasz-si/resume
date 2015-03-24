@@ -18,18 +18,16 @@
     <div id="timeline-container" class="wow fadeIn" data-wow-delay="0.3s" data-wow-duration="1s"></div>
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <div class="row">
-                <div class="project col-md-6" ng-repeat="selectedProject in selectedProjects track by $index">
-                    <div class="company">{{getCompany(selectedProject.group).name}}</div>
-                    <div class="name">{{selectedProject.contentParsed}}</div>
-                    <div class="website">
-                        <a ng-href="{{selectedProject.website}}" target="_blank">{{selectedProject.website}}</a></div>
-                    <div class="position">{{selectedProject.position}}</div>
-                    <div class="date">{{selectedProject.start}}{{(selectedProject.end ? ' - ' : '') + selectedProject.end}}{{selectedProject.months}}</div>
-                    <div class="description">{{selectedProject.description}}</div>
-                    <div>Technologies:</div>
-                    <div class="technologies">{{selectedProject.technologies.slice().join(', ')}}</div>
-                </div>
+            <div class="project" ng-repeat="selectedProject in selectedProjects track by $index">
+                <div class="company">{{getCompany(selectedProject.group).name}}</div>
+                <div class="name">{{selectedProject.contentParsed}}</div>
+                <div class="website">
+                    <a ng-href="{{selectedProject.website}}" target="_blank">{{selectedProject.website}}</a></div>
+                <div class="position">{{selectedProject.position}}</div>
+                <div class="date">{{selectedProject.start}}{{(selectedProject.end ? ' - ' : '') + selectedProject.end}}{{selectedProject.months}}</div>
+                <div class="description">{{selectedProject.description}}</div>
+                <div>Technologies:</div>
+                <div class="technologies">{{selectedProject.technologies.slice().join(', ')}}</div>
             </div>
         </div>
     </div>

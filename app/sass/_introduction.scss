@@ -2,6 +2,12 @@ $lettersCellWidth: 35px;
 
 #home {
 
+    .container-wrapper {
+        h3 {
+            margin-top: 40px;
+        }
+    }
+
     .container-wrapper, .header-padding {
         background-color: $homeBackgroundColor;
     }
@@ -45,20 +51,43 @@ $lettersCellWidth: 35px;
 
         .hobby-wrapper {
             text-align: center;
+            float: left;
+
+            @media (max-width: $screen-xs) {
+                width: 100%;
+            }
+
+            @media (min-width: $screen-xs + 1) and (max-width: 640px) {
+                width: 50%;
+            }
+
+            @media (min-width: 641px) and (max-width: $screen-sm-max) {
+                width: 33%;
+            }
+
+            @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                width: 25%;
+            }
+
+            @media (min-width: $screen-lg) {
+                width: 20%;
+            }
 
             .hobby {
                 display: inline-block;
-                padding-top: 10px;
+                padding-top: 12px;
                 margin-top: 20px;
                 border: 3px solid #a0a0a0;
                 border-radius: 50%;
                 height: 100px;
                 width: 100px;
                 text-align: center;
+                font-size: 14px;
 
                 span {
-//                    margin-bottom: 7px;
+                    margin-bottom: 4px;
                     display: block;
+                    //                    font-size: 20px;
                 }
             }
         }

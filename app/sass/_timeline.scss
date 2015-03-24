@@ -38,11 +38,12 @@
     .navigation-buttons {
         margin-bottom: 5px;
 
-        button:active, button:focus {
-            background-color: inherit;
+        button, button:active, button:focus {
+            background-color: $timelineBackgroundColor;
         }
         button:hover {
-            background-color: $gray-lighter;
+            background-color: $gray-light;
+            color: $timelineBackgroundColor;
         }
     }
 
@@ -52,12 +53,14 @@
 
     }
 
-//    .technology {
-//        float: left;
-//        margin-right: 5px;
-//    }
+    //    .technology {
+    //        float: left;
+    //        margin-right: 5px;
+    //    }
 
     .project {
+
+        padding: 20px;
 
         &.ng-enter,
         &.ng-move {
@@ -82,5 +85,4 @@
             opacity: 0;
         }
     }
-
 }

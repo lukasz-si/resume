@@ -15,36 +15,27 @@
         }
     }
     .project {
-//        border-bottom-color: #d7dddd;
-//        border-bottom-width: 2px;
-//        border-bottom-style: solid;
-//        padding-bottom: 25px;
+        //        border-bottom-color: #d7dddd;
+        //        border-bottom-width: 2px;
+        //        border-bottom-style: solid;
+        //        padding-bottom: 25px;
         padding: 15px 0;
-        box-shadow: $boxShadowLine;
 
-        &:last-child {
-//            border-bottom-style: none;
-            box-shadow: none;
-        }
-
-        &:nth-child {
-
-        }
         .company {
             text-align: center;
-//            padding: 10px 0;
+            //            padding: 10px 0;
         }
-//        .freelance .brand span {
-//            font-size: 40px;
-//            color: #38607d;
-//        }
-//        .tieto .brand img {
-//            width: 60px;
-//            height: 60px;
-//            background-color: #63b3e3;
-//        }
-//        .meelogic .brand img {
-//        }
+        //        .freelance .brand span {
+        //            font-size: 40px;
+        //            color: #38607d;
+        //        }
+        //        .tieto .brand img {
+        //            width: 60px;
+        //            height: 60px;
+        //            background-color: #63b3e3;
+        //        }
+        //        .meelogic .brand img {
+        //        }
 
         &.ng-enter,
         &.ng-leave,

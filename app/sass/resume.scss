@@ -4,7 +4,6 @@ $navbarHeight: 78px;
 $sectionPadding: 30px 0 0 30px;
 $projectBottomPadding: 5px;
 
-
 $bodyBackgroundColor: #282828;
 $homeBackgroundColor: #efefef;
 $timelineBackgroundColor: #fafafa;
@@ -47,7 +46,7 @@ $screen-md-max: ($screen-lg-min - 1);
 #resume {
 
     background-color: $bodyBackgroundColor;
-    font-family: "diavlo", Arial, Helvetica, sans-serif;
+    font-family: Verdana, Arial, sans-serif; //"diavlo", Arial, Helvetica, sans-serif;
     font-size: 16px;
 
     h1 {
@@ -157,20 +156,27 @@ $screen-md-max: ($screen-lg-min - 1);
     .project {
         text-align: left;
 
+        box-shadow: $boxShadowLine;
+
+        &:last-child {
+            box-shadow: none;
+        }
+
         .company {
             font-size: 24px;
+            text-align: center;
         }
         .name {
             font-weight: bold;
             font-size: 20px;
-//            padding-bottom: $projectBottomPadding;
+            //            padding-bottom: $projectBottomPadding;
         }
         .website {
-//            padding-bottom: $projectBottomPadding;
+            //            padding-bottom: $projectBottomPadding;
         }
         .position {
             font-size: 18px;
-//            padding-bottom: $projectBottomPadding;
+            //            padding-bottom: $projectBottomPadding;
         }
         .date {
             padding-bottom: $projectBottomPadding;
