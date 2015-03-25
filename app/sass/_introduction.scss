@@ -47,6 +47,30 @@ $lettersCellWidth: 35px;
         }
     }
 
+    .svg-poland {
+        width: 100%;
+        overflow: visible;
+
+        g {
+            //            fill: #94add6;
+            fill-opacity: 0;
+//            stroke: linear-gradient(to bottom, black 0%, white 100%);
+            stroke-opacity: 1;
+            stroke-width: 5px;
+
+//            path {
+//                fill: #94add6;
+//                fill-opacity: 1;
+//                fill-rule: nonzero;
+//                stroke: #94add6;
+//                stroke-width: 0.99999952px;
+//                stroke-linecap: butt;
+//                stroke-linejoin: miter;
+//                stroke-opacity: 1
+//            }
+        }
+    }
+
     .hobbies {
 
         .hobby-wrapper {
