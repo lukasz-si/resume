@@ -41,7 +41,7 @@ $lettersCellWidth: 35px;
                 color: #dcdcdc;
 
                 &.letters-cell-marked {
-                    color: #d24837;
+                    color: $redColor;
                 }
             }
         }
@@ -69,7 +69,22 @@ $lettersCellWidth: 35px;
         }
     }
 
+    .area-of-interest {
+        [class*="fa-"] {
+            color: $redColor;
+        }
+    }
+
+    .education {
+        [class*="fa-"] {
+            color: $redColor;
+        }
+    }
+
     .hobbies {
+        [class*="fa-"] {
+            color: $redColor;
+        }
 
         .hobby-wrapper {
             text-align: center;
@@ -99,12 +114,13 @@ $lettersCellWidth: 35px;
                 display: inline-block;
                 padding-top: 12px;
                 margin-top: 20px;
-                border: 3px solid #a0a0a0;
+                border: 3px solid $redColor;
                 border-radius: 50%;
                 height: 100px;
                 width: 100px;
                 text-align: center;
                 font-size: 14px;
+                color: #902214;
 
                 span {
                     margin-bottom: 4px;
@@ -130,13 +146,15 @@ $lettersCellWidth: 35px;
 
     .about-me {
         padding: 20px 0;
+        border-top: $redBorder !important;
+        border-bottom: $redBorder;
 
         .header {
             font-size: 18px;
         }
 
         .quote-margin {
-            margin: 0 20px 20px 0;
+            margin-right: 20px;
         }
     }
 }

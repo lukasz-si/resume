@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Resume</title>
 
@@ -9,8 +10,39 @@
 
     %%BASE_SCRIPT%%
 
+    <!--[if lt IE 10]>
+    <style>
+        #background-code, .main-wrapper {
+            display: none !important;
+        }
+
+        #old-browser-panel {
+            display: block !important;
+            text-align: center;
+            color: #bbbbbb;
+        }
+    </style><![endif]-->
+
+    <noscript>
+        <style>
+            #background-code, .main-wrapper {
+                display: none !important;
+            }
+
+            .noscriptPanel {
+                text-align: center;
+                color: #bbbbbb;
+            }
+        </style>
+    </noscript>
 </head>
 <body id="resume">
+
+<noscript>
+    <div class="noscriptPanel">
+        <h1>Please switch on JavaScript</h1>
+    </div>
+</noscript>
 
 <div class="loader-wrapper">
     <div class="spinner">
@@ -55,11 +87,24 @@
             <div class="row">
                 <div class="col-sm-5">
                     <div class="clearfix">
-                        <span class="fa fa-quote-left fa-3x pull-left quote-margin"></span> I'm front-end web developer based in Szczecin, Poland.
+                        <span class="fa fa-quote-left fa-3x pull-left quote-margin"></span>
+
+                        <p>I'm front-end web developer based in Szczecin, Poland. I develop in Javascript, Java and PHP.</p>
+
+                        <p>I like sport, especially football. I play in an amateur football league called Halp.</p>
+
+                        Individual characteristics:
+                        <ul>
+                            <li>ability of fast learning</li>
+                            <li>scrupulosity</li>
+                            <li>quality orientation</li>
+                            <li>ability of analytical thinking</li>
+                        </ul>
+
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <svg class="svg-poland" viewBox="0 0 800 600">
+                    <svg class="svg-poland" viewBox="0 0 600 570">
                         <defs>
                             <linearGradient id="svg-poland-color" x1="100%" y1="30%" x2="100%" y2="70%" gradientUnits="objectBoundingBox">
                                 <stop offset="0%" style="stop-color:rgb(255, 255, 255); stop-opacity:1"></stop>
@@ -99,53 +144,38 @@
     <div class="container-wrapper first-wrapper">
         <div class="container">
 
-            <h3>Area of interest</h3>
+            <div class="area-of-interest">
+                <h3>Area of interest</h3>
 
-            <div class="well">
-
-                <div class="row intro-row">
-                    <div class="col-sm-5 col-sm-offset-1 col-sm-push-5">
-                        <span class="fa fa-5x fa-html5"></span> <span class="fa fa-5x fa-css3"></span>
+                <div class="well">
+                    <div class="row intro-row">
+                        <div class="col-sm-5 col-sm-offset-1 col-sm-push-5">
+                            <span class="fa fa-5x fa-html5"></span> <span class="fa fa-5x fa-css3"></span>
+                        </div>
+                        <div class="col-sm-5 col-sm-pull-5 intro-col">
+                            <p class="bold">Single Page Web Applications</p>
+                            Web apps that load a single HTML page and dynamically update that page as the user interacts with the app.
+                        </div>
+                        <div class="border clearfix col-sm-10 col-sm-offset-1"></div>
                     </div>
-                    <div class="col-sm-5 col-sm-pull-5 intro-col">
-                        Single Page Web Applications - are Web apps that load a single HTML page and dynamically update that page as the user interacts with the app (using JavasScript OOP, jQuery, HTML5, CSS3).
+                    <div class="row intro-row">
+                        <div class="col-sm-5 col-sm-offset-1">
+                            <span class="fa fa-3x fa-mobile"></span> <span class="fa fa-4x fa-tablet"></span>
+                            <span class="fa fa-5x fa-desktop"></span>
+                        </div>
+                        <div class="col-sm-5">
+                            <p class="bold">Responsive Web Design (RWD)</p>
+                            The concept of developing a website design in a manner that helps the layout to get changed according to the user’s computer screen resolution: mobile phone, tablet or desktop.
+                        </div>
+                        <div class="border clearfix col-sm-10 col-sm-offset-1"></div>
                     </div>
-                    <div class="border clearfix col-sm-10 col-sm-offset-1"></div>
-                </div>
-                <div class="row intro-row">
-                    <div class="col-sm-5 col-sm-offset-1">
-                        <span class="fa fa-3x fa-mobile"></span> <span class="fa fa-4x fa-tablet"></span>
-                        <span class="fa fa-5x fa-desktop"></span>
-                    </div>
-                    <div class="col-sm-5">
-                        Responsive Web Design (RWD) - the concept of developing a website design in a manner that helps the layout to get changed according to the user’s computer screen resolution: mobile phone, tablet or desktop.
-                    </div>
-                    <div class="border clearfix col-sm-10 col-sm-offset-1"></div>
-                </div>
-                <div class="row intro-row">
-                    <div class="col-sm-5 col-sm-offset-1 col-sm-push-5">
-                        <span class="fa fa-5x fa-cubes"></span>
-                    </div>
-                    <div class="col-sm-5 col-sm-pull-5 intro-col">
-                        Modularity - modules are abstractions to make software easier to write and to maintain. AngularJS provides Model View Controller (MVC) architecture. Sass is a great tool to generate one CSS file. RequireJS.
-                    </div>
-                    <div class="border clearfix col-sm-10 col-sm-offset-1"></div>
-                </div>
-                <div class="row intro-row">
-                    <div class="col-sm-5 col-sm-offset-1">
-                        <span class="fa fa-5x fa-gears"></span>
-                    </div>
-                    <div class="col-sm-5">
-                        Website Optimization - join all JavaScript files into one via r.js tool.
-                    </div>
-                    <div class="border clearfix col-sm-10 col-sm-offset-1"></div>
-                </div>
-                <div class="row intro-row">
-                    <div class="col-sm-5 col-sm-offset-1 col-sm-push-5">
-                        <span class="fa fa-5x fa-shield"></span>
-                    </div>
-                    <div class="col-sm-5 col-sm-pull-5 intro-col">
-                        Web Security
+                    <div class="row intro-row">
+                        <div class="col-sm-5 col-sm-offset-1 col-sm-push-5">
+                            <span class="fa fa-5x fa-shield"></span>
+                        </div>
+                        <div class="col-sm-5 col-sm-pull-5 intro-col">
+                            <p class="bold">Web Security</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -160,7 +190,7 @@
                             <span class="fa fa-5x fa-graduation-cap"></span>
                         </div>
                         <div class="col-sm-8">
-                            <h4>Technical University of Szczecin</h4>
+                            <p class="bold">Technical University of Szczecin</p>
 
                             <div>Master of Science (MSc), Programming Techniques and Information Systems</div>
                             <div>2006 - 2008</div>
@@ -173,7 +203,7 @@
                             <span class="fa fa-5x fa-graduation-cap"></span>
                         </div>
                         <div class="col-sm-8">
-                            <h4>Technical University of Szczecin</h4>
+                            <p class="bold">Technical University of Szczecin</p>
 
                             <div>Bachelor of Science (BSc), Computer Software Engineering</div>
                             <div>2002 - 2006</div>
@@ -186,7 +216,7 @@
                             <span class="fa fa-5x fa-group"></span>
                         </div>
                         <div class="col-sm-8">
-                            <h4>Technical collage of Electrical Engineering</h4>
+                            <p class="bold">Technical collage of Electrical Engineering</p>
 
                             <div>1997 - 2002</div>
                             <div>Thesis theme: Car amplifier with digital control (MCS-51)</div>
@@ -293,12 +323,15 @@
                         return (year > "2015") ? "-" + year : "";
                     }
                     document.write(getYear());
-                </script> <a href="mailto:l.sitnik@gmail.com">Łukasz Sitnik</a>
+                </script> <a href="mailto:l.sitnik@gmail.com">Lukasz Sitnik</a>
                 </span>
         </div>
     </div>
 </section>
 </div>
+</div>
+<div id="old-browser-panel" style="display: none">
+    You are using old browser.<br> Please install a newer version of Internet Explorer, Firefox or Chrome.
 </div>
 </body>
 </html>

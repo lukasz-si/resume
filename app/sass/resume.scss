@@ -3,6 +3,9 @@
 $navbarHeight: 78px;
 $sectionPadding: 30px 0 0 30px;
 $projectBottomPadding: 5px;
+$redColor: #d24837;
+$redBorder: 4px solid $redColor;
+
 
 $bodyBackgroundColor: #282828;
 $homeBackgroundColor: #efefef;
@@ -97,7 +100,7 @@ $screen-md-max: ($screen-lg-min - 1);
     }
 
     .container-wrapper {
-        border-top: 4px solid #d24837;
+        border-top: $redBorder;
 
         &.first-wrapper {
             border-top: none;
@@ -131,6 +134,10 @@ $screen-md-max: ($screen-lg-min - 1);
 
     a:hover, a:active {
         text-decoration: none;
+    }
+
+    .bold {
+        font-weight: bold;
     }
 
     /* Circles */
@@ -186,13 +193,19 @@ $screen-md-max: ($screen-lg-min - 1);
         }
     }
 
+    /* Buttons */
+    .btn-default:active, .btn-default.active {
+        border-color: $redColor;
+        color: $redColor;
+    }
+
     /* Icons */
-    .fa-html5 {
-        color: #e35600;
+/*    .fa-html5 {
+        color: $redColor;
     }
 
     .fa-css3 {
-        color: #2654b3;
+        color: $redColor;
     }
 
     .fa-gears {
@@ -204,19 +217,19 @@ $screen-md-max: ($screen-lg-min - 1);
     }
 
     .fa-shield {
-        color: #ba9800;
+        color: $redColor;
     }
 
     .fa-desktop {
-        color: #020066;
+        color: $redColor;
     }
 
     .fa-tablet {
-        color: #020053;
+        color: $redColor;
     }
 
     .fa-mobile {
-        color: #020037;
+        color: $redColor;
     }
 
     .fa-graduation-cap {
@@ -253,5 +266,5 @@ $screen-md-max: ($screen-lg-min - 1);
 
     .fa-futbol-o {
         color: #52506d;
-    }
+    }*/
 }

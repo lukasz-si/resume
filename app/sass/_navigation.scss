@@ -1,9 +1,8 @@
 #navigation {
     $navbarColor: #f8f8f8;
 
-    text-transform: uppercase;
     border-bottom: 4px solid #a4a4a4;
-    border-top: 4px solid #d24837;
+    border-top: $redBorder;
     background-color: rgba(1, 1, 1, 0.8);
     color: $navbarColor;
 
@@ -20,13 +19,15 @@
     li {
         font-size: 15px;
         text-align: center;
+        text-transform: uppercase;
 
         a {
             color: $navbarColor;
+            text-transform: uppercase;
         }
 
         &.current a, a:hover {
-            color: #d24837;
+            color: $redColor;
         }
 
         @media (max-width: $screen-xs-max) {
