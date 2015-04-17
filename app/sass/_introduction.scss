@@ -69,6 +69,10 @@ $lettersCellWidth: 35px;
         }
     }
 
+    .well {
+        padding-bottom: 35px;
+    }
+
     .area-of-interest {
         [class*="fa-"] {
             color: $redColor;
