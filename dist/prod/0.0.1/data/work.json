@@ -4,7 +4,7 @@
             "id": "tieto",
             "name": "Tieto",
             "content": "Tieto",
-            "className": "tieto company",
+            "className": "tieto company-timeline",
             "subgroupOrder": "start",
             "start": "2005-08-01",
             "end": ""
@@ -13,22 +13,44 @@
             "id": "meelogic",
             "name": "Meelogic",
             "content": "Meelogic",
-            "className": "meelogic company",
+            "className": "meelogic company-timeline",
             "subgroupOrder": "start",
             "start": "2005-08-01",
             "end": ""
         },
         {
             "id": "freelance",
-            "name": "Freelance / OpenSource",
-            "content": "Freelance / OpenSource",
-            "className": "freelance company",
+            "name": "Freelance / OpenSource / Trainings",
+            "content": "Freelance /<br> OpenSource /<br> Trainings",
+            "className": "freelance company-timeline",
             "subgroupOrder": "start",
             "start": "2005-08-01",
             "end": ""
         }
     ],
     "projects": [
+        {
+            "id": 27,
+            "start": "2015-03-05",
+            "end": "2015-03-06",
+            "group": "freelance",
+            "content": "Web Security Training",
+            "position": "",
+            "description": "Workshop that covered web attacks detection and prevention. ",
+            "website": "",
+            "technologies": ["XSS", "CSRF", "SQL Injection", "Blind SQL Injection", "Session hijacking", "Clickjacking"]
+        },
+        {
+            "id": 26,
+            "start": "2015-01-11",
+            "end": "2015-02-31",
+            "group": "freelance",
+            "content": "Resume",
+            "position": "Frontend Developer",
+            "description": "Resume template which is built using AngularJS. This is Open Source project.",
+            "website": "http://github.com/lukasz-si/resume",
+            "technologies": ["JavaScript", "AngularJS", "jQuery", "RequireJS", "Grunt", "Bower", "NPM", "Git", "HTML5", "CSS3", "Sass"]
+        },
         {
             "id": 25,
             "start": "2015-01-01",
@@ -38,7 +60,7 @@
             "position": "Frontend Developer",
             "description": "JavaScript library which might be useful to show opening hours. It is very easy to use and configure. Supports AMD and non-AMD projects. Fully documented with demo examples.",
             "website": "http://github.com/lukasz-si/opening-hours",
-            "technologies": ["JavaScript", "jQuery", "RequireJS", "Grunt", "Bower", "NPM", "Git", "Jasmine", "Istanbul (code coverage)", "JSDoc", "HTML", "CSS", "Sass"]
+            "technologies": ["JavaScript", "jQuery", "RequireJS", "Grunt", "Bower", "NPM", "Git", "Jasmine", "Istanbul (code coverage)", "JSDoc", "HTML5", "CSS3", "Sass"]
         },
         {
             "id": 24,
@@ -87,15 +109,26 @@
 
 
         {
+            "id": 13,
+            "start": "2014-07-01",
+            "end": "",
+            "group": "meelogic",
+            "content": "DataLens",
+            "position": "Frontend Developer",
+            "description": "Single Page Web Application which is designed to visualize data on charts or maps. User interactive interface is provided by JavaScript frameworks. All libraries created for the project are fully documented, the libraries are also automatically tested during every build.",
+            "website": "http://datalens.here.com",
+            "technologies": ["JavaScript", "AngularJS", "jQuery", "RequireJS", "D3", "Grunt", "Bower", "NPM", "Jenkins", "Git", "Protractor", "Jasmine", "Istanbul (code coverage)", "JSDoc", "HTML5", "CSS3", "Sass", "Scrum"]
+        },
+        {
             "id": 12,
             "start": "2014-03-02",
-            "end": "2014-12-31",
+            "end": "2014-06-30",
             "group": "meelogic",
             "content": "The Cube",
             "position": "Frontend Developer",
-            "description": "Single Page Web Application which is designed to visualize data on charts or maps. User interactive interface is provided by JavaScript frameworks. All libraries created for the project are fully documented, the libraries are also automatically tested during every build.",
+            "description": "Single Page Web Application which is designed to visualize data on maps.",
             "website": "",
-            "technologies": ["JavaScript", "jQuery", "RequireJS", "D3", "Grunt", "Bower", "NPM", "Jenkins", "Git", "Jasmine", "Istanbul (code coverage)", "JSDoc", "HTML5", "CSS3", "Sass"]
+            "technologies": ["JavaScript", "jQuery", "RequireJS", "Jenkins", "Git", "HTML5", "CSS3"]
         },
         {
             "id": 11,
@@ -105,7 +138,7 @@
             "content": "Campanda",
             "position": "Frontend Developer",
             "description": "Website designed to rent motorhomes. The application supports all devices – desktops, tablets and mobile phones (responsive design). Twitter Bootstrap framework provides modern layout. User interactive interface is provided by JavaScript frameworks. Project management methodology is Scrum.",
-            "website": "http://www.campanda.com/",
+            "website": "http://www.campanda.com",
             "technologies": ["JavaScript", "jQuery", "RequireJS", "Underscore", "Twitter Bootstrap", "PHP", "Zend Framework 2", "HTML5", "CSS5", "Less", "Git", "GitFlow", "REST", "Scrum", "Selenium"]
         },
 
