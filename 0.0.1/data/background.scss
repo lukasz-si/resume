@@ -1,0 +1,85 @@
+#timeline {
+
+    .vis.timeline {
+        border-radius: 5px;
+        background-color: $timelineBackgroundColor;
+
+        .item.point {
+            cursor: pointer;
+            border: 1px solid transparent;
+
+            &.selected {
+                background-color: #f4f4f4;
+                border: 1px solid #8c9292;
+                border-radius: 4px;
+            }
+
+            .item.dot {
+                background-color: #f5fbfb;
+                border-color: #969c9c;
+
+                &.selected {
+                    background-color: #f5fbfb;
+                    border-color: #434949;
+                }
+            }
+        }
+    }
+
+    .container-wrapper {
+        background-color: $timelineBackgroundColor;
+        overflow: hidden;
+    }
+
+    .header-padding {
+        background-color: $homeBackgroundColor;
+    }
+
+    .navigation-buttons {
+        margin-bottom: 5px;
+
+        button:active, button:focus {
+            background-color: inherit;
+        }
+        button:hover {
+            background-color: $gray-lighter;
+        }
+    }
+
+    .company {
+        text-align: center;
+        padding: 5px 5px 0px;
+
+    }
+
+    .technology {
+        float: left;
+        margin-right: 5px;
+    }
+
+    .project-description {
+
+        &.ng-enter,
+        &.ng-move {
+            @include transition(0.5s linear all);
+        }
+
+        &.ng-enter,
+        &.ng-move {
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        &.ng-move.ng-move-active,
+        &.ng-enter.ng-enter-active {
+            opacity: 1;
+        }
+
+        &.ng-leave {
+            opacity: 1;
+        }
+        &.ng-leave.ng-leave-active {
+            opacity: 0;
+        }
+    }
+}
