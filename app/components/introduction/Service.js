@@ -8,20 +8,6 @@ define([
 ], function (ng, $, module) {
     'use strict';
 
-    module.factory('OnImageLoadService', ['$q', function ($q) {
-
-        var deferred = $q.defer();
-
-        return {
-            getPromise: function () {
-                return deferred.promise;
-            },
-            getDefer: function () {
-                return deferred;
-            }
-        };
-    }]);
-
     module.factory('LettersPromise', ['$q', function ($q) {
 
         var deferred = $q.defer();

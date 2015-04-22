@@ -24,8 +24,8 @@ define([
             'skillModule',
             'backgroundModule'
         ])
-        .run(['$q', '$timeout', 'OnImageLoadService', 'TimelinePromise', 'SkillPromise', 'LettersPromise', 'BackgroundPromise',
-            function ($q, $timeout, OnImageLoadService, TimelinePromise, SkillPromise, LettersPromise, BackgroundPromise) {
+        .run(['$q', '$timeout', 'TimelinePromise', 'SkillPromise', 'LettersPromise', 'BackgroundPromise',
+            function ($q, $timeout, TimelinePromise, SkillPromise, LettersPromise, BackgroundPromise) {
 
                 var sunlightOptions = {
                     lineNumbers: false

@@ -17,6 +17,7 @@ define([
                     $scope.projects = data.projects;
                     $scope.companies = data.companies;
                 });
+
             $scope.companies = [];
             $scope.technologies = technologies;
             $scope.projects = [];
@@ -55,7 +56,6 @@ define([
 
                 return company || {};
             }
-
         }
     ]);
 

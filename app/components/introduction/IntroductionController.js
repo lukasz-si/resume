@@ -10,19 +10,12 @@ define([
     module.controller('IntroductionController', ['$scope', '$http', '$log', '$sce',
         function ($scope, $http, $log, $sce) {
 
-//            var index = (Math.floor((Math.random() * 100)) % imageList.length),
-//                name = imageList[index];
-//            $log.log(name + ' : ' + index)
-//
-//            $scope.imageName = name;
-
             $http.get('%%VERSION%%/data/work.json', {cache: true})
                 .success(function (data) {
                     $log.log("work.json loaded - intro");
 
                     $scope.hobbies = data.hobbies;
                 });
-
         }
     ]);
 
@@ -41,6 +34,5 @@ define([
     ]);
 
     return module;
-
 });
 

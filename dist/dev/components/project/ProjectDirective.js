@@ -9,7 +9,6 @@ define([
 
         return {
             restrict: 'A',
-//            controller: 'ProjectController',
             templateUrl: 'projects-template.html'
         }
     });

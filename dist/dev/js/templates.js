@@ -33,7 +33,7 @@ define(["angular"], function(ng) { ng.module("templates", []).run(["$templateCac
 
 
   $templateCache.put('skill-template.html',
-    "<div ng-controller=SkillController><h1>Skills</h1><br><div class=row><div class=\"col-sm-10 col-sm-offset-1\"><div class=row><div class=\"col-sm-3 wow fadeIn\" ng-repeat=\"skill in skills | orderBy:'level':true\" data-wow-delay=\"{{$index * 0.2}}s\"><div class=skill-wrapper><div>{{skill.name}}</div><input class=skill value={{skill.level}} data-fgcolor={{getColor(skill.level)}}></div></div></div></div></div></div>"
+    "<div ng-controller=SkillController><h1>Skills</h1><br><div class=row><div class=\"col-sm-10 col-sm-offset-1\"><div class=row><div class=\"col-sm-3 wow fadeIn\" ng-repeat=\"skill in skills | orderBy:'level':true\" data-wow-delay=\"{{$index * 0.1}}s\"><div class=skill-wrapper><div>{{skill.name}}</div><input class=skill value={{skill.level}} data-fgcolor={{getColor(skill.level)}}></div></div></div></div></div></div>"
   );
 
 

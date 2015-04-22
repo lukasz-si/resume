@@ -10,7 +10,6 @@ define([
 
         return {
             restrict: 'A',
-//            controller: 'NavigationController',
             templateUrl: 'navigation-template.html',
             link: function (scope, element, attrs) {
                 $(element).onePageNav({
