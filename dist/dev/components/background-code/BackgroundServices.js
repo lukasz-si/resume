@@ -22,11 +22,11 @@ define([
         };
     }]);
 
-    module.factory('BackgroundServices', ['$log', function ($log) {
-
-        return {
-        };
-    }]);
+//    module.factory('BackgroundServices', ['$log', function ($log) {
+//
+//        return {
+//        };
+//    }]);
 
     return module;
 });

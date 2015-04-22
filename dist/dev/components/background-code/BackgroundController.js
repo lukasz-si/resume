@@ -40,7 +40,9 @@ define([
 
             function resolveDefer() {
                 if (counter === 3) {
-                    BackgroundPromise.getDefer().resolve();
+                    $timeout(function () {
+                        BackgroundPromise.getDefer().resolve();
+                    }, 100);
                 }
             }
         }

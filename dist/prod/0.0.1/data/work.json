@@ -270,6 +270,22 @@
         {
             "name": "PHP",
             "level": 80
+        },
+        {
+            "name": "Grunt",
+            "level": 90
+        },
+        {
+            "name": "Sass",
+            "level": 80
+        },
+        {
+            "name": "Jasmine",
+            "level": 80
+        },
+        {
+            "name": "AngularJS",
+            "level": 80
         }
     ]
 }

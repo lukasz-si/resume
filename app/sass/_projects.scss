@@ -9,33 +9,27 @@
         margin-top: 10px;
         margin-bottom: 10px;
 
+        /* Buttons */
+        .btn-default {
+            overflow: hidden;
+
+            &:active, &.active {
+                border-color: $redColor;
+                color: $redColor;
+            }
+        }
+
         label {
             margin-top: 10px;
             margin-right: 5px;
         }
     }
     .project {
-        //        border-bottom-color: #d7dddd;
-        //        border-bottom-width: 2px;
-        //        border-bottom-style: solid;
-        //        padding-bottom: 25px;
         padding: 15px 0;
 
         .company {
             text-align: center;
-            //            padding: 10px 0;
         }
-        //        .freelance .brand span {
-        //            font-size: 40px;
-        //            color: #38607d;
-        //        }
-        //        .tieto .brand img {
-        //            width: 60px;
-        //            height: 60px;
-        //            background-color: #63b3e3;
-        //        }
-        //        .meelogic .brand img {
-        //        }
 
         &.ng-enter,
         &.ng-leave,
@@ -62,8 +56,6 @@
         }
 
     }
-    .technologies {
 
-    }
 
 }

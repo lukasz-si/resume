@@ -36,10 +36,10 @@
     }
 
     .navigation-buttons {
-        margin-bottom: 5px;
 
         button, button:active, button:focus {
             background-color: $timelineBackgroundColor;
+            margin-bottom: 5px;
         }
         button:hover {
             background-color: $gray-light;

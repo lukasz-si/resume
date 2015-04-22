@@ -31,7 +31,6 @@ define([
                             itemsLength = items.length,
                             selectedItems = [];
 
-
                         if (ng.isArray(items)) {
                             for (j = 0; j < itemsLength; j++) {
                                 for (i = $scope.projects.length; i--;) {
@@ -53,6 +52,11 @@ define([
                     $scope.companies = data.companies;
                     $scope.projects = projects;
                     $scope.technologies = data.technologies;
+
+                    TimelineServices.move(-0.4);
+                    $timeout(function () {
+                        TimelineServices.zoom(-0.4);
+                    }, 1000);
 
                     TimelinePromise.getDefer().resolve();
                 });
