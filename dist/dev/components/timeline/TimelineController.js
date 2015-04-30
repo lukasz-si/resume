@@ -94,7 +94,6 @@ define([
         }
     ]);
 
-
     return module;
 });
 

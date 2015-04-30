@@ -38,23 +38,6 @@ define([
             };
 
         return {
-//            convertStringToDate: function (value) {
-//                var project = ng.extend({}, value),
-//                    dateArray = project.start.split('-');
-//
-//                if (dateArray.length === 3) {
-//                    project.start = new Date(dateArray[0], dateArray[1], dateArray[2]);
-//                }
-//
-//                if (ng.isString(project.end)) {
-//                    dateArray = project.end.split('-');
-//                    if (dateArray.length === 3) {
-//                        project.end = new Date(dateArray[0], dateArray[1], dateArray[2]);
-//                    }
-//                }
-//
-//                return project;
-//            },
             calculateMonths: function (start, end) {
                 var startDate = moment(start),
                     endDate = moment(end),

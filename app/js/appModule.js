@@ -6,6 +6,7 @@ define([
     'sunlight.javascript',
     'sunlight.css',
     'sunlight.xml',
+    'jquery.knob',
     'components/timeline/main',
     'components/project/main',
     'components/navigation/main',
@@ -38,6 +39,15 @@ define([
 
                         sunlight.highlightAll(sunlightOptions);
 
+                    })
+                    .then(function () {
+                        $('#skills').find('.skill').knob({
+                            width: 100,
+                            height: 100,
+                            readOnly: true,
+                            angleOffset: -120,
+                            angleArc: 250
+                        });
                     })
                     .then(function () {
                         $('.main-wrapper').animate({

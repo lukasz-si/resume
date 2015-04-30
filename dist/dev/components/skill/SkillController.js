@@ -3,7 +3,6 @@ define([
     'jquery',
     'components/skill/module',
     'chroma-js',
-    'jquery.knob',
     'components/skill/SkillServices'
 ], function (ng, $, module, chroma) {
     'use strict';
@@ -18,24 +17,11 @@ define([
 
                     var skills = ng.isArray(data.skills) ? data.skills.slice() : [];
 
-                    $log.log("work.json loaded - skill");
+                    $log.log("work.json loaded - skills");
 
                     $scope.skills = skills;
 
-                    $timeout(function () {
-
-                        $('#skills').find('.skill').knob({
-                            width: 100,
-                            height: 100,
-                            readOnly: true,
-                            angleOffset: -120,
-                            angleArc: 250
-                        });
-
-                        SkillPromise.getDefer().resolve();
-
-                    }, 100);
-
+                    SkillPromise.getDefer().resolve();
                 });
             $scope.skills = [];
             $scope.getColor = function (level) {
