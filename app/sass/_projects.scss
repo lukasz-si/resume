@@ -5,6 +5,12 @@
         background-color: $projectsBackgroundColor;
     }
 
+    @media(max-width: $screen-xs-max) {
+        .header-padding.background-code-header {
+            background-color: $projectsBackgroundColor;
+        }
+    }
+
     .button-group {
         margin-top: 10px;
         margin-bottom: 10px;

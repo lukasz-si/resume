@@ -22,7 +22,7 @@ $lettersCellWidth: 35px;
             overflow: hidden;
 
             @media (max-width: $screen-sm-max) {
-                text-indent: -($lettersCellWidth * 4 - 5);
+                text-indent: -($lettersCellWidth * 4 - 7);
                 white-space: nowrap;
             }
 
@@ -38,7 +38,7 @@ $lettersCellWidth: 35px;
                 display: inline-block;
                 line-height: $lettersCellWidth;
                 font-size: $lettersCellWidth - 16px;
-                color: #CFCFCF;
+                color: #dbdbdb;
 
                 &.letters-cell-marked {
                     color: $redColor;

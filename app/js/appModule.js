@@ -50,12 +50,18 @@ define([
                         });
                     })
                     .then(function () {
-                        $('.main-wrapper').animate({
-                            opacity: 1
-                        }, 2000);
                         $('.loader-wrapper').remove();
 
-                        LettersPromise.getDefer().resolve();
+                        $timeout(function () {
+                            $('.main-wrapper').animate({
+                                opacity: 1
+                            }, 2000);
+
+                            $timeout(function () {
+                                LettersPromise.getDefer().resolve();
+                            }, 1000);
+
+                        }, 300);
                     });
             }]);
 

@@ -21,8 +21,10 @@ define([
         function ($scope, $http, $log, LettersService, LettersPromise) {
             $http.get('./data/letters.json', {cache: true})
                 .success(function (data) {
+
+                    $scope.rows = LettersService.generateRandomLetters(data);
+
                     LettersPromise.getPromise().then(function () {
-                        $scope.rows = LettersService.generateRandomLetters(data);
                         LettersService.setInterval($scope.rows);
                     });
                 });

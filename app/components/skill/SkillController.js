@@ -9,8 +9,8 @@ define([
 
     var scale = chroma.scale(['lightyellow', 'lightyellow', 'yellow', 'orange', 'red']);
 
-    module.controller('SkillController', ['$scope', '$http', 'SkillPromise', '$log', '$timeout',
-        function ($scope, $http, SkillPromise, $log, $timeout) {
+    module.controller('SkillController', ['$scope', '$http', 'SkillPromise', '$log',
+        function ($scope, $http, SkillPromise, $log) {
 
             $http.get('%%VERSION%%/data/work.json', {cache: true})
                 .success(function (data) {
