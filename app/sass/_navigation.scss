@@ -10,7 +10,10 @@
         padding-top: 13px;
         padding-bottom: 7px;
 
-        .navbar-brand, .navbar-brand:hover {
+        @media (max-width: $screen-xs-max) {
+            padding-left: 10px;
+        }
+        .navbar-text, .navbar-text:hover {
             color: $navbarColor;
             cursor: default;
         }

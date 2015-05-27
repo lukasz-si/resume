@@ -1,11 +1,12 @@
-<div id="navigation" class="navbar navbar-default navbar-fixed-top sticky-nav fixednav" role="navigation">
+<div id="navigation" class="navbar navbar-default navbar-fixed-top sticky-nav fixednav" role="navigation" ng-controller="NavigationController">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
                 <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <span class="navbar-brand">Lukasz Sitnik</span>
+            <p class="navbar-text navbar-left">Lukasz Sitnik</p>
+            <button type="button" id="print-resume" class="btn btn-default navbar-btn navbar-left visible-lg visible-md" ng-click="printResume()">Print</button>
         </div>
         <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
