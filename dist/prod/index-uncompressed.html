@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Resume</title>
 
-    <link href="0.0.4/css/resume.css" rel="stylesheet">
+    <link href="1.0.0/css/resume.css" rel="stylesheet">
 
-    <script src="0.0.4/js/resume.js"></script>
+    <script src="1.0.0/js/resume.js"></script>
 
     <!--[if lt IE 10]>
     <style>
@@ -67,17 +67,17 @@
     </div>
 </div>
 
-<div ui-background-component id="background-code"></div>
+<div ui-background-component id="background-code" class="hidden-print"></div>
 
 <div class="main-wrapper">
 
-<nav ui-navigation-component class="no-selection"></nav>
+<nav ui-navigation-component class="no-selection hidden-print"></nav>
 
 <div class="container-fluid container-extended">
 
 <section id="home" ng-controller="IntroductionController">
-    <div class="header-padding"></div>
-    <div class="container-wrapper first-wrapper">
+    <div class="header-padding hidden-print"></div>
+    <div class="container-wrapper first-wrapper hidden-print">
         <div class="container">
             <div ui-letters-component class="no-selection"></div>
         </div>
@@ -103,7 +103,7 @@
 
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 hidden-print">
                     <svg class="svg-poland" viewBox="0 0 600 570">
                         <defs>
                             <linearGradient id="svg-poland-color" x1="100%" y1="30%" x2="100%" y2="70%" gradientUnits="objectBoundingBox">
@@ -246,7 +246,7 @@
 </section>
 
 <!-- Timeline -->
-<section id="timeline" class="hidden-xs">
+<section id="timeline" class="hidden-xs hidden-print">
     <div class="header-padding"></div>
     <div class="container-wrapper background-code-header dark-background">
         <div class="container">
@@ -266,7 +266,7 @@
 </section>
 
 <!-- Skills -->
-<section id="skills">
+<section id="skills" class="hidden-print">
     <div class="header-padding"></div>
     <div class="container-wrapper background-code-header dark-background">
         <div class="container">
@@ -294,7 +294,7 @@
                                 <li><a href="http://campanda.com">Campanda</a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 hidden-print">
                             <div class="title">Used JS libraries</div>
                             <ul>
                                 <li><a href="http://getbootstrap.com/">Twitter Bootstrap</a></li>
@@ -315,7 +315,7 @@
 </section>
 
 <!-- Footer -->
-<section id="footer">
+<section id="footer" class="hidden-print">
     <div class="header-padding"></div>
     <div class="container-wrapper dark-background">
         <div class="container">
