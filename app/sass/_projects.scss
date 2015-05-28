@@ -35,6 +35,10 @@
 
         .company {
             text-align: center;
+
+            br {
+                display: none;
+            }
         }
 
         &.ng-enter,

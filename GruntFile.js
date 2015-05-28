@@ -163,6 +163,12 @@ module.exports = function (grunt) {
                 dest: 'dist/prod/<%= pkg.version %>/data/',
                 expand: true,
                 flatten: true
+            },
+            favicon: {
+                src: 'app/favicon.ico',
+                dest: 'dist/prod/',
+                expand: true,
+                flatten: true
             }
         },
         clean: {
@@ -222,6 +228,6 @@ module.exports = function (grunt) {
     // Default task.
     grunt.registerTask('default', ['dev', 'prod']);
 
-    grunt.registerTask('prod', ['clean:prod', 'sass', 'ngtemplates', 'requirejs', 'string-replace:prod', 'copy:fonts', 'copy:data', 'htmlmin']);
+    grunt.registerTask('prod', ['clean:prod', 'sass', 'ngtemplates', 'requirejs', 'string-replace:prod', 'copy:fonts', 'copy:data', 'copy:favicon', 'htmlmin']);
     grunt.registerTask('dev', ['clean:dev', 'sass', 'ngtemplates', 'string-replace:dev', 'copy:fonts-dev']);
 };
