@@ -6,7 +6,6 @@ define([
     'sunlight.javascript',
     'sunlight.css',
     'sunlight.xml',
-    'jquery.knob',
     'components/timeline/main',
     'components/project/main',
     'components/navigation/main',
@@ -34,22 +33,13 @@ define([
                     lineNumbers: false
                 };
 
-                $q.all([TimelinePromise.getPromise(), SkillPromise.getPromise(), BackgroundPromise.getPromise()])
+                $q.all([/*TimelinePromise.getPromise(), SkillPromise.getPromise(), */BackgroundPromise.getPromise()])
                     .then(function (value) {
-                        new wow().init();
+//                        new wow().init();
                         $('[data-toggle="tooltip"]').tooltip();
 
                         sunlight.highlightAll(sunlightOptions);
 
-                    })
-                    .then(function () {
-                        $('#skills').find('.skill').knob({
-                            width: 100,
-                            height: 100,
-                            readOnly: true,
-                            angleOffset: -120,
-                            angleArc: 250
-                        });
                     })
                     .then(function () {
                         $('.loader-wrapper').remove();
@@ -62,10 +52,8 @@ define([
                             $timeout(function () {
                                 LettersPromise.getDefer().resolve();
                             }, 1000);
-
                         }, 300);
                     });
             }]);
-
 });
 

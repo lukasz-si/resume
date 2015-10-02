@@ -13,7 +13,6 @@
             'vis': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/vis/dist/vis',
             'wow': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/wow/dist/wow',
             'moment': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/moment/moment',
-            'one-page-nav': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/jQuery-One-Page-Nav/jquery.nav',
             'app-bootstrap': 'js/app-bootstrap',
             'app-module': 'js/app-module',
             'templates': 'js/templates',
@@ -40,9 +39,6 @@
             },
             'angular-route': {
                 deps: ['angular']
-            },
-            'one-page-nav': {
-                deps: ['jquery']
             },
             'wow': {
                 exports: 'WOW'

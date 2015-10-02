@@ -13,6 +13,7 @@ define([
                 .when("/projects", {templateUrl: 'projects-view-template.html'})
                 .when("/skills", {templateUrl: 'skills-view-template.html'})
                 .when("/links", {templateUrl: 'links-view-template.html'})
+                .when("/print", {templateUrl: 'print-view-template.html'})
                 .otherwise({
                     redirectTo: "/introduction"
                 })

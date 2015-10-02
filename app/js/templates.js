@@ -23,7 +23,7 @@ define(["angular"], function(ng) { ng.module("templates", []).run(["$templateCac
 
 
   $templateCache.put('navigation-template.html',
-    "<div id=navigation class=\"navbar navbar-default navbar-fixed-top sticky-nav fixednav\" role=navigation ng-controller=NavigationController><div class=container><div class=navbar-header><button type=button class=\"navbar-toggle collapsed\" data-toggle=collapse data-target=#bs-navbar-collapse-1><span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span></button><p class=\"navbar-text navbar-left\">Lukasz Sitnik</p><button type=button id=print-resume class=\"btn btn-default navbar-btn navbar-left visible-lg visible-md\" ng-click=printResume()>Print</button></div><div class=\"collapse navbar-collapse\" id=bs-navbar-collapse-1><ul class=\"nav navbar-nav navbar-right\"><li class=current><a href=#home><span class=\"fa fa-home\" aria-hidden=true></span><br>Home</a></li><li class=hidden-xs><a href=#timeline><span class=\"fa fa-clock-o\" aria-hidden=true></span><br>Timeline</a></li><li><a href=#projects><span class=\"fa fa-tasks\" aria-hidden=true></span><br>Projects</a></li><li><a href=#skills><span class=\"fa fa-link\" aria-hidden=true></span><br>Skills</a></li><li><a href=#links><span class=\"fa fa-link\" aria-hidden=true></span><br>Links</a></li></ul></div></div></div>"
+    "<div id=navigation class=\"navbar navbar-default navbar-fixed-top sticky-nav fixednav\" role=navigation><div class=container><div class=navbar-header><button type=button class=\"navbar-toggle collapsed\" data-toggle=collapse data-target=#bs-navbar-collapse-1><span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span></button><p class=\"navbar-text navbar-left\">Lukasz Sitnik</p></div><div class=\"collapse navbar-collapse\" id=bs-navbar-collapse-1><ul class=\"nav navbar-nav navbar-right\"><li ng-class=item.liClass ng-repeat=\"item in menu\" ng-click=changeView(item)><a ng-href={{item.href}}><span ng-class=item.iconClass aria-hidden=true></span><br>{{item.name}}</a></li></ul></div></div></div>"
   );
 
 
@@ -33,7 +33,7 @@ define(["angular"], function(ng) { ng.module("templates", []).run(["$templateCac
 
 
   $templateCache.put('skill-template.html',
-    "<div><h1>Skills</h1><br><div class=row><div class=\"col-sm-10 col-sm-offset-1\"><div class=row><div class=\"col-sm-3 wow fadeIn\" ng-repeat=\"skill in skills | orderBy:'level':true\" data-wow-delay=\"{{$index * 0.1}}s\"><div class=skill-wrapper><div ng-bind={{skill.name}}></div><input class=skill value={{skill.level}} data-fgcolor={{getColor(skill.level)}}></div></div></div></div></div></div>"
+    "<div><h1>Skills</h1><br><div class=row><div class=\"col-sm-10 col-sm-offset-1\"><div class=\"row hidden skills-container\"><div class=\"col-sm-3 wow fadeIn\" ng-repeat=\"skill in skills | orderBy:'level':true\" data-wow-delay=\"{{$index * 0.1}}s\"><div class=skill-wrapper><div ng-bind={{skill.name}}></div><input class=skill value={{skill.level}} data-fgcolor={{getColor(skill.level)}}></div></div></div></div></div></div>"
   );
 
 
@@ -48,7 +48,12 @@ define(["angular"], function(ng) { ng.module("templates", []).run(["$templateCac
 
 
   $templateCache.put('links-view-template.html',
-    "<section id=links><div class=\"header-padding background-code-header\"></div><div class=container-wrapper><div class=container><h1>Links</h1><br><div class=row><div class=\"col-sm-10 col-sm-offset-1\"><div class=row><div class=col-sm-6><div class=title>Online projects</div><ul><li><a href=http://pizzeriaplanetarium.pl>Pizzeria Planetarium</a></li><li><a href=http://github.com/lukasz-si/resume>Resume template</a></li><li><a href=http://github.com/lukasz-si/opening-hours>Opening Hours</a></li><li><a href=http://campanda.com>Campanda</a></li></ul></div><div class=\"col-sm-6 hidden-print\"><div class=title>Used JS libraries</div><ul><li><a href=\"http://getbootstrap.com/\">Twitter Bootstrap</a></li><li><a href=\"http://jquery.com/\">jQuery</a></li><li><a href=\"http://angularjs.org/\">AngularJS</a></li><li><a href=\"http://requirejs.org/\">RequireJS</a></li><li><a href=http://github.com/matthieua/WOW>WOW</a></li><li><a href=http://github.com/davist11/jQuery-One-Page-Nav>OnePageNav</a></li><li><a href=\"http://visjs.org/\">vis.js</a></li><li><a href=http://github.com/gka/chroma.js>Chroma.js</a></li></ul></div></div></div></div></div></div></section>"
+    "<section id=links><div class=\"header-padding background-code-header\"></div><div class=container-wrapper><div class=container><h1>Links</h1><br><div class=row><div class=\"col-sm-10 col-sm-offset-1\"><div class=row><div class=col-sm-6><div class=title>Online projects</div><ul><li><a href=http://pizzeriaplanetarium.pl>Pizzeria Planetarium</a></li><li><a href=http://github.com/lukasz-si/resume>Resume template</a></li><li><a href=http://github.com/lukasz-si/opening-hours>Opening Hours</a></li><li><a href=http://campanda.com>Campanda</a></li></ul></div><div class=\"col-sm-6 hidden-print\"><div class=title>Used JS libraries</div><ul><li><a href=\"http://getbootstrap.com/\">Twitter Bootstrap</a></li><li><a href=\"http://jquery.com/\">jQuery</a></li><li><a href=\"http://angularjs.org/\">AngularJS</a></li><li><a href=\"http://requirejs.org/\">RequireJS</a></li><li><a href=http://github.com/matthieua/WOW>WOW</a></li><li><a href=\"http://visjs.org/\">vis.js</a></li><li><a href=http://github.com/gka/chroma.js>Chroma.js</a></li></ul></div></div></div></div></div></div></section>"
+  );
+
+
+  $templateCache.put('print-view-template.html',
+    "<div ng-include=\"'introduction-view-template.html'\"></div><div ng-include=\"'projects-view-template.html'\"></div><div ng-include=\"'links-view-template.html'\"></div>"
   );
 
 

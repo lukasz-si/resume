@@ -1,44 +1,38 @@
 define([
     'angular',
-    'components/navigation/module',
-    'jquery'
-], function (ng, module, $) {
+    'components/navigation/module'
+], function (ng, module) {
     'use strict';
 
-    module.controller('NavigationController', ['$scope', '$window', '$timeout',
-        function ($scope, $window, $timeout) {
+    module.controller('NavigationController', ['$scope', '$location',
+        function ($scope, $location) {
 
-            $scope.printResume = function () {
-                var footerPosition = $('#footer').offset().top,
-                    printDialogShown = false;
+            var currentView = '#' + $location.path(),
+                selectedClassName = 'current';
 
-                $('body,html').stop(false, false).animate(
-                    {
-                        scrollTop: footerPosition
-                    },
-                    {
-                        duration: 500,
-                        complete: function () {
-                            $('body,html').stop(false, false).animate(
-                                {
-                                    scrollTop: 0
-                                },
-                                {
-                                    duration: 200,
-                                    complete: function () {
-                                        if (!printDialogShown) {
-                                            printDialogShown = true;
-                                            $timeout(function () {
-                                                $window.print();
-                                            }, 200);
-                                        }
-                                    }
-                                }
-                            );
-                        }
+            $scope.menu = [
+                {href: '#/introduction', name: 'Home', liClass: '', iconClass: 'fa fa-home'},
+                {href: '#/timeline', name: 'Timeline', liClass: 'hidden-xs', iconClass: 'fa fa-clock-o'},
+                {href: '#/projects', name: 'Projects', liClass: '', iconClass: 'fa fa-tasks'},
+                {href: '#/skills', name: 'Skills', liClass: '', iconClass: 'fa fa-link'},
+                {href: '#/links', name: 'Links', liClass: '', iconClass: 'fa fa-link'},
+                {href: '#/print', name: 'Print', liClass: 'visible-lg visible-md', iconClass: 'fa fa-print'}
+            ];
+
+            ng.forEach($scope.menu, function (value) {
+                if (value.href == currentView) {
+                    value.liClass += ' ' + selectedClassName;
+                }
+            });
+
+            $scope.changeView = function (item) {
+                ng.forEach($scope.menu, function (value) {
+                    value.liClass = value.liClass.replace(selectedClassName, '');
+                    if (value.name == item.name) {
+                        value.liClass += ' ' + selectedClassName;
                     }
-                );
-            }
+                });
+            };
         }
     ]);
 
