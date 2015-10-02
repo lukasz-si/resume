@@ -2,14 +2,15 @@ define([
     'angular',
     'components/letters/module',
     'jquery',
-    'components/letters/LettersServices'
+    'components/letters/LettersController'
 ], function (ng, module, $) {
     'use strict';
 
     module.directive('uiLettersComponent', function () {
         return {
             restrict: 'A',
-            templateUrl: 'letters-template.html'
+            templateUrl: 'letters-template.html',
+            controller: 'LettersController'
         }
     });
 

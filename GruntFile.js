@@ -31,8 +31,8 @@ module.exports = function (grunt) {
                     out: "dist/prod/<%= pkg.version %>/js/resume-no-version.js",
                     // none | uglify | uglify2
                     optimize: debug ? "none" : "uglify2",
-                    name: "js/main",
-                    insertRequire: ["js/main"],
+                    name: "js/app-bootstrap",
+                    insertRequire: ["js/app-bootstrap"],
                     mainConfigFile: "app/require-config.js",
                     include: "../bower_components/requirejs/require",
                     exclude: [],
@@ -178,7 +178,7 @@ module.exports = function (grunt) {
         ngtemplates: {
             app: {
                 cwd: '',
-                src: 'app/components/**/*-template.html',
+                src: 'app/**/*-template.html',
                 dest: 'app/js/templates.js',
                 options: {
                     module: 'templates',

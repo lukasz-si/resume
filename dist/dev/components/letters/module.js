@@ -4,6 +4,6 @@ define([
 ], function (ng) {
     'use strict';
 
-    return ng.module('introductionModule', ['templates']);
+    return ng.module('lettersModule', ['templates']);
 });
 

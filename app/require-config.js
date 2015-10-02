@@ -14,7 +14,8 @@
             'wow': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/wow/dist/wow',
             'moment': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/moment/moment',
             'one-page-nav': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/jQuery-One-Page-Nav/jquery.nav',
-            'main': 'js/main',
+            'app-bootstrap': 'js/app-bootstrap',
+            'app-module': 'js/app-module',
             'templates': 'js/templates',
             'jquery.knob': 'js/libs/jquery.knob',
             'chroma-js': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/chroma-js/chroma',
@@ -35,6 +36,9 @@
                 deps: ['jquery']
             },
             'angular-animate': {
+                deps: ['angular']
+            },
+            'angular-route': {
                 deps: ['angular']
             },
             'one-page-nav': {
@@ -64,7 +68,7 @@
     });
 
 // Start the main app logic.
-    require(['main'], function () {
+    require(['app-bootstrap'], function () {
         "use strict";
     });
 

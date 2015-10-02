@@ -10,30 +10,23 @@ define([
     'components/timeline/main',
     'components/project/main',
     'components/navigation/main',
-    'components/introduction/main',
+    'components/letters/main',
     'components/skill/main',
     'components/background-code/main',
+    'components/views/main',
     'bootstrap'
 ], function (ng, $, wow, sunlight) {
     'use strict';
 
     return ng.module('resumeApp', [
-            'ngRoute',
             'timelineModule',
             'projectModule',
             'navigationModule',
-            'introductionModule',
+            'lettersModule',
             'skillModule',
-            'backgroundModule'
+            'backgroundModule',
+            'viewsModule'
         ])
-        .config(["$routeProvider", function ($routeProvider) {
-            $routeProvider
-                .when("/introduction", {templateUrl: 'introduction-view-template.html'})
-                .when("/versionsView", {templateUrl: "versions-view-template.html", controller: "cfVersionsViewController"})
-                .otherwise({
-                    redirectTo: "/introduction"
-                })
-        }])
         .run(['$q', '$timeout', 'TimelinePromise', 'SkillPromise', 'LettersPromise', 'BackgroundPromise',
             function ($q, $timeout, TimelinePromise, SkillPromise, LettersPromise, BackgroundPromise) {
 

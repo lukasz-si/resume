@@ -10,9 +10,10 @@ define([
     'components/timeline/main',
     'components/project/main',
     'components/navigation/main',
-    'components/introduction/main',
+    'components/letters/main',
     'components/skill/main',
     'components/background-code/main',
+    'components/views/main',
     'bootstrap'
 ], function (ng, $, wow, sunlight) {
     'use strict';
@@ -21,9 +22,10 @@ define([
             'timelineModule',
             'projectModule',
             'navigationModule',
-            'introductionModule',
+            'lettersModule',
             'skillModule',
-            'backgroundModule'
+            'backgroundModule',
+            'viewsModule'
         ])
         .run(['$q', '$timeout', 'TimelinePromise', 'SkillPromise', 'LettersPromise', 'BackgroundPromise',
             function ($q, $timeout, TimelinePromise, SkillPromise, LettersPromise, BackgroundPromise) {
@@ -32,7 +34,7 @@ define([
                     lineNumbers: false
                 };
 
-                $q.all([TimelinePromise.getPromise(), SkillPromise.getPromise(), BackgroundPromise.getPromise()])
+                $q.all([/*TimelinePromise.getPromise(), SkillPromise.getPromise(), */BackgroundPromise.getPromise()])
                     .then(function (value) {
                         new wow().init();
                         $('[data-toggle="tooltip"]').tooltip();

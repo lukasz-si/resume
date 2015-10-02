@@ -1,6 +1,6 @@
 define([
     'angular',
-    'components/letters/lettersDirective'
+    'components/views/ViewsControllers'
 ], function (ng) {
     return ng;
 });

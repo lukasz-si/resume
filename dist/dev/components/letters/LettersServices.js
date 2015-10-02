@@ -4,7 +4,7 @@
 define([
     'angular',
     'jquery',
-    'components/introduction/module'
+    'components/letters/module'
 ], function (ng, $, module) {
     'use strict';
 

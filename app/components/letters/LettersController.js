@@ -1,7 +1,7 @@
 define([
     'angular',
     'components/letters/module',
-    'components/letters/Service'
+    'components/letters/LettersServices'
 ], function (ng, module) {
     'use strict';
 

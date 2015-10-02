@@ -8,12 +8,14 @@
             'jquery': ('.'.length === 1 ? '../' : '') + '../bower_components/jquery/dist/jquery',
             'angular': ('.'.length === 1 ? '../' : '') + '../bower_components/angular/angular',
             'angular-animate': ('.'.length === 1 ? '../' : '') + '../bower_components/angular-animate/angular-animate',
+            'angular-route': ('.'.length === 1 ? '../' : '') + '../bower_components/angular-route/angular-route',
             'bootstrap': ('.'.length === 1 ? '../' : '') + '../bower_components/bootstrap/dist/js/bootstrap.min',
             'vis': ('.'.length === 1 ? '../' : '') + '../bower_components/vis/dist/vis',
             'wow': ('.'.length === 1 ? '../' : '') + '../bower_components/wow/dist/wow',
             'moment': ('.'.length === 1 ? '../' : '') + '../bower_components/moment/moment',
             'one-page-nav': ('.'.length === 1 ? '../' : '') + '../bower_components/jQuery-One-Page-Nav/jquery.nav',
-            'main': 'js/main',
+            'app-bootstrap': 'js/app-bootstrap',
+            'app-module': 'js/app-module',
             'templates': 'js/templates',
             'jquery.knob': 'js/libs/jquery.knob',
             'chroma-js': ('.'.length === 1 ? '../' : '') + '../bower_components/chroma-js/chroma',
@@ -34,6 +36,9 @@
                 deps: ['jquery']
             },
             'angular-animate': {
+                deps: ['angular']
+            },
+            'angular-route': {
                 deps: ['angular']
             },
             'one-page-nav': {
@@ -63,7 +68,7 @@
     });
 
 // Start the main app logic.
-    require(['main'], function () {
+    require(['app-bootstrap'], function () {
         "use strict";
     });
 

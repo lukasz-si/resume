@@ -1,7 +1,7 @@
 define([
     'angular',
     'jquery',
-    'js/appModule'
+    'app-module'
 ], function (ng, $) {
     'use strict';
 

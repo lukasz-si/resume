@@ -1,4 +1,4 @@
-<div ng-controller="SkillController">
+<div>
     <h1>Skills</h1>
 
     <br>
@@ -8,9 +8,7 @@
             <div class="row">
                 <div class="col-sm-3 wow fadeIn" ng-repeat="skill in skills | orderBy:'level':true" data-wow-delay="{{$index * 0.1}}s">
                     <div class="skill-wrapper">
-                        <div>
-                            {{skill.name}}
-                        </div>
+                        <div ng-bind="{{skill.name}}"></div>
                         <input type="text" class="skill" value="{{skill.level}}" data-fgColor="{{getColor(skill.level)}}">
                     </div>
                 </div>
