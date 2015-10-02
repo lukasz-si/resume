@@ -8,6 +8,7 @@
             'jquery': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/jquery/dist/jquery',
             'angular': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/angular/angular',
             'angular-animate': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/angular-animate/angular-animate',
+            'angular-route': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/angular-route/angular-route',
             'bootstrap': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/bootstrap/dist/js/bootstrap.min',
             'vis': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/vis/dist/vis',
             'wow': ('%%VERSION%%'.length === 1 ? '../' : '') + '../bower_components/wow/dist/wow',

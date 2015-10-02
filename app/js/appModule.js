@@ -18,6 +18,7 @@ define([
     'use strict';
 
     return ng.module('resumeApp', [
+            'ngRoute',
             'timelineModule',
             'projectModule',
             'navigationModule',
@@ -25,6 +26,14 @@ define([
             'skillModule',
             'backgroundModule'
         ])
+        .config(["$routeProvider", function ($routeProvider) {
+            $routeProvider
+                .when("/introduction", {templateUrl: 'introduction-view-template.html'})
+                .when("/versionsView", {templateUrl: "versions-view-template.html", controller: "cfVersionsViewController"})
+                .otherwise({
+                    redirectTo: "/introduction"
+                })
+        }])
         .run(['$q', '$timeout', 'TimelinePromise', 'SkillPromise', 'LettersPromise', 'BackgroundPromise',
             function ($q, $timeout, TimelinePromise, SkillPromise, LettersPromise, BackgroundPromise) {
 

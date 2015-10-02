@@ -11,6 +11,7 @@ define([
         return {
             restrict: 'A',
             templateUrl: 'timeline-template.html',
+            controller: 'TimelineController',
 
             link: function (scope, element, attrs) {
 
