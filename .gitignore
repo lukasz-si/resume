@@ -7,3 +7,4 @@ _SpecRunner.html
 test/code-coverage/coverage.json
 test/code-coverage/html/
 /doc/
+/dist/

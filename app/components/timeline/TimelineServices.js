@@ -24,7 +24,7 @@ define([
         };
     }]);
 
-    module.factory('TimelineServices', ['$document', '$log', '$window', function ($document, $log, $window) {
+    module.factory('TimelineServices', ['$document', '$log', function ($document, $log) {
 
         var timeline = null,
             zoom = 10,
@@ -53,15 +53,8 @@ define([
                 return months;
             },
             createTimeline: function (selector, items, groups, options) {
-
-                if (timeline === null) {
-                    var opts = ng.extend({}, DEFAULT_TIMELINE_OPTIONS, options);
-
-                    timeline = new vis.Timeline($(selector)[0], items, groups, opts);
-
-                } else {
-                    this.updateTimeline(items, groups, options);
-                }
+                var opts = ng.extend({}, DEFAULT_TIMELINE_OPTIONS, options);
+                timeline = new vis.Timeline($(selector)[0], items, groups, opts);
 
                 return timeline;
             },

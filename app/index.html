@@ -77,13 +77,15 @@
 
     <div class="container-fluid container-extended">
 
-        <div ng-view=""></div>
-
-        <!-- Footer -->
-        <section id="footer" class="hidden-print">
-            <div class="header-padding"></div>
-            <div class="container-wrapper dark-background">
-                <div class="container">
+        <div class="view-container">
+            <div ng-view="" class="view-frame"></div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<section id="footer" class="hidden-print">
+    <div class="container-wrapper dark-background">
+        <div class="container">
                 <span>Copyright &copy; 2015<script>
                     function getYear() {
                         var year = new Date().getFullYear();
@@ -93,11 +95,9 @@
                     document.write(getYear() + " ");
                 </script> <a href="mailto:l.sitnik@gmail.com">Lukasz Sitnik</a>
                 </span>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
-</div>
+</section>
 <div id="old-browser-panel" style="display: none">
     You are using old browser.<br> Please install a newer version of Internet Explorer, Firefox or Chrome.
 </div>

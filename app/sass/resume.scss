@@ -1,6 +1,7 @@
 // centered image
 // background: url("../images/bg1.jpg") no-repeat fixed center center / cover  rgba(0, 0, 0, 0)
 $navbarHeight: 78px;
+$footerHeight: 100px;
 $sectionPadding: 30px 0 0 30px;
 $projectBottomPadding: 5px;
 $redColor: #d24837;
@@ -42,6 +43,11 @@ $screen-md-max: ($screen-lg-min - 1);
 @import "_background-code";
 @import "_footer";
 @import "_links";
+@import "_views";
+
+html,body {
+    height: 100%;
+}
 
 #resume {
 
@@ -49,6 +55,7 @@ $screen-md-max: ($screen-lg-min - 1);
     font-family: Verdana, Arial, sans-serif; //"diavlo", Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: #1B1B1B;
+    padding-bottom: $footerHeight;
 
     h1 {
         font-size: 40px;
@@ -81,6 +88,7 @@ $screen-md-max: ($screen-lg-min - 1);
 
     .main-wrapper {
         opacity: 0;
+        min-height: 100%;
         z-index: 1;
     }
 
@@ -94,6 +102,7 @@ $screen-md-max: ($screen-lg-min - 1);
 
         .header-padding {
             padding-top: $navbarHeight;
+            background-color: $homeBackgroundColor;
         }
     }
 
