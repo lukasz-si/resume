@@ -11,6 +11,7 @@ define([
         return {
             restrict: 'A',
             templateUrl: 'background-template.html',
+            controller: 'BackgroundController',
 
             link: function (scope, element, attrs) {
 

@@ -1,7 +1,7 @@
 define(["angular"], function(ng) { ng.module("templates", []).run(["$templateCache", function($templateCache) {  'use strict';
 
   $templateCache.put('background-template.html',
-    "<div class=background-code ng-controller=BackgroundController><div class=js-code><pre class=sunlight-highlight-javascript>\r" +
+    "<div class=background-code><div class=js-code><pre class=sunlight-highlight-javascript>\r" +
     "\n" +
     "{{javascript}}\r" +
     "\n" +
