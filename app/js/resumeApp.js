@@ -13,6 +13,7 @@ define([
     'components/skill/main',
     'components/background-code/main',
     'components/views/main',
+    'commonModule',
     'bootstrap'
 ], function (ng, $, wow, sunlight) {
     'use strict';
@@ -24,7 +25,8 @@ define([
             'lettersModule',
             'skillModule',
             'backgroundModule',
-            'viewsModule'
+            'viewsModule',
+            'commonModule'
         ])
         .run(['$q', '$timeout', 'TimelinePromise', 'SkillPromise', 'LettersPromise', 'BackgroundPromise',
             function ($q, $timeout, TimelinePromise, SkillPromise, LettersPromise, BackgroundPromise) {
@@ -34,7 +36,7 @@ define([
                 };
 
                 $q.all([/*TimelinePromise.getPromise(), SkillPromise.getPromise(), */BackgroundPromise.getPromise()])
-                    .then(function (value) {
+                    .then(function () {
 //                        new wow().init();
                         $('[data-toggle="tooltip"]').tooltip();
 

@@ -5,12 +5,12 @@ define([
 ], function (ng, module) {
     'use strict';
 
-    module.controller('TimelineController', ['$scope', '$http', '$log', 'TimelineServices', 'TimelinePromise', '$timeout',
-        function ($scope, $http, $log, TimelineServices, TimelinePromise, $timeout) {
+    module.controller('TimelineController', ['$scope', '$http', '$log', 'TimelineServices', 'TimelinePromise', '$timeout', 'Utils',
+        function ($scope, $http, $log, TimelineServices, TimelinePromise, $timeout, Utils) {
 
-            $http.get('%%VERSION%%/data/work.json', {cache: true})
-                .success(function (data) {
-                    var projects = ng.isArray(data.projects) ? data.projects.slice() : [],
+            Utils.getResumeData().then(function (response) {
+                    var data = response.data,
+                        projects = ng.isArray(data.projects) ? data.projects.slice() : [],
                         months, timeline, monthsText;
 
                     $log.log("work.json loaded");

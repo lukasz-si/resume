@@ -1,7 +1,7 @@
 define([
     'angular',
     'jquery',
-    'app-module'
+    'resumeApp'
 ], function (ng, $) {
     'use strict';
 

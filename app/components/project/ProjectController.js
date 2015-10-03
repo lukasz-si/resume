@@ -7,16 +7,14 @@ define([
     var technologies = ["JavaScript", "Java", "PHP", "HTML5", "CSS5", "jQuery", "AngularJS", "RequireJS",
         "Smarty", "Sass", "Less", "Grunt", "Bower", "Jasmine", "Git", "Scrum", "D3"];
 
-    module.controller('ProjectController', ['$scope', '$http', '$log', '$sce',
-        function ($scope, $http, $log, $sce) {
+    module.controller('ProjectController', ['$scope', '$http', '$log', '$sce', 'Utils',
+        function ($scope, $http, $log, $sce, Utils) {
 
-            $http.get('%%VERSION%%/data/work.json', {cache: true})
-                .success(function (data) {
-                    $log.log("work.json loaded - project");
-
-                    $scope.projects = data.projects;
-                    $scope.companies = data.companies;
-                });
+            Utils.getResumeData().then(function (data) {
+                $log.log("work.json loaded");
+                $scope.projects = data.data.projects;
+                $scope.companies = data.data.companies;
+            });
 
             $scope.companies = [];
             $scope.technologies = technologies;

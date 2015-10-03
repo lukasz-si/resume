@@ -9,13 +9,12 @@ define([
 
     var scale = chroma.scale(['lightyellow', 'lightyellow', 'yellow', 'orange', 'red']);
 
-    module.controller('SkillController', ['$scope', '$http', 'SkillPromise', '$log',
-        function ($scope, $http, SkillPromise, $log) {
+    module.controller('SkillController', ['$scope', '$http', 'SkillPromise', '$log', 'Utils',
+        function ($scope, $http, SkillPromise, $log, Utils) {
 
-            $http.get('%%VERSION%%/data/work.json', {cache: true})
-                .success(function (data) {
-
-                    var skills = ng.isArray(data.skills) ? data.skills.slice() : [];
+            Utils.getResumeData().then(function (response) {
+                    var data = response.data,
+                        skills = ng.isArray(data.skills) ? data.skills.slice() : [];
 
                     $log.log("work.json loaded - skills");
 

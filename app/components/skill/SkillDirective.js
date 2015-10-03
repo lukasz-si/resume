@@ -18,12 +18,8 @@ define([
 
                 link: function (scope, element) {
 
-
-                    console.log(element.find('.row').size())
-
                     SkillPromise.getPromise().then(function () {
                         $timeout(function () {
-                            console.log(element.find('.wow').size())
 
                             element.find('.skill').knob({
                                 width: 100,
