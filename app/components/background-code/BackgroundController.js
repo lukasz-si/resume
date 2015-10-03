@@ -5,46 +5,29 @@ define([
 ], function (ng, module) {
     'use strict';
 
-    module.controller('BackgroundController', ['$scope', '$http', '$log', 'BackgroundPromise', '$timeout',
-        function ($scope, $http, $log, BackgroundPromise, $timeout) {
+    module.controller('BackgroundController', ['$scope', '$http', '$log', 'BackgroundPromise', '$timeout', '$q',
+        function ($scope, $http, $log, BackgroundPromise, $timeout, $q) {
 
             var counter = 0;
 
-            $http.get('%%VERSION%%/data/background.js', {cache: true})
-                .success(function (data) {
-                    counter++;
-                    $scope.javascript = data;
-                    resolveDefer();
-                    $log.log("background.js loaded");
-                });
+            $q.all([
+                    $http.get('%%VERSION%%/data/background.js', {cache: true}),
+                    $http.get('%%VERSION%%/data/background.scss', {cache: true}),
+                    $http.get('%%VERSION%%/data/background.html', {cache: true})
+                ])
+                .then(function (values) {
+                    $scope.javascript = values[0].data;
+                    $scope.css = values[1].data;
+                    $scope.html = values[2].data;
 
-            $http.get('%%VERSION%%/data/background.scss', {cache: true})
-                .success(function (data) {
-                    counter++;
-                    $scope.css = data;
-                    resolveDefer();
-                    $log.log("background.css loaded");
-                });
-
-            $http.get('%%VERSION%%/data/background.html', {cache: true})
-                .success(function (data) {
-                    counter++;
-                    $scope.html = data;
-                    resolveDefer();
-                    $log.log("background.html loaded");
+                    $timeout(function () {
+                        BackgroundPromise.getDefer().resolve();
+                    }, 100);
                 });
 
             $scope.css = '';
             $scope.javascript = '';
             $scope.html = '';
-
-            function resolveDefer() {
-                if (counter === 3) {
-                    $timeout(function () {
-                        BackgroundPromise.getDefer().resolve();
-                    }, 100);
-                }
-            }
         }
     ]);
 
