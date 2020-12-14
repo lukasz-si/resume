@@ -23,12 +23,12 @@
         },
         {
             "offset": 8,
-            "text": "JAVASCRIPT JQUERY",
+            "text": "JAVASCRIPT  VUE.JS",
             "class": "letters-cell-marked"
         },
         {
-            "offset": 9,
-            "text": "CSS3  ANGULARJS",
+            "offset": 10,
+            "text": "CSS3   ANGULARJS",
             "class": "letters-cell-marked"
         },
         {
@@ -37,8 +37,8 @@
             "class": "letters-cell-marked"
         },
         {
-            "offset": 13,
-            "text": "REQUIREJS",
+            "offset": 9,
+            "text": "DOCKER   TESTING",
             "class": "letters-cell-marked"
         },
         {
