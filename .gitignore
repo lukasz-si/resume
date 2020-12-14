@@ -4,6 +4,7 @@ bower_components/
 npm-debug.log
 .grunt/
 _SpecRunner.html
-test/code-coverage/coverage.json
-test/code-coverage/html/
+/test/
 /doc/
+/dist/
+app/js/templates.js

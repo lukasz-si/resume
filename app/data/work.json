@@ -30,6 +30,17 @@
     ],
     "projects": [
         {
+            "id": 28,
+            "start": "2015-11-01",
+            "end": "2016-06-30",
+            "group": "freelance",
+            "content": "TiqDiet",
+            "position": "Frontend Developer",
+            "description": "Single-page website designed to support dieticians in creating diets, calculating nutrients, controlling patient’s progress, etc. Front-end is based on React library while back-end on NodeJS and MongoDB.",
+            "website": "https://tiqdiet.com/",
+            "technologies": ["JavaScript", "React", "Lodash", "Twitter Bootstrap", "Gulp", "NPM", "Git", "HTML5", "CSS3", "Sass"]
+        },
+        {
             "id": 27,
             "start": "2015-03-05",
             "end": "2015-03-06",
@@ -109,14 +120,47 @@
 
 
         {
+            "id": 16,
+            "start": "2019-02-01",
+            "end": "",
+            "group": "meelogic",
+            "content": "DMP",
+            "position": "Frontend/Backend Developer",
+            "description": "Data Management Platform is a highly performant data catalogue. End-user is able to access it by a browser (SPA). It allows to check-in, search, export or create jobs based on the indexed data. The platform is used to define complex scenarios for advanced driver assistance systems.",
+            "website": "",
+            "technologies": ["JavaScript", "AngularJS", "PHP", "Symfony", "CouchDB", "Elasticsearch", "Protractor", "Puppeteer", "Docker", "docker-compose", "Bash", "Ansible", "Kubernetes", "Jasmine", "Istanbul (code coverage)", "Webpack", "Gulp", "TSLint", "Karma", "NPM", "Jenkins", "Git", "HTML5", "CSS3", "Sass", "Scrum"]
+        },
+        {
+            "id": 15,
+            "start": "2017-02-01",
+            "end": "2019-01-31",
+            "group": "meelogic",
+            "content": "Tracking",
+            "position": "Frontend Developer",
+            "description": "Single-page application which is designed to show positions of devices on a map. It allows to create geofences which are used to notify a user if a device has entered defined areas. User interactive interface is provided by JavaScript frameworks. Test Automation is based on Nightwatch.js framework. Project is developed using SCRUM agile methodology.",
+            "website": "https://tracking.here.com",
+            "technologies": ["JavaScript", "Vue.js", "Vuex", "VueRouter", "D3", "Nightwatch.js", "Mocha", "Chai", "Sinon", "Istanbul (code coverage)", "Webpack", "NPM", "Jenkins", "Git", "Gerrit", "HTML5", "CSS3", "Sass", "Scrum"]
+        },
+        {
+            "id": 14,
+            "start": "2016-11-01",
+            "end": "2017-01-31",
+            "group": "meelogic",
+            "content": "Tracking (prototype)",
+            "position": "Frontend Developer",
+            "description": "Single-page application which is a prototype to show positions of devices on a map. User interactive interface is provided by JavaScript frameworks. Project is developed using SCRUM agile methodology.",
+            "website": "",
+            "technologies": ["JavaScript", "Angular2", "TypeScript", "Redux", "RxJS", "D3", "Webpack", "NPM", "Jenkins", "Git", "HTML5", "CSS3", "Sass", "Scrum"]
+        },
+        {
             "id": 13,
             "start": "2014-07-01",
-            "end": "",
+            "end": "2016-10-31",
             "group": "meelogic",
             "content": "DataLens",
             "position": "Frontend Developer",
-            "description": "Single Page Web Application which is designed to visualize data on charts or maps. User interactive interface is provided by JavaScript frameworks. All libraries created for the project are fully documented, the libraries are also automatically tested during every build.",
-            "website": "http://datalens.here.com",
+            "description": "Single-page application which is designed to visualize data on charts or maps. User interactive interface is provided by JavaScript frameworks. All libraries created for the project are fully documented, the libraries are also automatically tested during every build.",
+            "website": "",
             "technologies": ["JavaScript", "AngularJS", "jQuery", "RequireJS", "D3", "Grunt", "Bower", "NPM", "Jenkins", "Git", "Protractor", "Jasmine", "Istanbul (code coverage)", "JSDoc", "HTML5", "CSS3", "Sass", "Scrum"]
         },
         {
@@ -138,7 +182,7 @@
             "content": "Campanda",
             "position": "Frontend Developer",
             "description": "Website designed to rent motorhomes. The application supports all devices – desktops, tablets and mobile phones (responsive design). Twitter Bootstrap framework provides modern layout. User interactive interface is provided by JavaScript frameworks. Project management methodology is Scrum.",
-            "website": "http://www.campanda.com",
+            "website": "https://www.campanda.com",
             "technologies": ["JavaScript", "jQuery", "RequireJS", "Underscore", "Twitter Bootstrap", "PHP", "Zend Framework 2", "HTML5", "CSS5", "Less", "Git", "GitFlow", "REST", "Scrum", "Selenium"]
         },
 
@@ -206,24 +250,12 @@
     ],
     "hobbies": [
         {
-            "name": "Football",
+            "name": "Sport",
             "icon": "fa-futbol-o"
         },
         {
             "name": "Bicycle",
             "icon": "fa-bicycle"
-        },
-        {
-            "name": "Beer",
-            "icon": "fa-beer"
-        },
-        {
-            "name": "Books",
-            "icon": "fa-book"
-        },
-        {
-            "name": "Motorcycle",
-            "icon": "fa-motorcycle"
         },
         {
             "name": "Music",
@@ -244,12 +276,12 @@
             "level": 90
         },
         {
-            "name": "jQuery",
-            "level": 90
+            "name": "Vue.js",
+            "level": 80
         },
         {
-            "name": "RequireJS",
-            "level": 90
+            "name": "Docker",
+            "level": 80
         },
         {
             "name": "CSS3",
@@ -261,10 +293,6 @@
         },
         {
             "name": "Java",
-            "level": 80
-        },
-        {
-            "name": "Spring",
             "level": 70
         },
         {
@@ -272,16 +300,16 @@
             "level": 80
         },
         {
-            "name": "Grunt",
-            "level": 90
+            "name": "Symfony",
+            "level": 70
         },
         {
             "name": "Sass",
             "level": 80
         },
         {
-            "name": "Jasmine",
-            "level": 80
+            "name": "Jasmine/Mocha",
+            "level": 90
         },
         {
             "name": "AngularJS",

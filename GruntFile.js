@@ -1,8 +1,9 @@
 /*global module:false*/
 module.exports = function (grunt) {
-    var fs = require('fs-sync'),
-        baseUrl = 'app',
-        debug = false;
+    const fs = require('fs-sync');
+    const baseUrl = 'app';
+    const debug = false;
+    const sass = require('node-sass');
 
     // Project configuration.
     grunt.initConfig({
@@ -45,6 +46,7 @@ module.exports = function (grunt) {
         },
         sass: {
             options: {
+                implementation: sass,
                 sourceMap: false,
                 outputStyle: "compressed" // nested | compressed
             },
