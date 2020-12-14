@@ -37,7 +37,7 @@
             "content": "TiqDiet",
             "position": "Frontend Developer",
             "description": "Single-page website designed to support dieticians in creating diets, calculating nutrients, controlling patient’s progress, etc. Front-end is based on React library while back-end on NodeJS and MongoDB.",
-            "website": "https://tiqdiet.com/",
+            "website": "https://tiqdiet.com",
             "technologies": ["JavaScript", "React", "Lodash", "Twitter Bootstrap", "Gulp", "NPM", "Git", "HTML5", "CSS3", "Sass"]
         },
         {

@@ -4,8 +4,8 @@ define([
 ], function (ng, module) {
     'use strict';
 
-    var technologies = ["JavaScript", "Java", "PHP", "HTML5", "CSS5", "jQuery", "AngularJS", "RequireJS",
-        "Smarty", "Sass", "Less", "Grunt", "Bower", "Jasmine", "Git", "Scrum", "D3"];
+    var technologies = ["JavaScript", "Java", "PHP", "HTML5", "CSS5", "jQuery", "AngularJS", "Angular2", "Vue.js",
+        "React", "Sass", "Less", "Docker", "Jasmine", "Git", "Scrum", "D3"];
 
     module.controller('ProjectController', ['$scope', '$http', '$log', '$sce',
         function ($scope, $http, $log, $sce) {
