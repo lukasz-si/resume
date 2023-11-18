@@ -1,6 +1,15 @@
 {
     "companies": [
         {
+            "id": "kadme",
+            "name": "Kadme",
+            "content": "Kadme",
+            "className": "kadme company-timeline",
+            "subgroupOrder": "start",
+            "start": "2005-08-01",
+            "end": ""
+        },
+        {
             "id": "tieto",
             "name": "Tieto",
             "content": "Tieto",
@@ -118,11 +127,21 @@
             "technologies": ["PHP", "Ajax", "Smarty", "CSS", "HTML", "SVN"]
         },
 
-
+        {
+            "id": 17,
+            "start": "2022-03-01",
+            "end": "",
+            "group": "kadme",
+            "content": "Lumin",
+            "position": "Frontend/Backend Developer",
+            "description": "Lumin is an integration platform, specialised in the Oil & Gas domain. Lumin is able to read a collection of unstructured documents and automatically spatialise them; publishing them as layers on a powerful GIS interface.",
+            "website": "",
+            "technologies": ["JavaScript", "React", "TypeScript", "Redux", "OpenLayers", "Java", "Spring Boot", "Maven", "Elasticsearch", "Docker", "docker-compose", "Bash", "Webpack", "Jenkins", "Git", "HTML5", "CSS3", "Sass", "Scrum"]
+        },
         {
             "id": 16,
             "start": "2019-02-01",
-            "end": "",
+            "end": "2022-02-28",
             "group": "meelogic",
             "content": "DMP",
             "position": "Frontend/Backend Developer",
@@ -276,6 +295,14 @@
             "level": 90
         },
         {
+            "name": "React",
+            "level": 90
+        },
+        {
+            "name": "Java",
+            "level": 80
+        },
+        {
             "name": "Vue.js",
             "level": 80
         },
@@ -292,10 +319,6 @@
             "level": 90
         },
         {
-            "name": "Java",
-            "level": 70
-        },
-        {
             "name": "PHP",
             "level": 80
         },
@@ -308,7 +331,7 @@
             "level": 80
         },
         {
-            "name": "Jasmine/Mocha",
+            "name": "Jest/Jasmine/Mocha",
             "level": 90
         },
         {

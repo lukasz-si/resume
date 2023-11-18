@@ -23,17 +23,17 @@
         },
         {
             "offset": 8,
-            "text": "JAVASCRIPT  VUE.JS",
+            "text": "JAVASCRIPT  REACT",
             "class": "letters-cell-marked"
         },
         {
             "offset": 10,
-            "text": "CSS3   ANGULARJS",
+            "text": "JEST   REDUX",
             "class": "letters-cell-marked"
         },
         {
             "offset": 7,
-            "text": "BOOTSTRAP  HTML5",
+            "text": "VUE.JS  JAVA  PHP",
             "class": "letters-cell-marked"
         },
         {
