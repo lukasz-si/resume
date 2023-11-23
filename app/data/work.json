@@ -311,7 +311,7 @@
             "level": 80
         },
         {
-            "name": "CSS3",
+            "name": "Sass",
             "level": 90
         },
         {
@@ -327,8 +327,8 @@
             "level": 70
         },
         {
-            "name": "Sass",
-            "level": 80
+            "name": "Git",
+            "level": 90
         },
         {
             "name": "Jest/Jasmine/Mocha",
